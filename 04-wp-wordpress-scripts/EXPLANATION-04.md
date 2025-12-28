@@ -1,6 +1,10 @@
 # 08 WordPress Scripts Plugin
 
-A comprehensive WordPress plugin demonstrating modern JavaScript development using **@wordpress/scripts**, React, and the WordPress REST API.
+## What is @wordpress/scripts
+
+@wordpress/scripts (or wp-scripts) is a collection of pre-configured build tools (like Webpack, Babel, ESLint) and scripts for modern WordPress development, especially for plugins and themes using the Block Editor (Gutenberg), simplifying the process of compiling modern JS/JSX/Sass into browser-ready code, linting, and managing assets without complex manual setup. It handles tasks like transforming ESNext/JSX, bundling, minifying, and provides commands (like build, start) in your package.json for a streamlined workflow, acting similarly to react-scripts. 
+
+See `EXPLANATION-JS-BUNDLE-INECTION.md` for how JS Frameworks are rendered.
 
 ## Table of Contents
 
