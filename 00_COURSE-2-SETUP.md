@@ -26,10 +26,5 @@
 12. Add plugins and test admin and frontenc.
 
     Add 01, 02, 03 check in Admin and Front end
-    Add 04 but is blank
-    Add 05 add key and do regenerate - check phpMyAdmin
-    - Test API for 'silicone'or 'air fryer' - both FTS and Vector searches have post ids.
-    Add 06 
-    - Test FRONT 'chatbot' - rename plugin06
 
-We will load in PLUGINS 06> as needed.
+We will load in PLUGINS 04+ as needed.
