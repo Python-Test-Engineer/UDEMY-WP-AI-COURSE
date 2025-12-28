@@ -1,5 +1,11 @@
 # Integrating LangChain.js into WordPress Plugins Using @wordpress/scripts
 
+[https://docs.langchain.com/oss/javascript/langchain/overview](https://docs.langchain.com/oss/javascript/langchain/overview)
+
+[https://www.langchain.com/langgraph](https://www.langchain.com/langgraph)
+
+[https://academy.langchain.com/](https://academy.langchain.com/)
+
 This explainer demonstrates how to create a basic WordPress plugin that integrates LangChain.js, a framework for building applications with large language models (LLMs), using WordPress's official `@wordpress/scripts` package for development and build processes.
 
 ## Prerequisites
