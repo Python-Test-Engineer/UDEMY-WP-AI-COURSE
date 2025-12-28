@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic AI Agent with PHP & OpenAI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .keyword { color: #ff79c6; }
+        .string { color: #50fa7b; }
+        .comment { color: #6272a4; }
+        .variable { color: #f1fa8c; }
+        .function { color: #8be9fd; }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .step {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .interactive-demo {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #5568d3;
+        }
+
+        #flow-diagram {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .flow-step {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 15px 25px;
+            margin: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .arrow {
+            display: inline-block;
+            color: #667eea;
+            font-size: 2em;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Basic AI Agent with PHP & OpenAI</h1>
+        <p class="subtitle">Understanding how to build a simple AI agent using PHP to interact with OpenAI's API</p>
+
+        <div class="section">
+            <h2>What is an AI Agent?</h2>
+            <p>An AI agent is a program that can perceive its environment, make decisions, and take actions to achieve specific goals. In this basic example, our agent receives user input, sends it to OpenAI's API, and returns the AI's response.</p>
+        </div>
+
+        <div class="section">
+            <h2>How It Works</h2>
+            <div id="flow-diagram">
+                <div class="flow-step">User Input</div>
+                <span class="arrow">→</span>
+                <div class="flow-step">PHP Agent</div>
+                <span class="arrow">→</span>
+                <div class="flow-step">OpenAI API</div>
+                <span class="arrow">→</span>
+                <div class="flow-step">AI Response</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Step-by-Step Breakdown</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Set up the API endpoint</strong>
+                <p>Define the OpenAI API URL we'll be sending requests to.</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Prepare the request data</strong>
+                <p>Create an array with the model name, user message, and parameters like max_tokens to limit response length.</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Initialize cURL</strong>
+                <p>PHP's cURL library handles HTTP requests. We initialize it with the API endpoint.</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Configure the request</strong>
+                <p>Set options for POST request, JSON data format, and authorization header with your API key.</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">5</span>
+                <strong>Execute and handle response</strong>
+                <p>Send the request, check for errors, and extract the AI's response from the JSON result.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Components Explained</h2>
+            
+            <div class="info-box">
+                <strong>📡 cURL (Client URL Library)</strong>
+                <p>PHP's built-in library for making HTTP requests. It's perfect for API calls because it supports authentication, headers, and different request methods.</p>
+            </div>
+
+            <div class="info-box">
+                <strong>🔑 API Authentication</strong>
+                <p>The Authorization header sends your API key as a Bearer token. This authenticates your request with OpenAI.</p>
+            </div>
+
+            <div class="info-box">
+                <strong>📦 JSON Encoding/Decoding</strong>
+                <p>We use json_encode() to convert PHP arrays to JSON for the API, and json_decode() to parse the response back into PHP arrays.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Important Considerations</h2>
+            
+            <div class="warning-box">
+                <strong>⚠️ Security</strong>
+                <ul>
+                    <li>Never hardcode your API key in production code</li>
+                    <li>Use environment variables or secure configuration files</li>
+                    <li>Never expose your API key in client-side code</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <strong>💰 Cost Management</strong>
+                <ul>
+                    <li>OpenAI charges per token (both input and output)</li>
+                    <li>Use max_tokens to limit response length and costs</li>
+                    <li>Monitor your API usage in the OpenAI dashboard</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <strong>🔄 Error Handling</strong>
+                <ul>
+                    <li>Always check for cURL errors</li>
+                    <li>Handle API rate limits and timeouts gracefully</li>
+                    <li>Validate API responses before using them</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Extending the Agent</h2>
+            <p>This basic agent can be enhanced with:</p>
+            <ul>
+                <li><strong>Conversation Memory:</strong> Store previous messages to maintain context</li>
+                <li><strong>System Prompts:</strong> Add a system message to define the agent's personality</li>
+                <li><strong>Error Recovery:</strong> Implement retry logic for failed requests</li>
+                <li><strong>Response Streaming:</strong> Use OpenAI's streaming API for real-time responses</li>
+                <li><strong>Multiple Models:</strong> Switch between different models based on task complexity</li>
+            </ul>
+        </div>
+
+        <div class="interactive-demo">
+            <h3>💡 Try It Yourself</h3>
+            <p>To use this code:</p>
+            <ol>
+                <li>Sign up for an OpenAI API key at <a href="https://platform.openai.com" target="_blank">platform.openai.com</a></li>
+                <li>Replace 'your-api-key-here' with your actual API key</li>
+                <li>Save the code as <code>agent.php</code></li>
+                <li>Run it from command line: <code>php agent.php</code></li>
+                <li>Or host it on a web server and access via browser</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

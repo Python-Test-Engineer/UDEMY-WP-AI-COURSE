@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL Vector Fields and Comparison Functions Explained</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.6;
+            margin: 15px 0;
+            white-space: pre-wrap;
+        }
+
+        .keyword {
+            color: #ff79c6;
+        }
+
+        .string {
+            color: #50fa7b;
+        }
+
+        .comment {
+            color: #6272a4;
+        }
+
+        .variable {
+            color: #f1fa8c;
+        }
+
+        .function {
+            color: #8be9fd;
+        }
+
+        .number {
+            color: #bd93f9;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example-box {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        ul,
+        ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .step-container {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .visual-example {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #667eea;
+        }
+
+        strong {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🗄️ MySQL Vector Fields and Comparison Functions Explained</h1>
+        <p class="subtitle">Understanding vector data types, similarity search, and implementing vector functionality across MySQL versions</p>
+
+        <div class="section">
+            <h2>What are MySQL Vector Fields?</h2>
+            <p>MySQL's VECTOR data type, introduced in MySQL 8.0.39, is designed to store mathematical vectors - arrays of numbers (typically 32-bit or 64-bit floats) used in AI, machine learning, and similarity search applications.</p>
+            <ul>
+                <li>Stores vectors as efficient binary data</li>
+                <li>Supports similarity search with built-in distance functions</li>
+                <li>Indexes supported (vector search)</li>
+                <li>Perfect for AI embeddings, semantic search, recommendation systems</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Creating Tables with Vector Fields</h2>
+
+            <h3>Basic Vector Table Creation</h3>
+            <div class="code-block">
+                <span class="comment">-- Create a table with VECTOR column for storing AI embeddings</span>
+                <span class="keyword">CREATE TABLE</span> <span class="variable">documents</span> (
+                <span class="variable">id</span> <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span> <span class="keyword">AUTO_INCREMENT</span>,
+                <span class="variable">title</span> <span class="keyword">VARCHAR</span>(<span class="number">200</span>),
+                <span class="variable">content</span> <span class="keyword">TEXT</span>,
+                <span class="variable">embedding</span> <span class="keyword">VECTOR</span>(<span class="number">1536</span>) <span class="comment">-- BERT embedding: 1536 dimensions</span>
+                ) <span class="keyword">ENGINE</span>=<span class="string">InnoDB</span>;
+
+                <span class="comment">-- Insert vector data (from OpenAI Ada-002 or similar)</span>
+                <span class="keyword">INSERT INTO</span> <span class="variable">documents</span> (<span class="variable">title</span>, <span class="variable">content</span>, <span class="variable">embedding</span>) <span class="keyword">VALUES</span>
+                (<span class="string">'Getting Started with MySQL'</span>, <span class="string">'Introduction to database management...'</span>,
+                 <span class="string">'[0.123, 0.456, 0.789, ...]'</span>);
+            </div>
+
+            <div class="info-box">
+                <strong>Vector Dimensions</strong>
+                <p>The VECTOR type requires specifying dimensions in parentheses. Common sizes: 384 (MiniLM), 768 (BERT), 1536 (Ada-002), 4096 (GPT-3.5 embeddings).</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Vector Comparison Functions</h2>
+            <p>MySQL provides built-in functions to calculate distances/similarities between vectors. These are essential for semantic search, recommendations, and similarity matching.</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Function</th>
+                        <th>Formula</th>
+                        <th>Use Case</th>
+                        <th>Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>ELEMENTWISE_L2_DISTANCE(a, b)</code></td>
+                        <td>sqrt(sum((a_i - b_i)²))</td>
+                        <td>Euclidean distance</td>
+                        <td>[0, ∞)</td>
+                    </tr>
+                    <tr>
+                        <td><code>COSINE_DISTANCE(a, b)</code></td>
+                        <td>1 - (a·b)/(|a|·|b|)</td>
+                        <td>Angle-based similarity</td>
+                        <td>[0, 2]</td>
+                    </tr>
+                    <tr>
+                        <td><code>INNER_PRODUCT(a, b)</code></td>
+                        <td>sum(a_i × b_i)</td>
+                        <td>Dot product similarity</td>
+                        <td>(-∞, ∞)</td>
+                    </tr>
+                    <tr>
+                        <td><code>L1_DISTANCE(a, b)</code></td>
+                        <td>sum(|a_i - b_i|)</td>
+                        <td>Manhattan distance</td>
+                        <td>[0, ∞)</td>
+                    </tr>
+                    <tr>
+                        <td><code>L2_DISTANCE(a, b)</code></td>
+                        <td>sum((a_i - b_i)²)<sup>½</sup></td>
+                        <td>Euclidean distance (normalized)</td>
+                        <td>[0, ∞)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Semantic Search Example</h3>
+            <div class="code-block">
+                <span class="comment">-- Find semantically similar documents using cosine distance</span>
+                <span class="keyword">SELECT</span>
+                <span class="variable">title</span>,
+                <span class="variable">content</span>,
+                <span class="function">COSINE_DISTANCE</span>(<span class="variable">embedding</span>, <span class="string">'[0.123, 0.456, ...]'</span>) <span class="keyword">AS</span> similarity_score
+                <span class="keyword">FROM</span> <span class="variable">documents</span>
+                <span class="keyword">ORDER BY</span> similarity_score <span class="keyword">ASC</span> <span class="comment">-- Lower is more similar</span>
+                <span class="keyword">LIMIT</span> <span class="number">10</span>;
+            </div>
+
+            <h3>Finding Similar Vectors</h3>
+            <div class="code-block">
+                <span class="comment">-- Find vectors closest to a query vector</span>
+                <span class="keyword">SELECT</span>
+                <span class="variable">user_id</span>,
+                <span class="function">EUCLIDEAN_DISTANCE</span>(<span class="variable">preferences_vector</span>, <span class="string">'[0.5, 0.8, 0.2, ...]'</span>) <span class="keyword">AS</span> distance
+                <span class="keyword">FROM</span> <span class="variable">user_preferences</span>
+                <span class="keyword">ORDER BY</span> distance <span class="keyword">ASC</span>
+                <span class="keyword">LIMIT</span> <span class="number">5</span>;
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Vector Indexing and Performance</h2>
+
+            <div class="success-box">
+                <strong>Creating Vector Indexes</strong>
+                <div class="code-block">
+                    <span class="comment">-- Create index for efficient vector search</span>
+                    <span class="keyword">CREATE</span> <span class="keyword">VECTOR INDEX</span> <span class="variable">idx_documents_embedding</span>
+                    <span class="keyword">ON</span> <span class="variable">documents</span>(<span class="variable">embedding</span>)
+                    <span class="keyword">USING</span> <span class="keyword">L2_DISTANCE</span>;
+
+                    <span class="comment">-- Alternative syntax</span>
+                    <span class="keyword">ALTER TABLE</span> <span class="variable">documents</span>
+                    <span class="keyword">ADD</span> <span class="keyword">VECTOR INDEX</span> <span class="variable">idx_documents_embedding</span>(<span class="variable">embedding</span>);
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>Index Types Available:</strong>
+                <ul>
+                    <li><code>IVF (Inverted File)</code> - Good for large datasets</li>
+                    <li><code>HNSW (Hierarchical Navigable Small World)</code> - Best for high-dimensional vectors</li>
+                    <li><code>FLAT</code> - Exact search, slower but most accurate</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Implementing Vector Fields in Older MySQL Versions</h2>
+            <p>If you're using MySQL before 8.0.39, the VECTOR type doesn't exist. However, you can implement vector functionality using these workarounds.</p>
+
+            <div class="step-container">
+                <span class="step-number">1</span>
+                <strong>Method 1: JSON Arrays (MySQL 5.7.8+)</strong>
+                <div class="code-block">
+                    <span class="comment">-- Store vectors as JSON arrays</span>
+                    <span class="keyword">CREATE TABLE</span> <span class="variable">documents</span> (
+                    <span class="variable">id</span> <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span>,
+                    <span class="variable">title</span> <span class="keyword">VARCHAR</span>(<span class="number">200</span>),
+                    <span class="variable">embedding</span> <span class="keyword">JSON</span>
+                    );
+
+                    <span class="comment">-- Insert data</span>
+                    <span class="keyword">INSERT INTO</span> <span class="variable">documents</span> <span class="keyword">VALUES</span>
+                    (<span class="number">1</span>, <span class="string">'MySQL Guide'</span>, <span class="string">'[0.1, 0.2, 0.3, 0.4, 0.5]'</span>);
+                </div>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">2</span>
+                <strong>Method 2: BLOB Storage</strong>
+                <div class="code-block">
+                    <span class="comment">-- Store as binary data (more efficient for large vectors)</span>
+                    <span class="keyword">CREATE TABLE</span> <span class="variable">documents</span> (
+                    <span class="variable">id</span> <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span>,
+                    <span class="variable">embedding</span> <span class="keyword">BLOB</span>,
+                    <span class="variable">embedding_dimension</span> <span class="keyword">INT</span> <span class="keyword">NOT NULL</span>
+                    );
+
+                    <span class="comment">-- You'd store binary floats and decode in application</span>
+                </div>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">3</span>
+                <strong>Manual Cosine Similarity Calculation</strong>
+                <div class="code-block">
+                    <span class="comment">-- Cosine similarity for JSON vectors</span>
+                    <span class="keyword">DELIMITER</span> <span class="string">$$</span>
+                    <span class="keyword">CREATE FUNCTION</span> <span class="function">cosine_similarity</span>(<span class="variable">vec1</span> <span class="keyword">JSON</span>, <span class="variable">vec2</span> <span class="keyword">JSON</span>)
+                    <span class="keyword">RETURNS</span> <span class="keyword">DOUBLE</span>
+                    <span class="keyword">DETERMINISTIC</span>
+                    <span class="keyword">BEGIN</span>
+                    <span class="keyword">DECLARE</span> <span class="variable">i</span> <span class="keyword">INT</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>;
+                    <span class="keyword">DECLARE</span> <span class="variable">dot_product</span>, <span class="variable">mag1</span>, <span class="variable">mag2</span> <span class="keyword">DOUBLE</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>;
+                    <span class="keyword">DECLARE</span> <span class="variable">n</span> <span class="keyword">INT</span>;
+
+                    <span class="keyword">SET</span> <span class="variable">n</span> = <span class="function">JSON_LENGTH</span>(<span class="variable">vec1</span>);
+
+                    <span class="comment">-- Calculate dot product and magnitudes</span>
+                    <span class="keyword">WHILE</span> <span class="variable">i</span> < <span class="variable">n</span> <span class="keyword">DO</span>
+                    <span class="keyword">SET</span> <span class="variable">dot_product</span> = <span class="variable">dot_product</span> +
+                        (<span class="function">JSON_EXTRACT</span>(<span class="variable">vec1</span>, <span class="string">$[</span><span class="variable">i</span><span class="string">]</span>) *
+                        <span class="function">JSON_EXTRACT</span>(<span class="variable">vec2</span>, <span class="string">$[</span><span class="variable">i</span><span class="string">]</span>));
+                    <span class="keyword">SET</span> <span class="variable">mag1</span> = <span class="variable">mag1</span> +
+                        <span class="function">POW</span>(<span class="function">JSON_EXTRACT</span>(<span class="variable">vec1</span>, <span class="string">$[</span><span class="variable">i</span><span class="string">]</span>), <span class="number">2</span>);
+                    <span class="keyword">SET</span> <span class="variable">mag2</span> = <span class="variable">mag2</span> +
+                        <span class="function">POW</span>(<span class="function">JSON_EXTRACT</span>(<span class="variable">vec2</span>, <span class="string">$[</span><span class="variable">i</span><span class="string">]</span>), <span class="number">2</span>);
+                    <span class="keyword">SET</span> <span class="variable">i</span> = <span class="variable">i</span> + <span class="number">1</span>;
+                    <span class="keyword">END WHILE</span>;
+
+                    <span class="keyword">SET</span> <span class="variable">mag1</span> = <span class="function">SQRT</span>(<span class="variable">mag1</span>);
+                    <span class="keyword">SET</span> <span class="variable">mag2</span> = <span class="function">SQRT</span>(<span class="variable">mag2</span>);
+
+                    <span class="keyword">RETURN</span> <span class="variable">dot_product</span> / (<span class="variable">mag1</span> * <span class="variable">mag2</span>);
+                    <span class="keyword">END$$</span>
+                    <span class="keyword">DELIMITER</span> ;
+                </div>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">4</span>
+                <strong>Euclidean Distance Function</strong>
+                <div class="code-block">
+                    <span class="comment">-- Euclidean distance for JSON vectors</span>
+                    <span class="keyword">DELIMITER</span> <span class="string">$$</span>
+                    <span class="keyword">CREATE FUNCTION</span> <span class="function">euclidean_distance</span>(<span class="variable">vec1</span> <span class="keyword">JSON</span>, <span class="variable">vec2</span> <span class="keyword">JSON</span>)
+                    <span class="keyword">RETURNS</span> <span class="keyword">DOUBLE</span>
+                    <span class="keyword">DETERMINISTIC</span>
+                    <span class="keyword">BEGIN</span>
+                    <span class="keyword">DECLARE</span> <span class="variable">i</span> <span class="keyword">INT</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>;
+                    <span class="keyword">DECLARE</span> <span class="variable">distance</span> <span class="keyword">DOUBLE</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>;
+                    <span class="keyword">DECLARE</span> <span class="variable">n</span> <span class="keyword">INT</span>;
+
+                    <span class="keyword">SET</span> <span class="variable">n</span> = <span class="function">JSON_LENGTH</span>(<span class="variable">vec1</span>);
+
+                    <span class="keyword">WHILE</span> <span class="variable">i</span> < <span class="variable">n</span> <span class="keyword">DO</span>
+                    <span class="keyword">SET</span> <span class="variable">distance</span> = <span class="variable">distance</span> +
+                        <span class="function">POW</span>((<span class="function">JSON_EXTRACT</span>(<span class="variable">vec1</span>, <span class="string">$[</span><span class="variable">i</span><span class="string">]</span>) -
+                        <span class="function">JSON_EXTRACT</span>(<span class="variable">vec2</span>, <span class="string">$[</span><span class="variable">i</span><span class="string">]</span>)), <span class="number">2</span>);
+                    <span class="keyword">SET</span> <span class="variable">i</span> = <span class="variable">i</span> + <span class="number">1</span>;
+                    <span class="keyword">END WHILE</span>;
+
+                    <span class="keyword">RETURN</span> <span class="function">SQRT</span>(<span class="variable">distance</span>);
+                    <span class="keyword">END$$</span>
+                    <span class="keyword">DELIMITER</span> ;
+                </div>
+            </div>
+
+            <h3>Using the Manual Functions</h3>
+            <div class="code-block">
+                <span class="comment">-- Find similar documents using manual functions</span>
+                <span class="keyword">SELECT</span>
+                <span class="variable">title</span>,
+                <span class="function">cosine_similarity</span>(<span class="variable">embedding</span>, <span class="string">'[0.1, 0.5, 0.3]'</span>) <span class="keyword">AS</span> similarity
+                <span class="keyword">FROM</span> <span class="variable">documents</span>
+                <span class="keyword">WHERE</span> <span class="function">cosine_similarity</span>(<span class="variable">embedding</span>, <span class="string">'[0.1, 0.5, 0.3]'</span>) > <span class="number">0.8</span>
+                <span class="keyword">ORDER BY</span> similarity <span class="keyword">DESC</span>;
+
+                <span class="comment">-- Euclidean distance search</span>
+                <span class="keyword">SELECT</span>
+                <span class="variable">id</span>,
+                <span class="function">euclidean_distance</span>(<span class="variable">embedding</span>, <span class="string">'[0.2, 0.7, 0.1]'</span>) <span class="keyword">AS</span> distance
+                <span class="keyword">FROM</span> <span class="variable">documents</span>
+                <span class="keyword">ORDER BY</span> distance <span class="keyword">ASC</span>
+                <span class="keyword">LIMIT</span> <span class="number">10</span>;
+            </div>
+
+            <div class="warning-box">
+                <strong>Performance Considerations</strong>
+                <ul>
+                    <li>Manual JSON functions are slow for high-dimensional vectors</li>
+                    <li>Consider application-side vector operations for better performance</li>
+                    <li>Use separate tables or columns for each dimension for very high performance (but harder to manage)</li>
+                    <li>For large datasets, consider vector databases like Pinecone, Weaviate, or Qdrant</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Real-World Applications</h2>
+
+            <div class="example-box">
+                <strong>Semantic Document Search</strong>
+                <p>Use vectors to find documents by meaning, not just keywords: "Find articles about machine learning algorithms" matches content even if the exact words aren't used.</p>
+            </div>
+
+            <div class="example-box">
+                <strong>Recommendation Systems</strong>
+                <p>Store user preference vectors and product feature vectors to find similar users or recommend products with similar characteristics.</p>
+            </div>
+
+            <div class="example-box">
+                <strong>Image Similarity</strong>
+                <p>Store image embedding vectors from models like CLIP and find visually similar images.</p>
+            </div>
+
+            <div class="example-box">
+                <strong>Natural Language Processing</strong>
+                <p>Compare sentence or document embeddings for similarity, clustering, or classification tasks.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Best Practices</h2>
+
+            <div class="success-box">
+                <strong>✅ Normalize Your Vectors</strong>
+                <p>For cosine similarity, normalize vectors to unit length. For Euclidean distance, consider normalization for scale-invariant comparisons.</p>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Choose Appropriate Distance Metrics</strong>
+                <ul>
+                    <li>Euclidean: Good for spatial relationships</li>
+                    <li>Cosine: Good for text semantics (ignores magnitude)</li>
+                    <li>Dot Product: Good when magnitudes matter</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Index for Performance</strong>
+                <p>In MySQL 8.0.39+, use vector indexes. In older versions, consider external vector databases for production workloads.</p>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Validate Vector Dimensions</strong>
+                <p>Ensure all vectors in a column have the same dimension. Store dimension as a separate column for validation.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Version Compatibility</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>MySQL Version</th>
+                        <th>Vector Support</th>
+                        <th>Workaround Needed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MySQL 8.0.39+</td>
+                        <td>Full (VECTOR type, functions, indexing)</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>MySQL 8.0.0 - 8.0.38</td>
+                        <td>None</td>
+                        <td>JSON/BLOB with stored procedures</td>
+                    </tr>
+                    <tr>
+                        <td>MySQL 5.7.8+</td>
+                        <td>None</td>
+                        <td>JSON with application-side calculations</td>
+                    </tr>
+                    <tr>
+                        <td>MySQL 5.7.7 and earlier</td>
+                        <td>None</td>
+                        <td>TEXT/BLOB with application-side operations</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

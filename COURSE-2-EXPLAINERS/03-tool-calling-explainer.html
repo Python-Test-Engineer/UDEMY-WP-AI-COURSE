@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Function/Tool Calling Explained</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.6;
+            margin: 15px 0;
+            white-space: pre-wrap;
+        }
+
+        .keyword {
+            color: #ff79c6;
+        }
+
+        .string {
+            color: #50fa7b;
+        }
+
+        .comment {
+            color: #6272a4;
+        }
+
+        .variable {
+            color: #f1fa8c;
+        }
+
+        .function {
+            color: #8be9fd;
+        }
+
+        .number {
+            color: #bd93f9;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example-box {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .flow-diagram {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .flow-step {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .flow-step.tool {
+            background: #4caf50;
+        }
+
+        .flow-step.result {
+            background: #ff9800;
+        }
+
+        .arrow {
+            display: inline-block;
+            color: #667eea;
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+
+        .arrow-down {
+            display: block;
+            color: #667eea;
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        ul,
+        ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .step-container {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .visual-example {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #667eea;
+        }
+
+        strong {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🛠️ AI Function/Tool Calling Explained</h1>
+        <p class="subtitle">Understanding how AI models can interact with external tools, APIs, and functions</p>
+
+        <div class="section">
+            <h2>What is Function/Tool Calling?</h2>
+            <p>Function calling (also called tool use) is a capability that allows AI models to intelligently decide
+                when and how to use external functions or APIs. Instead of just generating text, the AI can:</p>
+            <ul>
+                <li>Recognize when it needs external data or capabilities</li>
+                <li>Choose the right tool for the task</li>
+                <li>Extract the correct parameters from conversation context</li>
+                <li>Return structured data that you can use programmatically</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>The Complete Flow</h2>
+            <div class="flow-diagram">
+                <div class="flow-step">1. User Query</div>
+                <div class="arrow-down">↓</div>
+                <div class="flow-step">2. AI Analyzes Request</div>
+                <div class="arrow-down">↓</div>
+                <div class="flow-step tool">3. AI Calls Tool/Function</div>
+                <div class="arrow-down">↓</div>
+                <div class="flow-step result">4. Your Code Executes Function</div>
+                <div class="arrow-down">↓</div>
+                <div class="flow-step">5. Return Result to AI</div>
+                <div class="arrow-down">↓</div>
+                <div class="flow-step">6. AI Generates Final Response</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Real-World Example: Weather Assistant</h2>
+
+            <div class="visual-example">
+                <strong>User:</strong> "What's the weather like in Paris?"<br><br>
+                <strong>AI thinks:</strong> "I need weather data. I should use the get_weather tool with
+                location='Paris'"<br><br>
+                <strong>AI returns:</strong> Tool call → <code>get_weather("Paris")</code><br><br>
+                <strong>Your code:</strong> Executes the function, fetches data from weather API<br><br>
+                <strong>Result:</strong> <code>{"temp": 18, "condition": "Sunny"}</code><br><br>
+                <strong>AI responds:</strong> "It's currently 18°C and sunny in Paris!"
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Complete JavaScript Implementation</h2>
+
+            <h3>Step 1: Define Your Tools</h3>
+            <pre class="code-block"><span class="comment">// Define what tools are available to the AI</span>
+<span class="keyword">const</span> <span class="variable">tools</span> = [
+  {
+    <span class="variable">type</span>: <span class="string">"function"</span>,
+    <span class="variable">function</span>: {
+      <span class="variable">name</span>: <span class="string">"get_weather"</span>,
+      <span class="variable">description</span>: <span class="string">"Get the current weather for a location"</span>,
+      <span class="variable">parameters</span>: {
+        <span class="variable">type</span>: <span class="string">"object"</span>,
+        <span class="variable">properties</span>: {
+          <span class="variable">location</span>: {
+            <span class="variable">type</span>: <span class="string">"string"</span>,
+            <span class="variable">description</span>: <span class="string">"City name, e.g. Paris, London"</span>
+          },
+          <span class="variable">unit</span>: {
+            <span class="variable">type</span>: <span class="string">"string"</span>,
+            <span class="variable">enum</span>: [<span class="string">"celsius"</span>, <span class="string">"fahrenheit"</span>]
+          }
+        },
+        <span class="variable">required</span>: [<span class="string">"location"</span>]
+      }
+    }
+  },
+  {
+    <span class="variable">type</span>: <span class="string">"function"</span>,
+    <span class="variable">function</span>: {
+      <span class="variable">name</span>: <span class="string">"calculate"</span>,
+      <span class="variable">description</span>: <span class="string">"Perform mathematical calculations"</span>,
+      <span class="variable">parameters</span>: {
+        <span class="variable">type</span>: <span class="string">"object"</span>,
+        <span class="variable">properties</span>: {
+          <span class="variable">expression</span>: {
+            <span class="variable">type</span>: <span class="string">"string"</span>,
+            <span class="variable">description</span>: <span class="string">"Math expression, e.g. '2 + 2' or '10 * 5'"</span>
+          }
+        },
+        <span class="variable">required</span>: [<span class="string">"expression"</span>]
+      }
+    }
+  }
+];</pre>
+
+            <h3>Step 2: Implement the Actual Functions</h3>
+            <pre class="code-block"><span class="comment">// These are YOUR functions that do the actual work</span>
+
+<span class="keyword">async function</span> <span class="function">get_weather</span>(<span class="variable">location</span>, <span class="variable">unit</span> = <span class="string">"celsius"</span>) {
+  <span class="comment">// In real code, call a weather API here</span>
+  <span class="comment">// For demo, return mock data</span>
+  <span class="keyword">return</span> <span class="function">JSON.stringify</span>({
+    <span class="variable">location</span>: <span class="variable">location</span>,
+    <span class="variable">temperature</span>: <span class="number">18</span>,
+    <span class="variable">unit</span>: <span class="variable">unit</span>,
+    <span class="variable">condition</span>: <span class="string">"Sunny"</span>,
+    <span class="variable">humidity</span>: <span class="number">65</span>
+  });
+}
+
+<span class="keyword">function</span> <span class="function">calculate</span>(<span class="variable">expression</span>) {
+  <span class="keyword">try</span> {
+    <span class="comment">// Safely evaluate math expression</span>
+    <span class="keyword">const</span> <span class="variable">result</span> = <span class="function">eval</span>(<span class="variable">expression</span>);
+    <span class="keyword">return</span> <span class="function">JSON.stringify</span>({ <span class="variable">result</span>: <span class="variable">result</span> });
+  } <span class="keyword">catch</span> (<span class="variable">error</span>) {
+    <span class="keyword">return</span> <span class="function">JSON.stringify</span>({ <span class="variable">error</span>: <span class="string">"Invalid expression"</span> });
+  }
+}
+
+<span class="comment">// Map function names to actual functions</span>
+<span class="keyword">const</span> <span class="variable">availableFunctions</span> = {
+  <span class="variable">get_weather</span>: <span class="variable">get_weather</span>,
+  <span class="variable">calculate</span>: <span class="variable">calculate</span>
+};</pre>
+
+            <h3>Step 3: Call AI with Tools</h3>
+            <div class="code-block">
+                <span class="keyword">async function</span> <span class="function">chatWithTools</span>(<span
+                    class="variable">userMessage</span>, <span class="variable">apiKey</span>) {
+                <span class="keyword">const</span> <span class="variable">messages</span> = [
+                { <span class="variable">role</span>: <span class="string">"user"</span>, <span
+                    class="variable">content</span>: <span class="variable">userMessage</span> }
+                ];
+
+                <span class="keyword">const</span> <span class="variable">response</span> = <span
+                    class="keyword">await</span> <span class="function">fetch</span>(<span
+                    class="string">"https://api.openai.com/v1/chat/completions"</span>, {
+                <span class="variable">method</span>: <span class="string">"POST"</span>,
+                <span class="variable">headers</span>: {
+                <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span>,
+                <span class="string">"Authorization"</span>: <span class="string">`Bearer ${<span
+                        class="variable">apiKey</span>}`</span>
+                },
+                <span class="variable">body</span>: <span class="function">JSON.stringify</span>({
+                <span class="variable">model</span>: <span class="string">"gpt-4"</span>,
+                <span class="variable">messages</span>: <span class="variable">messages</span>,
+                <span class="variable">tools</span>: <span class="variable">tools</span>, <span class="comment">// Pass
+                    available tools</span>
+                <span class="variable">tool_choice</span>: <span class="string">"auto"</span> <span class="comment">//
+                    Let AI decide when to use tools</span>
+                })
+                });
+
+                <span class="keyword">const</span> <span class="variable">data</span> = <span
+                    class="keyword">await</span> <span class="variable">response</span>.<span
+                    class="function">json</span>();
+                <span class="keyword">return</span> <span class="variable">data</span>;
+                }
+            </div>
+
+            <h3>Step 4: Handle Tool Calls</h3>
+            <div class="code-block">
+                <span class="keyword">async function</span> <span class="function">handleToolCalls</span>(<span
+                    class="variable">response</span>, <span class="variable">messages</span>, <span
+                    class="variable">apiKey</span>) {
+                <span class="keyword">const</span> <span class="variable">message</span> = <span
+                    class="variable">response</span>.choices[<span class="number">0</span>].message;
+
+                <span class="comment">// Check if AI wants to use a tool</span>
+                <span class="keyword">if</span> (<span class="variable">message</span>.tool_calls) {
+                <span class="comment">// Add AI's response to message history</span>
+                <span class="variable">messages</span>.<span class="function">push</span>(<span
+                    class="variable">message</span>);
+
+                <span class="comment">// Execute each tool call</span>
+                <span class="keyword">for</span> (<span class="keyword">const</span> <span
+                    class="variable">toolCall</span> <span class="keyword">of</span> <span
+                    class="variable">message</span>.tool_calls) {
+                <span class="keyword">const</span> <span class="variable">functionName</span> = <span
+                    class="variable">toolCall</span>.function.name;
+                <span class="keyword">const</span> <span class="variable">functionArgs</span> = <span
+                    class="function">JSON.parse</span>(<span class="variable">toolCall</span>.function.arguments);
+
+                <span class="function">console.log</span>(<span class="string">`AI called: ${<span
+                        class="variable">functionName</span>}(${<span class="function">JSON.stringify</span>(<span
+                        class="variable">functionArgs</span>)})`</span>);
+
+                <span class="comment">// Execute the actual function</span>
+                <span class="keyword">const</span> <span class="variable">functionToCall</span> = <span
+                    class="variable">availableFunctions</span>[<span class="variable">functionName</span>];
+                <span class="keyword">const</span> <span class="variable">functionResult</span> = <span
+                    class="keyword">await</span> <span class="function">functionToCall</span>(
+                ...<span class="function">Object.values</span>(<span class="variable">functionArgs</span>)
+                );
+
+                <span class="comment">// Add function result to messages</span>
+                <span class="variable">messages</span>.<span class="function">push</span>({
+                <span class="variable">tool_call_id</span>: <span class="variable">toolCall</span>.id,
+                <span class="variable">role</span>: <span class="string">"tool"</span>,
+                <span class="variable">name</span>: <span class="variable">functionName</span>,
+                <span class="variable">content</span>: <span class="variable">functionResult</span>
+                });
+                }
+
+                <span class="comment">// Call AI again with function results</span>
+                <span class="keyword">const</span> <span class="variable">secondResponse</span> = <span
+                    class="keyword">await</span> <span class="function">fetch</span>(<span
+                    class="string">"https://api.openai.com/v1/chat/completions"</span>, {
+                <span class="variable">method</span>: <span class="string">"POST"</span>,
+                <span class="variable">headers</span>: {
+                <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span>,
+                <span class="string">"Authorization"</span>: <span class="string">`Bearer ${<span
+                        class="variable">apiKey</span>}`</span>
+                },
+                <span class="variable">body</span>: <span class="function">JSON.stringify</span>({
+                <span class="variable">model</span>: <span class="string">"gpt-4"</span>,
+                <span class="variable">messages</span>: <span class="variable">messages</span>
+                })
+                });
+
+                <span class="keyword">return await</span> <span class="variable">secondResponse</span>.<span
+                    class="function">json</span>();
+                }
+
+                <span class="keyword">return</span> <span class="variable">response</span>;
+                }
+            </div>
+
+            <h3>Step 5: Complete Flow</h3>
+            <div class="code-block">
+                <span class="keyword">async function</span> <span class="function">runAgent</span>(<span
+                    class="variable">userMessage</span>, <span class="variable">apiKey</span>) {
+                <span class="function">console.log</span>(<span class="string">`User: ${<span
+                        class="variable">userMessage</span>}`</span>);
+
+                <span class="keyword">const</span> <span class="variable">messages</span> = [
+                { <span class="variable">role</span>: <span class="string">"user"</span>, <span
+                    class="variable">content</span>: <span class="variable">userMessage</span> }
+                ];
+
+                <span class="comment">// First API call</span>
+                <span class="keyword">let</span> <span class="variable">response</span> = <span
+                    class="keyword">await</span> <span class="function">chatWithTools</span>(<span
+                    class="variable">userMessage</span>, <span class="variable">apiKey</span>);
+
+                <span class="comment">// Handle any tool calls</span>
+                <span class="variable">response</span> = <span class="keyword">await</span> <span
+                    class="function">handleToolCalls</span>(<span class="variable">response</span>, <span
+                    class="variable">messages</span>, <span class="variable">apiKey</span>);
+
+                <span class="comment">// Get final answer</span>
+                <span class="keyword">const</span> <span class="variable">finalMessage</span> = <span
+                    class="variable">response</span>.choices[<span class="number">0</span>].message.content;
+                <span class="function">console.log</span>(<span class="string">`AI: ${<span
+                        class="variable">finalMessage</span>}`</span>);
+
+                <span class="keyword">return</span> <span class="variable">finalMessage</span>;
+                }
+
+                <span class="comment">// Example usage</span>
+                <span class="keyword">const</span> <span class="variable">apiKey</span> = <span
+                    class="string">"your-api-key-here"</span>;
+                <span class="keyword">await</span> <span class="function">runAgent</span>(<span class="string">"What's
+                    the weather in Paris?"</span>, <span class="variable">apiKey</span>);
+                <span class="keyword">await</span> <span class="function">runAgent</span>(<span
+                    class="string">"Calculate 234 * 567"</span>, <span class="variable">apiKey</span>);
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Understanding the Response Structure</h2>
+
+            <div class="info-box">
+                <h3>When AI Wants to Use a Tool</h3>
+                <div class="code-block" style="font-size: 0.8em;">
+                    {
+                    <span class="string">"choices"</span>: [{
+                    <span class="string">"message"</span>: {
+                    <span class="string">"role"</span>: <span class="string">"assistant"</span>,
+                    <span class="string">"content"</span>: <span class="keyword">null</span>,
+                    <span class="string">"tool_calls"</span>: [{
+                    <span class="string">"id"</span>: <span class="string">"call_abc123"</span>,
+                    <span class="string">"type"</span>: <span class="string">"function"</span>,
+                    <span class="string">"function"</span>: {
+                    <span class="string">"name"</span>: <span class="string">"get_weather"</span>,
+                    <span class="string">"arguments"</span>: <span class="string">"{\"location\": \"Paris\", \"unit\":
+                        \"celsius\"}"</span>
+                    }
+                    }]
+                    }
+                    }]
+                    }
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>After You Execute the Function</h3>
+                <div class="code-block" style="font-size: 0.8em;">
+                    <span class="comment">// You add this to messages array</span><br>
+                    {
+                    <span class="string">"tool_call_id"</span>: <span class="string">"call_abc123"</span><br>,
+                    <span class="string">"role"</span>: <span class="string">"tool"</span><br>,
+                    <span class="string">"name"</span>: <span class="string">"get_weather"</span><br>,
+                    <span class="string">"content"</span>: <span class="string">"{\"temperature\": 18, \"condition\":
+                        \"Sunny\"}"</span><br>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Concepts Explained</h2>
+
+            <div class="step-container">
+                <span class="step-number">1</span>
+                <strong>Tool Definitions</strong>
+                <p>You describe your functions using JSON Schema. The AI uses these descriptions to understand what each
+                    tool does and what parameters it needs.</p>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">2</span>
+                <strong>tool_choice Parameter</strong>
+                <ul>
+                    <li><code>"auto"</code> - AI decides when to use tools (recommended)</li>
+                    <li><code>"none"</code> - AI won't use any tools</li>
+                    <li><code>{"type": "function", "function": {"name": "get_weather"}}</code> - Force specific tool
+                    </li>
+                </ul>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">3</span>
+                <strong>The Loop Pattern</strong>
+                <p>Tool calling often requires multiple API calls: (1) AI decides to use tool → (2) You execute function
+                    → (3) AI uses result to form final answer</p>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">4</span>
+                <strong>Message Roles</strong>
+                <ul>
+                    <li><code>"user"</code> - Human input</li>
+                    <li><code>"assistant"</code> - AI responses (including tool calls)</li>
+                    <li><code>"tool"</code> - Your function results</li>
+                    <li><code>"system"</code> - Instructions for AI behavior</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Common Use Cases</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Use Case</th>
+                        <th>Example Tools</th>
+                        <th>Why Tool Calling?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Data Retrieval</strong></td>
+                        <td>get_database_records, search_documents</td>
+                        <td>AI can't access your data directly</td>
+                    </tr>
+                    <tr>
+                        <td><strong>External APIs</strong></td>
+                        <td>get_weather, stock_price, translate_text</td>
+                        <td>AI needs current/real-time information</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Actions</strong></td>
+                        <td>send_email, create_calendar_event, post_tweet</td>
+                        <td>AI can trigger actions in other systems</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Calculations</strong></td>
+                        <td>calculate_mortgage, convert_currency</td>
+                        <td>Get precise results instead of approximations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Custom Logic</strong></td>
+                        <td>check_inventory, validate_user, apply_business_rules</td>
+                        <td>Implement complex business logic</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Best Practices</h2>
+
+            <div class="success-box">
+                <strong>✅ Write Clear Descriptions</strong>
+                <p>The AI only knows about your functions through their descriptions. Be specific about what they do and
+                    what parameters mean.</p>
+                <div class="code-block" style="font-size: 0.85em;">
+                    <span class="comment">// Good</span>
+                    <span class="string">"description"</span>: <span class="string">"Get weather forecast for a city.
+                        Returns temperature, conditions, and humidity."</span>
+
+                    <span class="comment">// Bad</span>
+                    <span class="string">"description"</span>: <span class="string">"Gets weather"</span>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Use Enums for Limited Options</strong>
+                <p>When parameters have specific valid values, use enums to guide the AI.</p>
+                <div class="code-block" style="font-size: 0.85em;">
+                    <span class="string">"unit"</span>: {
+                    <span class="string">"type"</span>: <span class="string">"string"</span>,
+                    <span class="string">"enum"</span>: [<span class="string">"celsius"</span>, <span
+                        class="string">"fahrenheit"</span>, <span class="string">"kelvin"</span>]
+                    }
+                </div>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Return Structured Data</strong>
+                <p>Return JSON strings from your functions so the AI can parse and use the data effectively.</p>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Handle Errors Gracefully</strong>
+                <p>If a function fails, return an error message as JSON. The AI will incorporate it into its response.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Important Considerations</h2>
+
+            <div class="warning-box">
+                <strong>⚠️ Security</strong>
+                <ul>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieval-Augmented Generation (RAG) Explained</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.6;
+            margin: 15px 0;
+            white-space: pre-wrap;
+        }
+
+        .keyword {
+            color: #ff79c6;
+        }
+
+        .string {
+            color: #50fa7b;
+        }
+
+        .comment {
+            color: #6272a4;
+        }
+
+        .variable {
+            color: #f1fa8c;
+        }
+
+        .function {
+            color: #8be9fd;
+        }
+
+        .number {
+            color: #bd93f9;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example-box {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        ul,
+        ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .step-container {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .visual-example {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #667eea;
+        }
+
+        .flow-diagram {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .flow-step {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .flow-step.retrieval {
+            background: #4caf50;
+        }
+
+        .flow-step.generation {
+            background: #ff9800;
+        }
+
+        .arrow {
+            display: inline-block;
+            color: #667eea;
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+
+        strong {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔍 Retrieval-Augmented Generation (RAG) Explained</h1>
+        <p class="subtitle">Enhancing AI responses with external knowledge retrieval for more accurate and contextual answers</p>
+
+        <div class="section">
+            <h2>What is Retrieval-Augmented Generation?</h2>
+            <p>RAG is an AI technique that improves language models by retrieving relevant information from external knowledge sources before generating responses. Instead of relying solely on trained knowledge, RAG combines:</p>
+            <ul>
+                <li><strong>Retrieval</strong>: Finding relevant documents/information from a knowledge base</li>
+                <li><strong>Augmentation</strong>: Contextually inserting retrieved information into the query</li>
+                <li><strong>Generation</strong>: Creating responses using both retrieved context and model knowledge</li>
+            </ul>
+            <p>This approach provides up-to-date information, reduces hallucinations, and enables understanding of domain-specific knowledge not in the model's training data.</p>
+        </div>
+
+        <div class="section">
+            <h2>The RAG Architecture</h2>
+            <div class="flow-diagram">
+                <div class="flow-step">1. Query Processing</div>
+                <div class="arrow">→</div>
+                <div class="flow-step retrieval">2. Information Retrieval</div>
+                <div class="arrow">→</div>
+                <div class="flow-step">3. Context Preparation</div>
+                <div class="arrow">→</div>
+                <div class="flow-step generation">4. Augmented Generation</div>
+                <div class="arrow">→</div>
+                <div class="flow-step">5. Final Response</div>
+            </div>
+
+            <div class="info-box">
+                <strong>Key Components:</strong>
+                <ul>
+                    <li><strong>Knowledge Base/Index</strong>: Document collection (PDFs, websites, databases, etc.)</li>
+                    <li><strong>Retrieval System</strong>: Vector search, keyword matching, or hybrid approaches</li>
+                    <li><strong>Embedding Model</strong>: Converts text to vectors for semantic similarity</li>
+                    <li><strong>LLM</strong>: Generates responses using retrieved context</li>
+                    <li><strong>Prompt Engineering</strong>: Structures retrieved info for optimal generation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>RAG vs Traditional Generation</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Traditional Generation</th>
+                        <th>RAG-Enhanced Generation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Knowledge</strong></td>
+                        <td>Limited to training data</td>
+                        <td>Access to up-to-date external knowledge</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hallucinations</strong></td>
+                        <td>More prone to factual errors</td>
+                        <td>Reduced through retrieved evidence</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Domain Knowledge</strong></td>
+                        <td>General knowledge only</td>
+                        <td>Specialized knowledge via sources</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Traceability</strong></td>
+                        <td>Hard to verify facts</td>
+                        <td>Citable sources from retrieval</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scalability</strong></td>
+                        <td>Limited by model size</td>
+                        <td>Scalable knowledge through indexing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Complete RAG Implementation Guide</h2>
+
+            <div class="step-container">
+                <span class="step-number">1</span>
+                <strong>Data Preparation and Indexing</strong>
+                <div class="code-block">
+                    <span class="comment">// Python example using LangChain (adapt for your framework)</span>
+                    <span class="keyword">import</span> <span class="variable">faiss</span>
+                    <span class="keyword">from</span> langchain.vectorstores <span class="keyword">import</span> <span class="variable">FAISS</span>
+                    <span class="keyword">from</span> langchain.embeddings <span class="keyword">import</span> <span class="variable">OpenAIEmbeddings</span>
+
+                    <span class="comment"># Load and split documents</span>
+                    <span class="keyword">from</span> langchain.document_loaders <span class="keyword">import</span> <span class="variable">DirectoryLoader</span>
+                    <span class="keyword">from</span> langchain.text_splitter <span class="keyword">import</span> <span class="variable">RecursiveCharacterTextSplitter</span>
+
+                    <span class="variable">documents</span> = <span class="function">DirectoryLoader</span>(<span class="string">'knowledge_base/'</span>).load()
+                    <span class="variable">text_splitter</span> = <span class="function">RecursiveCharacterTextSplitter</span>(
+                        chunk_size=<span class="number">1000</span>,
+                        chunk_overlap=<span class="number">200</span>
+                    )
+                    <span class="variable">docs</span> = <span class="variable">text_splitter.split_documents</span>(<span class="variable">documents</span>)
+
+                    <span class="comment"># Create vector embeddings and index</span>
+                    <span class="variable">embeddings</span> = <span class="function">OpenAIEmbeddings</span>(api_key=<span class="string">"your-api-key"</span>)
+                    <span class="variable">vectorstore</span> = <span class="function">FAISS.from_documents</span>(<span class="variable">docs</span>, <span class="variable">embeddings</span>)
+
+                    <span class="comment"># Save for later use</span>
+                    <span class="variable">vectorstore.save_local</span>(<span class="string">"faiss_index"</span>)
+                </div>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">2</span>
+                <strong>Retrieval System Implementation</strong>
+                <div class="code-block">
+                    <span class="comment">// Retrieval function with similarity search</span>
+                    <span class="keyword">class</span> <span class="variable">RAGRetriever</span>:
+                    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>, <span class="variable">vectorstore</span>):
+                        <span class="variable">self.vectorstore</span> = <span class="variable">vectorstore</span>
+
+                    <span class="keyword">def</span> <span class="function">retrieve</span>(<span class="variable">self</span>, <span class="variable">query</span>, <span class="variable">k</span>=<span class="number">3</span>):
+                        <span class="comment"># Perform semantic search</span>
+                        <span class="variable">docs</span> = <span class="variable">self.vectorstore.similarity_search</span>(<span class="variable">query</span>, <span class="variable">k</span>=<span class="variable">k</span>)
+
+                        <span class="comment"># Get relevant passages</span>
+                        <span class="variable">context</span> = <span class="string">""</span>
+                        <span class="keyword">for</span> <span class="variable">doc</span> <span class="keyword">in</span> <span class="variable">docs</span>:
+                            <span class="variable">context</span> += <span class="variable">doc.page_content</span> + <span class="string">"\n\n"</span>
+
+                        <span class="keyword">return</span> <span class="variable">context.strip()</span>
+
+                    <span class="variable">retriever</span> = <span class="function">RAGRetriever</span>(<span class="variable">vectorstore</span>)
+                    <span class="variable">query</span> = <span class="string">"How does RAG improve AI responses?"</span>
+                    <span class="variable">context</span> = <span class="variable">retriever.retrieve</span>(<span class="variable">query</span>)
+                </div>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">3</span>
+                <strong>Augmented Prompt Construction</strong>
+                <div class="code-block">
+                    <span class="comment">// Construct prompts with retrieved context</span>
+                    <span class="keyword">def</span> <span class="function">build_rag_prompt</span>(<span class="variable">query</span>, <span class="variable">context</span>):
+                        <span class="variable">template</span> = <span class="string">"""</span>
+                        <span class="string">Use the following context to answer the question accurately.</span>
+                        <span class="string">If you cannot find the answer in the context, say so.</span>
+
+                        <span class="string">Context:</span>
+                        <span class="string">{context}</span>
+
+                        <span class="string">Question: {query}</span>
+
+                        <span class="string">Answer:"""</span>
+                        <span class="keyword">return</span> <span class="variable">template.format</span>(context=<span class="variable">context</span>, query=<span class="variable">query</span>)
+
+                    <span class="comment">// Alternative with source citations</span>
+                    <span class="keyword">def</span> <span class="function">build_citation_prompt</span>(<span class="variable">query</span>, <span class="variable">docs</span>):
+                        <span class="variable">context</span> = <span class="string">""</span>
+                        <span class="keyword">for</span> <span class="variable">i</span>, <span class="variable">doc</span> <span class="keyword">in</span> <span class="function">enumerate</span>(<span class="variable">docs</span>, <span class="number">1</span>):
+                            <span class="variable">context</span> += <span class="string">f"[Source {i}] {doc.page_content}\n\n"</span>
+
+                        <span class="variable">template</span> = <span class="string">"""</span>
+                        <span class="string">Answer using the provided sources. Cite sources in your response.</span>
+
+                        <span class="string">Sources: {context}</span>
+
+                        <span class="string">Question: {query}</span>
+
+                        <span class="string">Answer:"""</span>
+                        <span class="keyword">return</span> <span class="variable">template.format</span>(context=<span class="variable">context</span>, query=<span class="variable">query</span>)
+                </div>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">4</span>
+                <strong>Integration with Language Model</strong>
+                <div class="code-block">
+                    <span class="keyword">import</span> openai
+
+                    <span class="keyword">class</span> <span class="variable">RAGPipeline</span>:
+                    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>, <span class="variable">retriever</span>, <span class="variable">api_key</span>):
+                        <span class="variable">self.retriever</span> = <span class="variable">retriever</span>
+                        <span class="variable">self.api_key</span> = <span class="variable">api_key</span>
+
+                    <span class="keyword">def</span> <span class="function">answer</span>(<span class="variable">self</span>, <span class="variable">query</span>):
+                        <span class="comment"># 1. Retrieve relevant context</span>
+                        <span class="variable">context</span> = <span class="variable">self.retriever.retrieve</span>(<span class="variable">query</span>)
+
+                        <span class="comment">// 2. Build augmented prompt</span>
+                        <span class="variable">prompt</span> = <span class="function">build_rag_prompt</span>(<span class="variable">query</span>, <span class="variable">context</span>)
+
+                        <span class="comment">// 3. Generate response using OpenAI</span>
+                        <span class="variable">response</span> = <span class="function">openai.ChatCompletion.create</span>(
+                            model=<span class="string">"gpt-4"</span>,
+                            messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="variable">prompt</span>}],
+                            api_key=<span class="variable">self.api_key</span>
+                        )
+
+                        <span class="keyword">return</span> <span class="variable">response.choices[0].message.content</span>
+
+                    <span class="variable">rag_system</span> = <span class="function">RAGPipeline</span>(<span class="variable">retriever</span>, <span class="string">"your-api-key"</span>)
+                    <span class="variable">answer</span> = <span class="variable">rag_system.answer</span>(<span class="string">"What is the capital of France?"</span>)
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>RAG Patterns and Variations</h2>
+
+            <h3>Basic RAG</h3>
+            <div class="visual-example">
+                Query → Retrieve k most similar documents → Augment prompt → Generate response
+                <br><br><em>Simple but effective for most use cases</em>
+            </div>
+
+            <h3>Advanced RAG with Query Expansion</h3>
+            <div class="code-block">
+                <span class="comment">// Expand query for better retrieval</span>
+                <span class="keyword">def</span> <span class="function">expand_query</span>(<span class="variable">query</span>):
+                    <span class="variable">expansion_prompt</span> = <span class="string">f"Generate 3 related search queries: {query}"</span>
+                    <span class="variable">expanded</span> = <span class="function">openai.ChatCompletion.create</span>(
+                        model=<span class="string">"gpt-3.5-turbo"</span>,
+                        messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="variable">expansion_prompt</span>}]
+                    )
+
+                    <span class="variable">queries</span> = [<span class="variable">query</span>] + <span class="variable">expanded.choices[0].message.content.split</span>(<span class="string">'\n'</span>)
+                    <span class="keyword">return</span> <span class="variable">queries</span>
+
+                <span class="keyword">def</span> <span class="function">retrieve_expanded</span>(<span class="variable">self</span>, <span class="variable">query</span>):
+                    <span class="variable">queries</span> = <span class="function">expand_query</span>(<span class="variable">query</span>)
+                    <span class="variable">all_results</span> = []
+
+                    <span class="keyword">for</span> <span class="variable">q</span> <span class="keyword">in</span> <span class="variable">queries</span>:
+                        <span class="variable">results</span> = <span class="variable">self.vectorstore.similarity_search</span>(<span class="variable">q</span>, <span class="variable">k</span>=<span class="number">2</span>)
+                        <span class="variable">all_results.extend</span>(<span class="variable">results</span>)
+
+                    <span class="comment">// Remove duplicates and return top unique results</span>
+                    <span class="keyword">return</span> <span class="function">list</span>(<span class="function">dict.fromkeys</span>(<span class="variable">all_results</span>))[:<span class="number">5</span>]
+            </div>
+
+            <h3>Hybrid Search (Keyword + Semantic)</h3>
+            <div class="info-box">
+                <strong>Combines the best of both worlds:</strong>
+                <ul>
+                    <li>BM25 / TF-IDF for exact keyword matching</li>
+                    <li>Cosine similarity for semantic understanding</li>
+                    <li>Weighted combination with reciprocal rank fusion</li>
+                </ul>
+            </div>
+
+            <h3>Modular RAG</h3>
+            <div class="code-block">
+                <span class="comment">// Break down complex queries</span>
+                <span class="keyword">def</span> <span class="function">decompose_query</span>(<span class="variable">query</span>):
+                    <span class="variable">decomposition</span> = <span class="function">openai.ChatCompletion.create</span>(
+                        model=<span class="string">"gpt-4"</span>,
+                        messages=[{
+                            <span class="string">"role"</span>: <span class="string">"user"</span>,
+                            <span class="string">"content"</span>: <span class="string">f"""Break down this complex query into 2-3 simpler sub-queries:
+                                        {query}
+
+                                        Return as JSON array of strings."""</span>
+                        }]
+                    )
+                    <span class="keyword">return</span> <span class="function">json.loads</span>(<span class="variable">decomposition.choices[0].message.content</span>)
+
+                <span class="comment">// Answer each sub-query and combine results</span>
+                <span class="keyword">def</span> <span class="function">answer_modular</span>(<span class="variable">query</span>):
+                    <span class="variable">sub_queries</span> = <span class="function">decompose_query</span>(<span class="variable">query</span>)
+                    <span class="variable">partial_answers</span> = []
+
+                    <span class="keyword">for</span> <span class="variable">sub_q</span> <span class="keyword">in</span> <span class="variable">sub_queries</span>:
+                        <span class="variable">partial_answers.append</span>(<span class="variable">self.answer</span>(<span class="variable">sub_q</span>))
+
+                    <span class="variable">combined_prompt</span> = <span class="string">f"Synthesize these answers into a coherent response:\n"</span> + \
+                                       <span class="string">"\n".join</span>([<span class="string">f"{i+1}. {ans}"</span> <span class="keyword">for</span> <span class="variable">i</span>, <span class="variable">ans</span> <span class="keyword">in</span> <span class="function">enumerate</span>(<span class="variable">partial_answers</span>)])
+                    <span class="keyword">return</span> <span class="function">openai.ChatCompletion.create</span>(...).<span class="variable">choices[0].message.content</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Real-World Applications</h2>
+
+            <div class="example-box">
+                <strong>Customer Support Chatbots</strong>
+                <p>Create chatbots that can answer questions about your product documentation, troubleshoot issues using knowledge bases, and provide accurate responses based on your specific help articles.</p>
+            </div>
+
+            <div class="example-box">
+                <strong>Research and Analysis</strong>
+                <p>Build systems that can answer questions about historical events, scientific papers, or financial reports by retrieving and synthesizing information from large document collections.</p>
+            </div>
+
+            <div class="example-box">
+                <strong>Educational Platforms</strong>
+                <p>Power tutoring systems that can explain concepts using custom educational materials, provide detailed explanations with citations to source materials.</p>
+            </div>
+
+            <div class="example-box">
+                <strong>Legal Document Analysis</strong>
+                <p>Assist lawyers by retrieving relevant case law, statutes, and precedents to answer legal questions or draft documents based on established legal knowledge.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Best Practices and Performance Tips</h2>
+
+            <div class="success-box">
+                <strong>✅ Quality Data Preparation</strong>
+                <ul>
+                    <li>Clean and preprocess documents before indexing</li>
+                    <li>Use appropriate chunk sizes (500-1000 tokens for most use cases)</li>
+                    <li>Add metadata (source, timestamp) for better filtering</li>
+                    <li>Regularly update your knowledge base</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Retrieval Optimization</strong>
+                <ul>
+                    <li>Use hybrid search (keyword + semantic) for better results</li>
+                    <li>Implement re-ranking with cross-encoders</li>
+                    <li>Test different embedding models for your domain</li>
+                    <li>Add query expansion for complex questions</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Prompt Engineering</strong>
+                <ul>
+                    <li>Include clear instructions about using retrieved context</li>
+                    <li>Add role-based prompts ("You are a technical support expert...")</li>
+                    <li>Use few-shot examples for consistent formatting</li>
+                    <li>Include citations when appropriate</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Common Challenges</strong>
+                <ul>
+                    <li><strong>Hallucinations</strong>: Model may still generate incorrect information even with retrieval</li>
+                    <li><strong>Irrelevant Context</strong>: Retrieved documents may not always be perfectly relevant</li>
+                    <li><strong>Cost</strong>: Embedding large document collections can be expensive</li>
+                    <li><strong>Latency</strong>: Retrieval adds computational overhead</li>
+                    <li><strong>Citation Verification</strong>: Ensure cited sources actually support claims</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Evaluation and Monitoring</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>What it measures</th>
+                        <th>How to evaluate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Relevance</strong></td>
+                        <td>Retrieved documents are topically related</td>
+                        <td>Manual review + NDCG scores</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Faithfulness</strong></td>
+                        <td>Generated answer matches retrieved facts</td>
+                        <td>LLM-based verification</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Answer Quality</strong></td>
+                        <td>Response completeness and accuracy</td>
+                        <td>Human evaluation + automated checks</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Latency</strong></td>
+                        <td>End-to-end response time</td>
+                        <td>Benchmark retrieval and generation times</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Citation Accuracy</strong></td>
+                        <td>Sources actually support claims</td>
+                        <td>Manual verification of cited facts</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <span class="comment">// Basic RAG evaluation example</span>
+                <span class="keyword">def</span> <span class="function">evaluate_rag</span>(<span class="variable">queries</span>, <span class="variable">ground_truth</span>):
+                    <span class="variable">total_relevance</span> = <span class="number">0</span>
+                    <span class="variable">total_faithfulness</span> = <span class="number">0</span>
+
+                    <span class="keyword">for</span> <span class="variable">query</span>, <span class="variable">truth</span> <span class="keyword">in</span> <span class="function">zip</span>(<span class="variable">queries</span>, <span class="variable">ground_truth</span>):
+                        <span class="comment">// Get retrieval results</span>
+                        <span class="variable">docs</span> = <span class="variable">retriever.retrieve</span>(<span class="variable">query</span>, <span class="variable">k</span>=<span class="number">3</span>)
+                        <span class="variable">response</span> = <span class="variable">rag_system.answer</span>(<span class="variable">query</span>)
+
+                        <span class="comment">// Evaluate retrieval relevance (simplified)</span>
+                        <span class="variable">relevance_score</span> = <span class="function">calculate_relevance</span>(<span class="variable">docs</span>, <span class="variable">query</span>)
+                        <span class="variable">total_relevance</span> += <span class="variable">relevance_score</span>
+
+                        <span class="comment">// Evaluate answer faithfulness</span>
+                        <span class="variable">faithfulness_score</span> = <span class="function">check_faithfulness</span>(<span class="variable">response</span>, <span class="variable">docs</span>)
+                        <span class="variable">total_faithfulness</span> += <span class="variable">faithfulness_score</span>
+
+                    <span class="keyword">return</span> {
+                        <span class="string">"avg_relevance"</span>: <span class="variable">total_relevance</span> / <span class="function">len</span>(<span class="variable">queries</span>),
+                        <span class="string">"avg_faithfulness"</span>: <span class="variable">total_faithfulness</span> / <span class="function">len</span>(<span class="variable">queries</span>)
+                    }
+
+                <span class="variable">evaluation</span> = <span class="function">evaluate_rag</span>(<span class="variable">test_queries</span>, <span class="variable">test_answers</span>)
+                <span class="function">print</span>(<span class="variable">evaluation</span>)
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>RAG Frameworks and Tools</h2>
+
+            <div class="info-box">
+                <strong>Popular Frameworks:</strong>
+                <ul>
+                    <li><strong>LangChain</strong> - Modular framework for building RAG applications</li>
+                    <li><strong>LlamaIndex</strong> (formerly GPT Index) - Focus on indexing and retrieval</li>
+                    <li><strong>Haystack</strong> - NLP framework with strong RAG capabilities</li>
+                    <li><strong>Weaviate</strong> - Vector database with built-in RAG features</li>
+                    <li><strong>Pinecone</strong> - Managed vector database service</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong>Embedding Models:</strong>
+                <ul>
+                    <li><code>text-embedding-ada-002</code> (OpenAI) - Balanced performance/size</li>
+                    <li><code>all-MiniLM-L6-v2</code> (Sentence Transformers) - Fast, good quality</li>
+                    <li><code>instructor-xl</code> - Instruction-tuned embeddings</li>
+                    <li><code>bge-large-en-v1.5</code> - Strong performance on benchmarks</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

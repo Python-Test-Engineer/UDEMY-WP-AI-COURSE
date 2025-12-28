@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The ReAct Pattern in AI Apps Explained</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.6;
+            margin: 15px 0;
+            white-space: pre-wrap;
+        }
+
+        .keyword {
+            color: #ff79c6;
+        }
+
+        .string {
+            color: #50fa7b;
+        }
+
+        .comment {
+            color: #6272a4;
+        }
+
+        .variable {
+            color: #f1fa8c;
+        }
+
+        .function {
+            color: #8be9fd;
+        }
+
+        .number {
+            color: #bd93f9;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example-box {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .flow-diagram {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .flow-step {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .flow-step.think {
+            background: #ff9800;
+        }
+
+        .flow-step.act {
+            background: #4caf50;
+        }
+
+        .flow-step.observe {
+            background: #9c27b0;
+        }
+
+        .arrow {
+            display: inline-block;
+            color: #667eea;
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+
+        .arrow-down {
+            display: block;
+            color: #667eea;
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        ul,
+        ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .step-container {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .visual-example {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #667eea;
+        }
+
+        strong {
+            color: #333;
+        }
+
+        .loop-example {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #4caf50;
+        }
+
+        .loop-step {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #4caf50;
+        }
+
+        .thought {
+            font-style: italic;
+            color: #ff9800;
+        }
+
+        .action {
+            font-weight: bold;
+            color: #4caf50;
+        }
+
+        .observation {
+            color: #9c27b0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🧠 The ReAct Pattern in AI Apps Explained</h1>
+        <p class="subtitle">Understanding how AI agents reason, act, and iterate to solve complex tasks</p>
+
+        <div class="section">
+            <h2>What is ReAct?</h2>
+            <p>ReAct (Reasoning + Acting) is a pattern where AI agents combine <strong>reasoning</strong> (thinking through problems step-by-step) with <strong>acting</strong> (calling tools/functions) to solve complex tasks. The agent alternates between:</p>
+            <ul>
+                <li><strong>Thought:</strong> Reasoning about the current situation and planning next steps</li>
+                <li><strong>Action:</strong> Executing a tool or function to gather information</li>
+                <li><strong>Observation:</strong> Receiving and processing the results</li>
+            </ul>
+            <p>This cycle repeats until the agent has enough information to provide a final answer.</p>
+        </div>
+
+        <div class="section">
+            <h2>The ReAct Loop</h2>
+            <div class="flow-diagram">
+                <div class="flow-step think">1. Thought</div>
+                <div class="arrow">→</div>
+                <div class="flow-step act">2. Action</div>
+                <div class="arrow">→</div>
+                <div class="flow-step observe">3. Observation</div>
+                <div class="arrow">←</div>
+                <div class="arrow-down">↻ Loop Until Done</div>
+                <div class="flow-step">Final Answer</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Why ReAct Matters</h2>
+            <p>Traditional AI approaches either generate one-shot responses or act blindly. ReAct agents are:</p>
+            <ul>
+                <li><strong>Adaptive:</strong> Can adjust plans based on new information</li>
+                <li><strong>Transparent:</strong> Expose their reasoning process</li>
+                <li><strong>Reliable:</strong> Verify information step-by-step</li>
+                <li><strong>Efficient:</strong> Make fewer irrelevant or incorrect actions</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Real-World Example: Travel Planner</h2>
+
+            <div class="loop-example">
+                <strong>User:</strong> "Plan a 3-day trip to Paris in July"<br><br>
+
+                <div class="loop-step">
+                    <span class="thought"><strong>Thought 1:</strong> User wants a Paris trip plan. I need current weather, attractions, and transportation info.</span><br>
+                    <span class="action"><strong>Action 1:</strong> Call get_weather("Paris", "July")</span><br>
+                    <span class="observation"><strong>Observation 1:</strong> Average of 25°C, mild showers possible</span>
+                </div>
+
+                <div class="loop-step">
+                    <span class="thought"><strong>Thought 2:</strong> Weather is good. Now need key attractions and booking options.</span><br>
+                    <span class="action"><strong>Action 2:</strong> Call get_attractions("Paris", [{"limit": 5}, {"type": "historical"}])</span><br>
+                    <span class="observation"><strong>Observation 2:</strong> Eiffel Tower, Louvre, Notre-Dame, Sacré-Cœur, Arc de Triomphe</span>
+                </div>
+
+                <div class="loop-step">
+                    <span class="thought"><strong>Thought 3:</strong> Great attractions. Let me check transportation and create the plan.</span><br>
+                    <span class="action"><strong>Action 3:</strong> Call check_transportation({"from": "airport", "to": "city center"})</span><br>
+                    <span class="observation"><strong>Observation 3:</strong> RER train (€11.45), bus, taxi (~€50)</span>
+                </div>
+
+                <div class="loop-step">
+                    <span class="thought"><strong>Thought 4:</strong> Have all the info needed to create a comprehensive plan.</span>
+                </div>
+
+                <strong>Final Answer:</strong> Here's your detailed Paris itinerary...
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>JavaScript Implementation with Looping</h2>
+
+            <h3>Step 1: Define Tools</h3>
+            <pre class="code-block"><span class="keyword">const</span> <span class="variable">tools</span> = [
+  {
+    <span class="variable">type</span>: <span class="string">"function"</span>,
+    <span class="variable">function</span>: {
+      <span class="variable">name</span>: <span class="string">"get_weather"</span>,
+      <span class="variable">description</span>: <span class="string">"Get weather information for a location"</span>,
+      <span class="variable">parameters</span>: {
+        <span class="variable">type</span>: <span class="string">"object"</span>,
+        <span class="variable">properties</span>: {
+          <span class="variable">location</span>: {
+            <span class="variable">type</span>: <span class="string">"string"</span>,
+            <span class="variable">description</span>: <span class="string">"City name"</span>
+          },
+          <span class="variable">month</span>: {
+            <span class="variable">type</span>: <span class="string">"string"</span>,
+            <span class="variable">description</span>: <span class="string">"Month to check"</span>
+          }
+        },
+        <span class="variable">required</span>: [<span class="string">"location"</span>]
+      }
+    }
+  },
+  {
+    <span class="variable">type</span>: <span class="string">"function"</span>,
+    <span class="variable">function</span>: {
+      <span class="variable">name</span>: <span class="string">"get_attractions"</span>,
+      <span class="variable">description</span>: <span class="string">"Find tourist attractions in a city"</span>,
+      <span class="variable">parameters</span>: {
+        <span class="variable">type</span>: <span class="string">"object"</span>,
+        <span class="variable">properties</span>: {
+          <span class="variable">city</span>: {
+            <span class="variable">type</span>: <span class="string">"string"</span>,
+            <span class="variable">description</span>: <span class="string">"City name"</span>
+          },
+          <span class="variable">limit</span>: {
+            <span class="variable">type</span>: <span class="number">integer</span>,
+            <span class="variable">description</span>: <span class="string">"Maximum number of attractions"</span>
+          }
+        },
+        <span class="variable">required</span>: [<span class="string">"city"</span>]
+      }
+    }
+  }
+];</pre>
+
+            <h3>Step 2: Implement Agent Functions</h3>
+            <pre class="code-block"><span class="keyword">async function</span> <span class="function">get_weather</span>(<span class="variable">location</span>, <span class="variable">month</span>) {
+  <span class="comment">// Mock weather API call</span>
+  <span class="keyword">return</span> <span class="function">JSON.stringify</span>({
+    <span class="variable">location</span>: <span class="variable">location</span>,
+    <span class="variable">month</span>: <span class="variable">month</span>,
+    <span class="variable">avg_temperature</span>: <span class="number">25</span>,
+    <span class="variable">conditions</span>: <span class="string">"Sunny with occasional showers"</span>
+  });
+}
+
+<span class="keyword">async function</span> <span class="function">get_attractions</span>(<span class="variable">city</span>, <span class="variable">limit</span> = <span class="number">5</span>) {
+  <span class="comment">// Mock attractions API call</span>
+  <span class="keyword">const</span> <span class="variable">attractions</span> = {
+    <span class="string">"Paris"</span>: [<span class="string">"Eiffel Tower"</span>, <span class="string">"Louvre"</span>, <span class="string">"Notre-Dame"</span>, <span class="string">"Sacré-Cœur"</span>, <span class="string">"Arc de Triomphe"</span>],
+    <span class="string">"London"</span>: [<span class="string">"Big Ben"</span>, <span class="string">"Tower Bridge"</span>, <span class="string">"London Eye"</span>, <span class="string">"Buckingham Palace"</span>, <span class="string">"British Museum"</span>]
+  };
+
+  <span class="keyword">return</span> <span class="function">JSON.stringify</span>({
+    <span class="variable">city</span>: <span class="variable">city</span>,
+    <span class="variable">attractions</span>: <span class="variable">attractions</span>[<span class="variable">city</span>]?.<span class="function">slice</span>(<span class="number">0</span>, <span class="variable">limit</span>) || []
+  });
+}
+
+<span class="keyword">const</span> <span class="variable">availableFunctions</span> = {
+  <span class="variable">get_weather</span>: <span class="variable">get_weather</span>,
+  <span class="variable">get_attractions</span>: <span class="variable">get_attractions</span>
+};</pre>
+
+            <h3>Step 3: The ReAct Agent Loop</h3>
+            <pre class="code-block"><span class="keyword">class</span> <span class="function">ReActAgent</span> {
+  <span class="keyword">constructor</span>(<span class="variable">apiKey</span>, <span class="variable">tools</span>, <span class="variable">functions</span>) {
+    <span class="variable">this</span>.<span class="variable">apiKey</span> = <span class="variable">apiKey</span>;
+    <span class="variable">this</span>.<span class="variable">tools</span> = <span class="variable">tools</span>;
+    <span class="variable">this</span>.<span class="variable">functions</span> = <span class="variable">functions</span>;
+    <span class="variable">this</span>.<span class="variable">maxIterations</span> = <span class="number">10</span>;
+  }
+
+  <span class="keyword">async</span> <span class="function">runReActLoop</span>(<span class="variable">task</span>) {
+    <span class="keyword">let</span> <span class="variable">iteration</span> = <span class="number">0</span>;
+    <span class="keyword">let</span> <span class="variable">finished</span> = <span class="keyword">false</span>;
+    <span class="keyword">let</span> <span class="variable">scratchpad</span> = <span class="string">""</span>; <span class="comment">// Agent's thinking space</span>
+    <span class="keyword">let</span> <span class="variable">finalAnswer</span> = <span class="keyword">null</span>;
+
+    <span class="keyword">const</span> <span class="variable">messages</span> = [
+      {
+        <span class="variable">role</span>: <span class="string">"system"</span>,
+        <span class="variable">content</span>: <span class="string">`You are a ReAct agent. Follow this format strictly:
+Thought: reason about what to do next
+Action: choose a tool to call (name and args in JSON)
+Observation: wait for tool result
+
+Or:
+Thought: reason about final answer
+Final Answer: provide your answer
+
+Continue looping until you have enough information.`</span>
+      },
+      { <span class="variable">role</span>: <span class="string">"user"</span>, <span class="variable">content</span>: <span class="variable">task</span> }
+    ];
+
+    <span class="keyword">while</span> (!<span class="variable">finished</span> && <span class="variable">iteration</span> < <span class="variable">this</span>.<span class="variable">maxIterations</span>) {
+      <span class="variable">iteration</span>++;
+
+      <span class="function">console.log</span>(<span class="string">`\\n--- Iteration ${<span class="variable">iteration</span>} ---`</span>);
+
+      <span class="keyword">const</span> <span class="variable">response</span> = <span class="keyword">await</span> <span class="function">this.callAI</span>(<span class="variable">messages</span>, <span class="variable">scratchpad</span>);
+      <span class="variable">messages</span>.<span class="function">push</span>({ <span class="variable">role</span>: <span class="string">"assistant"</span>, <span class="variable">content</span>: <span class="variable">response</span> });
+
+      <span class="function">console.log</span>(<span class="string">`AI Response: ${<span class="variable">response</span>}`</span>);
+
+      <span class="comment">// Parse the ReAct format</span>
+      <span class="keyword">const</span> <span class="variable">thoughtMatch</span> = <span class="variable">response</span>.<span class="function">match</span>(<span class="function">RegExp</span>(<span class="string">'Thought: (.*?(?=Action:|Final Answer:|\\n|$))'</span>, <span class="string">'s'</span>));
+      <span class="keyword">const</span> <span class="variable">actionMatch</span> = <span class="variable">response</span>.<span class="function">match</span>(<span class="function">RegExp</span>(<span class="string">'Action: (.*?(?=Observation:|Final Answer:|\\n|$))'</span>, <span class="string">'s'</span>));
+      <span class="keyword">const</span> <span class="variable">finalMatch</span> = <span class="variable">response</span>.<span class="function">match</span>(<span class="function">RegExp</span>(<span class="string">'Final Answer: (.*)'</span>, <span class="string">'s'</span>));
+
+      <span class="keyword">if</span> (<span class="variable">finalMatch</span>) {
+        <span class="variable">finalAnswer</span> = <span class="variable">finalMatch</span>[<span class="number">1</span>].<span class="function">trim</span>();
+        <span class="variable">finished</span> = <span class="keyword">true</span>;
+        <span class="function">console.log</span>(<span class="string">`Final Answer: ${<span class="variable">finalAnswer</span>}`</span>);
+        <span class="keyword">continue</span>;
+      }
+
+      <span class="keyword">if</span> (!<span class="variable">actionMatch</span>) {
+        <span class="function">console.log</span>(<span class="string">"No action found, agent might be stuck"</span>);
+        <span class="keyword">continue</span>;
+      }
+
+      <span class="comment">// Extract tool call from Action</span>
+      <span class="keyword">const</span> <span class="variable">actionText</span> = <span class="variable">actionMatch</span>[<span class="number">1</span>].<span class="function">trim</span>();
+      <span class="keyword">let</span> <span class="variable">toolCall</span>;
+      <span class="keyword">try</span> {
+        <span class="variable">toolCall</span> = <span class="function">JSON.parse</span>(<span class="variable">actionText</span>);
+      } <span class="keyword">catch</span> (<span class="variable">e</span>) {
+        <span class="function">console.log</span>(<span class="string">"Failed to parse action"</span>, <span class="variable">actionText</span>);
+        <span class="keyword">continue</span>;
+      }
+
+      <span class="keyword">const</span> <span class="variable">functionName</span> = <span class="variable">toolCall</span>.<span class="variable">name</span>;
+      <span class="keyword">const</span> <span class="variable">functionArgs</span> = <span class="variable">toolCall</span>.<span class="variable">arguments</span>;
+
+      <span class="function">console.log</span>(<span class="string">`Executing: ${<span class="variable">functionName</span>}(${<span class="function">JSON.stringify</span>(<span class="variable">functionArgs</span>)})`</span>);
+
+      <span class="comment">// Execute the function</span>
+      <span class="keyword">const</span> <span class="variable">func</span> = <span class="variable">this</span>.<span class="variable">functions</span>[<span class="variable">functionName</span>];
+      <span class="keyword">if</span> (!<span class="variable">func</span>) {
+        <span class="function">console.log</span>(<span class="string">`Unknown function: ${<span class="variable">functionName</span>}`</span>);
+        <span class="keyword">continue</span>;
+      }
+
+      <span class="keyword">const</span> <span class="variable">result</span> = <span class="keyword">await</span> <span class="function">func</span>(...<span class="function">Object.values</span>(<span class="variable">functionArgs</span>));
+
+      <span class="function">console.log</span>(<span class="string">`Result: ${<span class="variable">result</span>}`</span>);
+
+      <span class="comment">// Add observation to scratchpad and messages</span>
+      <span class="keyword">const</span> <span class="variable">observation</span> = <span class="string">`Observation: ${<span class="variable">result</span>}`</span>;
+      <span class="variable">scratchpad</span> += <span class="variable">response</span> + <span class="variable">observation</span> + <span class="string">"\n"</span>;
+      <span class="variable">messages</span>.<span class="function">push</span>({ <span class="variable">role</span>: <span class="string">"user"</span>, <span class="variable">content</span>: <span class="variable">observation</span> });
+    }
+
+    <span class="keyword">return</span> <span class="variable">finalAnswer</span>;
+  }
+
+  <span class="keyword">async</span> <span class="function">callAI</span>(<span class="variable">messages</span>, <span class="variable">scratchpad</span>) {
+    <span class="keyword">const</span> <span class="variable">allMessages</span> = [
+      ...<span class="variable">messages</span>,
+      { <span class="variable">role</span>: <span class="string">"user"</span>, <span class="variable">content</span>: <span class="variable">scratchpad</span> || <span class="string">"Start reasoning..."</span> }
+    ];
+
+    <span class="keyword">const</span> <span class="variable">response</span> = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">"https://api.openai.com/v1/chat/completions"</span>, {
+      <span class="variable">method</span>: <span class="string">"POST"</span>,
+      <span class="variable">headers</span>: {
+        <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span>,
+        <span class="string">"Authorization"</span>: <span class="string">`Bearer ${<span class="variable">this</span>.<span class="variable">apiKey</span>}`</span>
+      },
+      <span class="variable">body</span>: <span class="function">JSON.stringify</span>({
+        <span class="variable">model</span>: <span class="string">"gpt-4"</span>,
+        <span class="variable">messages</span>: <span class="variable">allMessages</span>,
+        <span class="variable">tools</span>: <span class="variable">this</span>.<span class="variable">tools</span>,
+        <span class="variable">tool_choice</span>: <span class="string">"auto"</span>,
+        <span class="variable">temperature</span>: <span class="number">0.1</span> <span class="comment">// Low temperature for consistent reasoning</span>
+      })
+    });
+
+    <span class="keyword">const</span> <span class="variable">data</span> = <span class="keyword">await</span> <span class="variable">response</span>.<span class="function">json</span>();
+    <span class="keyword">return</span> <span class="variable">data</span>.choices[<span class="number">0</span>].message.content;
+  }
+}</pre>
+
+            <h3>Step 4: Running the Agent</h3>
+            <pre class="code-block"><span class="comment">// Usage example</span>
+<span class="keyword">async function</span> <span class="function">main</span>() {
+  <span class="keyword">const</span> <span class="variable">apiKey</span> = <span class="string">"your-api-key-here"</span>;
+  <span class="keyword">const</span> <span class="variable">agent</span> = <span class="keyword">new</span> <span class="function">ReActAgent</span>(<span class="variable">apiKey</span>, <span class="variable">tools</span>, <span class="variable">availableFunctions</span>);
+
+  <span class="keyword">const</span> <span class="variable">task</span> = <span class="string">"Plan a weekend trip to Paris. Check the weather and suggest 3 attractions."</span>;
+  <span class="keyword">const</span> <span class="variable">result</span> = <span class="keyword">await</span> <span class="function">agent</span>.<span class="function">runReActLoop</span>(<span class="variable">task</span>);
+
+  <span class="function">console.log</span>(<span class="string">"Final Result:"</span>, <span class="variable">result</span>);
+}
+
+<span class="function">main</span>();</pre>
+        </div>
+
+        <div class="section">
+            <h2>Key Components of ReAct Implementation</h2>
+
+            <div class="step-container">
+                <span class="step-number">1</span>
+                <strong>Structured Prompting</strong>
+                <p>Guide the AI with specific instructions on how to format thoughts, actions, and observations.</p>
+                <pre class="code-block" style="font-size: 0.85em;"><span class="string">"Follow this format strictly:
+Thought: reason about what to do next
+Action: choose a tool (name and args in JSON)
+Observation: wait for tool result
+..."</span></pre>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">2</span>
+                <strong>Scratchpad Memory</strong>
+                <p>Maintain conversation history including previous thoughts, actions, and observations.</p>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">3</span>
+                <strong>Loop Control</strong>
+                <p>Implement maximum iteration limits and stopping conditions to prevent infinite loops.</p>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">4</span>
+                <strong>Result Parsing</strong>
+                <p>Use regex or structured parsing to extract thoughts, actions, and final answers from AI responses.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Use Cases</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Use Case</th>
+                        <th>Why ReAct?</th>
+                        <th>Example Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Travel Planning</strong></td>
+                        <td>Complex research requiring multiple data sources</td>
+                        <td>Check weather → Find hotels → Verify transport</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medical Diagnostics</strong></td>
+                        <td>Symptoms need differential diagnosis</td>
+                        <td>Analyze symptoms → Check conditions → Verify tests</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Financial Analysis</strong></td>
+                        <td>Multiple market factors to consider</td>
+                        <td>Get stock data → Check news → Analyze trends</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Code Debugging</strong></td>
+                        <td>Step-by-step problem solving needed</td>
+                        <td>Run tests → Check logs → Examine variables</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Research Tasks</strong></td>
+                        <td>Unsure paths, need exploration</td>
+                        <td>Search topics → Read papers → Analyze findings</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Best Practices</h2>
+
+            <div class="success-box">
+                <strong>✅ Provide Clear Instructions</strong>
+                <p>Use detailed system prompts that explain the ReAct format and when to stop.</p>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Implement Safety Limits</strong>
+                <p>Always set maximum iterations and timeout limits to prevent runaway agents.</p>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Handle Errors Gracefully</strong>
+                <p>If a tool fails, the agent can try alternative approaches in subsequent iterations.</p>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Use Low Temperature</strong>
+                <p>Set temperature 0.1-0.3 for consistent reasoning patterns in the loop.</p>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Provide Good Tool Descriptions</strong>
+                <p>Well-described tools help agents make better decisions about which actions to take.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Common Challenges</h2>
+
+            <div class="warning-box">
+                <strong>⚠️ Long-Form Responses</strong>
+                <ul>
+                    <li>AI might generate verbose thoughts</li>
+                    <li>Parse only the format you need</li>
+                    <li>Use prompt engineering to be concise</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Loop Detection</strong>
+                <ul>
+                    <li>Agents might repeat the same actions</li>
+                    <li>Track executed actions and stop duplicates</li>
+                    <li>Implement iteration limits</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Tool Choice</strong>
+                <ul>
+                    <li>AI might call wrong tools or bad parameters</li>
+                    <li>Restrict available tools per task</li>
+                    <li>Validate parameters before execution</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Next Steps</h2>
+            <p>ReAct is just one pattern - explore combinations with:</p>
+            <ul>
+                <li><strong>Chain of Thought:</strong> Enhanced reasoning within each thought step</li>
+                <li><strong>Self-Reflection:</strong> Agents that critique their own reasoning</li>
+                <li><strong>Multi-Agent:</strong> Multiple specialized agents working together</li>
+                <li><strong>Tree of Thoughts:</strong> Exploring multiple reasoning paths</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
