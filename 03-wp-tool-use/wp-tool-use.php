@@ -223,7 +223,7 @@ function wp_tool_use_ai_proxy() {
         ),
         'body' => json_encode($body),
         'timeout' => 30
-    ))
+    ));
     // ******************************
 
     if (is_wp_error($response)) {
