@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <div class="demo-form-group">
                 <label for="length">Length:</label>
+                <br>
                 <select id="length" class="demo-select">
                     <option value="short paragraph">Short paragraph</option>
                     <option value="medium article">Medium article</option>
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <div class="demo-form-group">
                 <label for="style">Style:</label>
+                <br>
                 <select id="style" class="demo-select">
                     <option value="professional">Professional</option>
                     <option value="conversational">Conversational</option>
@@ -78,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Initialize components with the provided API key
+            resultDiv.textContent = 'Generating response...';
             llm = initOpenAI(apiKey);
             prompt = createPromptTemplate();
             chain = createContentChain(llm, prompt);

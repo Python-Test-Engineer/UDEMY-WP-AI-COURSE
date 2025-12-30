@@ -50,7 +50,6 @@ add_action('admin_menu', 'wpli_add_admin_menu');
 function wpli_admin_page() {
     ?>
     <div class="wrap">
-        <h1>LangChain.js Integration Demo</h1>
         <div id="langchain-demo-app"></div>
     </div>
     <?php
