@@ -1,3 +1,9 @@
+.app-description {
+    color: #5a08c5;
+    margin-bottom: 30px;
+    font-size: 1.25rem;
+}
+
 .my-custom-app {
     padding: 20px;
     max-width: 1200px;
@@ -144,6 +150,7 @@
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

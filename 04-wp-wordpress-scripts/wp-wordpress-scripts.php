@@ -7,6 +7,9 @@
  * Text Domain: my-@wp-plugin
  */
 
+// Needs Node.js installed
+// https://www.npmjs.com/package/@wordpress/scripts
+
 if (!defined('ABSPATH')) {
     exit;
 }
