@@ -4,6 +4,10 @@
 
 This WordPress plugin demonstrates the concept of **AI Tool Use** (also known as function calling) in practical terms. Tool use allows AI models to interact with external functions, APIs, or systems to perform specific tasks that go beyond their training data.
 
+This example is different to `COURSE-1-HTML-EXAMPLES\03-openai-tool-calling.html` where we have a loop that uses the tool call response to provide data to the AI to produce a final answer.
+
+In this plugin we are just showing how AI can determine which tool/function our plugin needs to execute.
+
 ## What is Tool Use?
 
 Tool use is a feature of advanced AI models that enables them to:
