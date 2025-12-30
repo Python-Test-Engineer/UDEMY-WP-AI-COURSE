@@ -1,7 +1,8 @@
 # Basic PHP AI Agent Plugin - Technical Explanation
 
 ## Overview
-This WordPress plugin provides a complete OpenAI integration using **PHP only** (no JavaScript). It features API key management with a show/hide toggle, an AI query interface, and ChatGPT-style dark mode styling.
+
+This WordPress plugin provides a complete OpenAI integration using **PHP only** (no JavaScript other than a UI feature for show/hide of API key). It features API key management with a show/hide toggle, an AI query interface, and ChatGPT-style dark mode styling.
 
 ---
 
