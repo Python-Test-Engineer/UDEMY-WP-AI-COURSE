@@ -1,7 +1,7 @@
 import { createRoot } from '@wordpress/element';
 import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import './style.scss';
+import './style.scss'; // can be a CSS file as well
 
 const App = () => {
     const [count, setCount] = useState(0);
@@ -110,22 +110,22 @@ const App = () => {
                 </div>
 
                 <div className="button-group">
-                    <button 
-                        className="button button-primary button-large" 
+                    <button
+                        className="button button-primary button-large"
                         onClick={handleIncrement}
                         disabled={isLoading}
                     >
                         {__('+ Increment', 'my-custom-plugin')}
                     </button>
-                    <button 
-                        className="button button-secondary button-large" 
+                    <button
+                        className="button button-secondary button-large"
                         onClick={handleDecrement}
                         disabled={isLoading || count === 0}
                     >
                         {__('- Decrement', 'my-custom-plugin')}
                     </button>
-                    <button 
-                        className="button button-large" 
+                    <button
+                        className="button button-large"
                         onClick={handleReset}
                         disabled={isLoading || count === 0}
                     >
@@ -134,15 +134,15 @@ const App = () => {
                 </div>
 
                 <div className="button-group button-group-secondary">
-                    <button 
-                        className="button button-primary" 
+                    <button
+                        className="button button-primary"
                         onClick={handleSave}
                         disabled={isLoading}
                     >
                         {isLoading ? __('Saving...', 'my-custom-plugin') : __('Save to Database', 'my-custom-plugin')}
                     </button>
-                    <button 
-                        className="button button-secondary" 
+                    <button
+                        className="button button-secondary"
                         onClick={handleLoad}
                         disabled={isLoading}
                     >
@@ -169,7 +169,7 @@ const App = () => {
 // Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
     const rootElement = document.getElementById('my-custom-app-root');
-    
+
     if (rootElement) {
         const root = createRoot(rootElement);
         root.render(<App />);
