@@ -255,7 +255,7 @@ function wp_tool_use_ai_proxy() {
             $arguments = json_decode($tool_call['function']['arguments'], true);
 
             $result = null;
-
+            #region EXEC
             // Execute the appropriate tool function
             switch ($function_name) {
                 case 'get_weather':
@@ -274,7 +274,7 @@ function wp_tool_use_ai_proxy() {
                     $tool_response = "Unknown tool: {$function_name}";
                     break;
             }
-
+            #endregion EXEC
             // Add tool call details to response
             $response_data['tool_calls'][] = array(
                 'function' => $function_name,
