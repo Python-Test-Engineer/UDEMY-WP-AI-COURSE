@@ -50,6 +50,8 @@ add_action('admin_menu', 'wpli_add_admin_menu');
 function wpli_admin_page() {
     ?>
     <div class="wrap">
+    <!-- We use JS Bundle Injection -->
+    <!-- In src/index.js line 4 we inject our React App into this div -->
         <div id="langchain-demo-app"></div>
     </div>
     <?php
