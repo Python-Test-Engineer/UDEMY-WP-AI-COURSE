@@ -144,8 +144,9 @@ User Prompt → OpenAI API → AI Analyzes → Tool Call Requested? → Execute 
 
 ### Math Example:
 - **User:** "Add 15 and 27 together"
-- **AI:** Decides to call `add_two_numbers(15, 27)` as it is able to extract relevant information. It will extract the arguments supplied.
-- **Tool Execution:** Returns 42. If we send it back to the LLM with this additonal context we can generate an AI response "15 + 27 equals 42"
+- **AI:** Decides to call `add_two_numbers(15, 27)`
+- **Tool Execution:** Returns 42
+- **AI Response:** "15 + 27 equals 42"
 
 ## Technical Details
 
