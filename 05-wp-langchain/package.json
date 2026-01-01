@@ -16,11 +16,11 @@
     "plugin-zip": "wp-scripts plugin-zip"
   },
   "dependencies": {
-    "@langchain/openai": "^0.0.14",
-    "langchain": "^0.1.25"
+    "@langchain/openai": "^1.2.0",
+    "langchain": "^1.2.3"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^26.18.0"
+    "@wordpress/scripts": "^31.2.0"
   },
   "engines": {
     "node": ">=14.0.0",
