@@ -17,7 +17,7 @@ if ($message) {
 
     <div class="dashboard-container">
 
-        <!-- *******************  OPENAI SETTINGS TEMPLATE CONTENT ******************* -->
+        <!-- *****  OPENAI SETTINGS TEMPLATE CONTENT ***** -->
 
         <div class="dashboard-card">
             <h2><?php _e('API Configuration', 'wp-basic-agent'); ?></h2>
