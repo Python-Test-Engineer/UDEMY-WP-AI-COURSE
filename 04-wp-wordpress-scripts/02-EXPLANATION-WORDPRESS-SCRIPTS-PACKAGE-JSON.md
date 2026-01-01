@@ -6,22 +6,31 @@
 
 ```json
 {
-  "name": "my-wordpress-plugin",
+  "name": "wp-scripts-demo",
   "version": "1.0.0",
-  "description": "My WordPress plugin",
+  "description": "WordPress plugin with using @wordpress/scripts",
+  "main": "src/index.js",
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",
-    "test": "wp-scripts test-unit-js",
-    "lint:js": "wp-scripts lint-js",
-    "lint:css": "wp-scripts lint-style",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
     "format": "wp-scripts format",
-    "packages-update": "wp-scripts packages-update"
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.14.4"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^27.0.0"
+    "@wordpress/scripts": "^31.2.0"
   }
 }
+
 ```
 
 ## Available Scripts
@@ -36,6 +45,7 @@
 - **`wp-scripts check-engines`**: Verify Node/npm versions
 - **`wp-scripts check-licenses`**: Check dependency licenses
 - **`wp-scripts packages-update`**: Update WordPress packages
+- **`wp-scripts plugin-zip:`**: Creates plugin zip with just build folder and all the other plugin files for WordPress but not package.json, src etc that are not needed.
 
 ## Configuration
 
@@ -43,64 +53,6 @@
 By default, `@wordpress/scripts` looks for:
 - **Entry point**: `src/index.js`
 - **Output**: `build/index.js`
-
-### Custom Configuration (webpack)
-Create a `webpack.config.js` to customize:
-
-```javascript
-const defaultConfig = require('@wordpress/scripts/config/webpack.config');
-
-module.exports = {
-  ...defaultConfig,
-  entry: {
-    frontend: './src/frontend.js',
-    admin: './src/admin.js'
-  }
-};
-```
-
-### ESLint Configuration
-Extend in `.eslintrc.js`:
-
-```javascript
-module.exports = {
-  extends: ['plugin:@wordpress/eslint-plugin/recommended']
-};
-```
-
-### Babel Configuration
-Extend in `babel.config.js`:
-
-```javascript
-module.exports = {
-  presets: ['@wordpress/babel-preset-default']
-};
-```
-
-## Typical WordPress Block Plugin Example
-
-```json
-{
-  "name": "my-block-plugin",
-  "version": "1.0.0",
-  "description": "Custom WordPress block",
-  "main": "build/index.js",
-  "scripts": {
-    "build": "wp-scripts build",
-    "start": "wp-scripts start",
-    "lint:js": "wp-scripts lint-js",
-    "format": "wp-scripts format"
-  },
-  "devDependencies": {
-    "@wordpress/scripts": "^27.0.0"
-  },
-  "dependencies": {
-    "@wordpress/block-editor": "^12.0.0",
-    "@wordpress/blocks": "^12.0.0",
-    "@wordpress/i18n": "^4.0.0"
-  }
-}
-```
 
 ## Key Benefits
 

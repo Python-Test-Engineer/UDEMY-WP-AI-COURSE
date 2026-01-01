@@ -40,15 +40,15 @@ function wp_tool_use_shortcode($atts) {
     
     <div class="wp-tool-use-frontend-wrapper">
         <div class="wp-tool-use-container">
-            <div class="wp-tool-use-header">
-                <h3><?php _e('AI Tool Use Demo', 'wp-tool-use'); ?></h3>
+            <div>
+                <h2>TOOL USE</h2>
                 <p><?php _e('Ask about weather or do math - the AI will use tools to help!', 'wp-tool-use'); ?></p>
             </div>
 
             <?php if ($show_api_input): ?>
                 <!-- API Key Section -->
                 <div class="wp-tool-use-api-section">
-                    <h4><?php _e('OpenAI API Key', 'wp-tool-use'); ?></h4>
+                    <h2>OpenAI API KEY</h2>
                     <div class="wp-tool-use-api-input-group">
                         <input 
                             type="password" 

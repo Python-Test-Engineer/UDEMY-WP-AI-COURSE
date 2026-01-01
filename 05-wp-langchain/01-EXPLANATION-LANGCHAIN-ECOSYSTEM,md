@@ -1,0 +1,33 @@
+# Langchain Ecosystem
+
+## LangChain
+
+LangChain is a framework for developing applications powered by language models. It provides modular components that you can chain together to build LLM applications. The core concepts include:
+
+**Chains** - Sequential combinations of components where the output of one step feeds into the next. For example, you might chain together a prompt template, an LLM call, and an output parser.
+
+**Agents** - Systems that use an LLM as a reasoning engine to decide which actions to take and in what order. Agents have access to tools (functions they can call) and dynamically determine which tools to use based on user input.
+
+**Memory** - Components that persist state between chain or agent calls, allowing for conversational context.
+
+LangChain's agent system (often called AgentExecutor) follows a relatively simple loop: the LLM decides on an action, executes it, observes the result, and repeats until it has a final answer. This works well for straightforward agentic workflows.
+
+## LangGraph
+
+LangGraph is a more recent addition to the ecosystem, built on top of LangChain, designed for building more complex, stateful multi-actor applications. Key differences:
+
+**Graph-based architecture** - Instead of linear chains, you define agents as graphs with nodes (functions) and edges (transitions). This allows for cycles, conditional branching, and parallel execution.
+
+**Explicit state management** - You define a state schema that gets passed between nodes and updated throughout execution. This makes it easier to track what's happening and debug complex workflows.
+
+**Better control flow** - You can create sophisticated routing logic, have multiple agents collaborate, implement human-in-the-loop patterns, and build persistent, resumable workflows.
+
+**Checkpointing** - Built-in support for saving state at any point, allowing you to pause, resume, or even rewind agent execution.
+
+## When to use which
+
+Use **LangChain** when you need simple sequential chains or basic agent loops with straightforward tool calling.
+
+Use **LangGraph** when you need complex multi-step workflows, multiple agents working together, sophisticated routing logic, or the ability to pause and resume execution. It's particularly powerful for production applications where you need more control and observability.
+
+Think of LangChain as providing the building blocks, while LangGraph provides the architecture for assembling those blocks into more sophisticated systems.
