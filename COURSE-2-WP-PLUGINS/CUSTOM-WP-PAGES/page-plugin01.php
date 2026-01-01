@@ -53,8 +53,6 @@ button:hover {
    <input type="text" id="prompt" placeholder="Enter your prompt" value="Capital of England?">
 
    <button id="sendBtn" type="submit">Send Request</button>
-
-   <br>
    <div id="result"></div>
 </div>
 
@@ -114,7 +112,7 @@ button:hover {
          if (data.error) {
             resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error.message}</p>`;
          } else {
-            resultDiv.innerHTML = `<p><strong>Response:</strong></p><p>${output + '<br>' + msg}</p>`;
+            resultDiv.innerHTML = `<strong>Response:</strong><p>${msg}</p>`;
          }
       } catch (error) {
          resultDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
