@@ -191,7 +191,5 @@ input[type="text"]::placeholder {
       }
    });
 </script>
-</body>
 
-</html>
 <?php get_footer(); ?>
