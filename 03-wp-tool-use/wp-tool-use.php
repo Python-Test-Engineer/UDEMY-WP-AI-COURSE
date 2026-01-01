@@ -268,6 +268,7 @@ function wp_tool_use_ai_proxy() {
                     $b = isset($arguments['b']) ? floatval($arguments['b']) : 0;
                     $result = add_two_numbers($a, $b);
                     $tool_response = "Math tool executed: {$a} + {$b} = {$result}";
+                    // We could resend it to the LLM for it to craft a final response using this result.
                     break;
 
                 default:
