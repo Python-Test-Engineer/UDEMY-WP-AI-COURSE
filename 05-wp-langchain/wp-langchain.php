@@ -30,8 +30,18 @@ function wpli_enqueue_scripts() {
         true
     );
 }
+
+// Enqueue scripts only on frontend
 add_action('wp_enqueue_scripts', 'wpli_enqueue_scripts');
-add_action('admin_enqueue_scripts', 'wpli_enqueue_scripts');
+
+// Enqueue scripts only on the specific admin page
+function wpli_enqueue_admin_scripts($hook) {
+    // Only enqueue on our plugin's admin page
+    if ($hook == 'toplevel_page_wp-langchain-demo') {
+        wpli_enqueue_scripts();
+    }
+}
+add_action('admin_enqueue_scripts', 'wpli_enqueue_admin_scripts');
 
 // Add admin menu for demonstration
 function wpli_add_admin_menu() {

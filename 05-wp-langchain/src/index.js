@@ -9,20 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Create the demo UI
     demoApp.innerHTML = `
-        <div id="demoAPP" >
+        <div class="wpli-langchain-demo">
             <h2>LangChain.js Content Generator Demo</h2>
 
-            <div class="demo-form-group">
+            <div class="wpli-form-group">
                 <label for="api-key">OpenAI API Key:</label>
                 <input type="password" id="api-key" class="demo-input" placeholder="sk-...">
             </div>
 
-            <div class="demo-form-group">
+            <div class="wpli-form-group">
                 <label for="topic">Topic:</label>
                 <input type="text" id="topic" class="demo-input" value="WordPress development">
             </div>
 
-            <div class="demo-form-group">
+            <div class="wpli-form-group">
                 <label for="length">Length:</label>
                 <br>
                 <select id="length" class="demo-select">
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </select>
             </div>
 
-            <div class="demo-form-group">
+            <div class="wpli-form-group">
                 <label for="style">Style:</label>
                 <br>
                 <select id="style" class="demo-select">
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 Generate Content
             </button>
 
-            <div id="result" class="demo-result"></div>
+            <div id="result" class="wpli-result"></div>
         </div>
     `;
 

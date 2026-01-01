@@ -1,5 +1,5 @@
 {
-  "name": "wp-langchain-integration",
+  "name": "wp-langchain",
   "version": "1.0.0",
   "description": "WordPress plugin with LangChain.js integration using @wordpress/scripts",
   "main": "src/index.js",

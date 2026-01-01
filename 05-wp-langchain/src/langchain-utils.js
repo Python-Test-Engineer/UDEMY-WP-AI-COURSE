@@ -1,6 +1,6 @@
 import { OpenAI } from '@langchain/openai';
-import { PromptTemplate } from 'langchain/prompts';
-import { LLMChain } from 'langchain/chains';
+import { PromptTemplate } from '@langchain/core/prompts';
+import { LLMChain } from '@langchain/core/chains';
 
 /**
  * Initialize OpenAI LLM with API key
