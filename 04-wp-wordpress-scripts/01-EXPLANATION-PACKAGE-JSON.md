@@ -2,6 +2,10 @@
 
 `package.json` is a configuration file used in Node.js projects (JavaScript/TypeScript). It's like a manifest that describes your project and manages its dependencies.
 
+In the LINKS.md is the link to get Node.js installed and it is [[https://nodejs.org/en/download](https://nodejs.org/en/download)]([https://nodejs.org/en/download](https://nodejs.org/en/download))
+
+Once installed, you can check installation by running `node --version` in the terminal. We will see that shortly.
+
 **Key purposes:**
 
 1. **Project metadata** - Name, version, description, author, license
