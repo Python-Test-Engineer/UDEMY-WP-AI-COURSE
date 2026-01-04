@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Basic Agent
+ * Template Name: Agent with Tool Calling Demo
  */
 
 get_header(); ?>
