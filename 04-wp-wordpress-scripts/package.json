@@ -1,5 +1,5 @@
 {
-  "name": "wp-scripts-demo",
+  "name": "wordpress-scripts-demo",
   "version": "1.0.0",
   "description": "WordPress plugin with using @wordpress/scripts",
   "main": "src/index.js",
