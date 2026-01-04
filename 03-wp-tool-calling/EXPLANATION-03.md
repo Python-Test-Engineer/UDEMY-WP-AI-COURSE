@@ -1,4 +1,6 @@
-# 3A WP Tool Calling Plugin
+# WP Tool Calling Plugin
+
+Created by asking Claude.ai to create a WP plugin based on `COURSE-1-HTML-EXAMPLES\HTML-PAGES\03-openai-tool-calling.html` and to create a shortcode as well.
 
 WordPress plugin that demonstrates OpenAI Tool Calling functionality with `get_weather()` and `get_sum()` functions.
 
@@ -13,7 +15,7 @@ WordPress plugin that demonstrates OpenAI Tool Calling functionality with `get_w
 
 ## Installation
 
-1. Upload the `3A-wp-tool-calling` folder to your WordPress `wp-content/plugins/` directory
+1. Upload the `03-wp-tool-calling` folder to your WordPress `wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 ## Usage
