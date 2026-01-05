@@ -32,6 +32,11 @@
 }
 
 ```
+## Installing @wordpress/scripts
+
+If you have a minimal `package.json`, you can install @wordpress/scripts with `npm install @wordpress/scripts --save-dev`. This saves it as a dependency.
+
+[https://www.npmjs.com/package/@wordpress/scripts](https://www.npmjs.com/package/@wordpress/scripts)
 
 ## Available Scripts
 
