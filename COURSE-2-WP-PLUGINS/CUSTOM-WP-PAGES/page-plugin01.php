@@ -3,6 +3,8 @@
  * Template Name: Basic Agent
  */
 
+// This is for learning purposes only. In production enqueue CSS and JS scripts properly via functions.php or other methods.
+
 get_header(); ?>
 
 <style>
