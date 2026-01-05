@@ -2,6 +2,32 @@
 
 `package.json` is a configuration file used in Node.js projects (JavaScript/TypeScript). It's like a manifest that describes your project and manages its dependencies.
 
+
+The absolute minimum valid `package.json` requires just two fields:
+
+```json
+{
+  "name": "my-project",
+  "version": "1.0.0"
+}
+```
+
+However, a practical minimum usually includes:
+
+```json
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "A brief description",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
+```
+
 In the LINKS.md is the link to get Node.js installed and it is [[https://nodejs.org/en/download](https://nodejs.org/en/download)]([https://nodejs.org/en/download](https://nodejs.org/en/download))
 
 Once installed, you can check installation by running `node --version` in the terminal. We will see that shortly.
@@ -38,28 +64,3 @@ Once installed, you can check installation by running `node --version` in the te
 When you run `npm install`, it reads `package.json` and downloads all the listed dependencies into a `node_modules` folder.
 
 Is this for a specific project you're working on, or just general curiosity?
-
-The absolute minimum valid `package.json` requires just two fields:
-
-```json
-{
-  "name": "my-project",
-  "version": "1.0.0"
-}
-```
-
-However, a practical minimum usually includes:
-
-```json
-{
-  "name": "my-project",
-  "version": "1.0.0",
-  "description": "A brief description",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "author": "Your Name",
-  "license": "MIT"
-}
-```
