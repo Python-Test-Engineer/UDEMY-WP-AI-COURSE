@@ -1,8 +1,10 @@
 # Integrating LangChain.js into WordPress Plugins Using @wordpress/scripts
 
-## What is @wordpres/scripts
+## Purpose of this section
 
-@wordpress/scripts (or wp-scripts) is a collection of pre-configured build tools (like Webpack, Babel, ESLint) and scripts for modern WordPress development, especially for plugins and themes using the Block Editor (Gutenberg), simplifying the process of compiling modern JS/JSX/Sass into browser-ready code, linting, and managing assets without complex manual setup. It handles tasks like transforming ESNext/JSX, bundling, minifying, and provides commands (like build, start) in your package.json for a streamlined workflow, acting similarly to react-scripts. 
+In this section, we are learning how to wire up Langchain/LangGraph so that we can if we want use examples from these libraries.
+
+This is not a course on these libraries, but once we know how to wire in template examples, once can use the free courses below to build more complex apps.
 
 [https://docs.langchain.com/oss/javascript/langchain/overview](https://docs.langchain.com/oss/javascript/langchain/overview)
 
