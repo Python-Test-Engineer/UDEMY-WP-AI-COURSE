@@ -1,14 +1,14 @@
-import { OpenAI } from '@langchain/openai';
+import { ChatOpenAI } from '@langchain/openai';
 import { PromptTemplate } from '@langchain/core/prompts';
 
 /**
  * Initialize OpenAI LLM with API key
  * @param {string} apiKey - OpenAI API key
- * @returns {OpenAI} Configured OpenAI instance
+ * @returns {ChatOpenAI} Configured ChatOpenAI instance
  */
 export function initOpenAI(apiKey) {
-    return new OpenAI({
-        openAIApiKey: apiKey,
+    return new ChatOpenAI({
+        apiKey: apiKey,
         modelName: 'gpt-4o-mini',
         temperature: 0.7,
     });
@@ -53,7 +53,8 @@ export function createContentChain(llm, prompt) {
 export async function generateContent(chain, inputs) {
     try {
         const result = await chain.invoke(inputs);
-        return result;
+        // ChatOpenAI returns an AIMessage object, extract the content
+        return result.content;
     } catch (error) {
         console.error('Error generating content:', error);
         throw error;
