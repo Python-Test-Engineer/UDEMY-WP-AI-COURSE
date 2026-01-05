@@ -3,7 +3,7 @@
  * Plugin Name: ✅ 03 UDEMY TOOL CALLING
  * Description: OpenAI Tool Calling Demo - Available in admin and via shortcode [tool_calling]
  * Version: 1.0.0
- * Author: Your Name
+ * Author: Craig West
  */
 
 // Prevent direct access

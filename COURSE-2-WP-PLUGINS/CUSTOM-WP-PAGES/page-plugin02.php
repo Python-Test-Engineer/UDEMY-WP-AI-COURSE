@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Basic Agent
+ * Template Name: Agent with Rag
  */
 
 // This is for learning purposes only. In production enqueue CSS and JS scripts properly via functions.php or other methods.
