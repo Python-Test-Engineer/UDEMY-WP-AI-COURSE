@@ -87,6 +87,7 @@ async function wptc_handleToolCalling(apiKey, userPrompt) {
         iterations++;
         wptc_displayMessage('loading', '⏳ Calling OpenAI API...');
 
+        // ***** AI BIT *****
         try {
             const response = await fetch('https://api.openai.com/v1/chat/completions', {
                 method: 'POST',
@@ -103,6 +104,7 @@ async function wptc_handleToolCalling(apiKey, userPrompt) {
             });
 
             const data = await response.json();
+            // ***** AI BIT *****
 
             if (data.error) {
                 wptc_displayMessage('error', `❌ Error: ${data.error.message}`);
@@ -170,7 +172,7 @@ async function wptc_handleToolCalling(apiKey, userPrompt) {
 }
 
 // Event listener
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const sendBtn = document.getElementById('wptc-sendBtn');
     const promptInput = document.getElementById('wptc-prompt');
 
