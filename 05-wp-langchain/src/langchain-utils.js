@@ -9,7 +9,7 @@ import { PromptTemplate } from '@langchain/core/prompts';
 export function initOpenAI(apiKey) {
     return new OpenAI({
         openAIApiKey: apiKey,
-        modelName: 'gpt-3.5-turbo',
+        modelName: 'gpt-4o-mini',
         temperature: 0.7,
     });
 }
