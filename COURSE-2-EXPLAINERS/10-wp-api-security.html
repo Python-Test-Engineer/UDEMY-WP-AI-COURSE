@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Securing API Keys in WordPress Plugins</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #c31432 0%, #240b36 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .method {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #c31432;
+            transition: all 0.3s ease;
+        }
+
+        .method:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .security-level {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .high {
+            background: #28a745;
+            color: white;
+        }
+
+        .medium {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .low {
+            background: #dc3545;
+            color: white;
+        }
+
+        h2 {
+            color: #240b36;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #c31432;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .code-comment {
+            color: #6a9955;
+        }
+
+        .code-string {
+            color: #ce9178;
+        }
+
+        .code-keyword {
+            color: #569cd6;
+        }
+
+        .code-function {
+            color: #dcdcaa;
+        }
+
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .danger {
+            background: #f8d7da;
+            padding: 15px;
+            border-left: 4px solid #dc3545;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .success {
+            background: #d4edda;
+            padding: 15px;
+            border-left: 4px solid #28a745;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .info {
+            background: #d1ecf1;
+            padding: 15px;
+            border-left: 4px solid #17a2b8;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #c31432 0%, #240b36 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .checkmark {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .crossmark {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .best-practices {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .best-practices h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .best-practices ul {
+            margin-left: 20px;
+        }
+
+        .best-practices li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #240b36;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        code {
+            background: #1e1e1e;
+            color: #ce9178;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background: #e9ecef;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab:hover {
+            background: #240b36;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Securing API Keys in WordPress</h1>
+            <p class="subtitle">Best practices for protecting sensitive credentials in plugins</p>
+        </header>
+
+        <div class="content">
+            <div class="danger">
+                <strong>⚠️ Critical:</strong> Never hardcode API keys directly in plugin code or commit them to version control. API keys in public repositories can be scraped by bots within minutes.
+            </div>
+
+            <div class="method">
+                <span class="security-level high">🛡️ BEST: Environment Variables</span>
+                <h2>1. Environment Variables (wp-config.php)</h2>
+                <p>The most secure method is storing API keys in wp-config.php, which is outside the web root and not tracked in version control.</p>
+                
+                <h3>In wp-config.php:</h3>
+                <div class="code-block"><span class="code-comment">// Add before "That's all, stop editing!"</span><br>
+<span class="code-function">define</span>(<span class="code-string">'MY_PLUGIN_API_KEY'</span>, <span class="code-string">'your-secret-api-key-here'</span>);<br>
+<span class="code-function">define</span>(<span class="code-string">'MY_PLUGIN_API_SECRET'</span>, <span class="code-string">'your-secret-here'</span>);</div>
+
+                <h3>In your plugin:</h3>
+                <div class="code-block"><span class="code-keyword">if</span> (<span class="code-function">defined</span>(<span class="code-string">'MY_PLUGIN_API_KEY'</span>)) {<br>
+    <span class="code-keyword">$api_key</span> = <span class="code-function">MY_PLUGIN_API_KEY</span>;<br>
+} <span class="code-keyword">else</span> {<br>
+    <span class="code-comment">// Fallback or error handling</span><br>
+    <span class="code-keyword">$api_key</span> = <span class="code-function">get_option</span>(<span class="code-string">'my_plugin_api_key'</span>);<br>
+}</div>
+
+                <div class="success">
+                    <strong>✅ Advantages:</strong> Not in database, not in version control, can use server environment variables, works across environments.
+                </div>
+            </div>
+
+            <div class="method">
+                <span class="security-level high">🛡️ BEST: True Environment Variables</span>
+                <h2>2. Server Environment Variables</h2>
+                <p>For production environments, use actual server environment variables.</p>
+                
+                <h3>In Apache .htaccess:</h3>
+                <div class="code-block">SetEnv MY_PLUGIN_API_KEY "your-api-key-here"<br>
+SetEnv MY_PLUGIN_API_SECRET "your-secret-here"</div>
+
+                <h3>In Nginx configuration:</h3>
+                <div class="code-block">fastcgi_param MY_PLUGIN_API_KEY "your-api-key-here";<br>
+fastcgi_param MY_PLUGIN_API_SECRET "your-secret-here";</div>
+
+                <h3>Access in PHP:</h3>
+                <div class="code-block"><span class="code-keyword">$api_key</span> = <span class="code-function">getenv</span>(<span class="code-string">'MY_PLUGIN_API_KEY'</span>);<br>
+<span class="code-comment">// Or use $_ENV or $_SERVER superglobals</span><br>
+<span class="code-keyword">$api_key</span> = $_ENV[<span class="code-string">'MY_PLUGIN_API_KEY'</span>] ?? <span class="code-string">''</span>;</div>
+
+                <div class="success">
+                    <strong>✅ Advantages:</strong> Most secure, completely isolated from application code, different values per environment.
+                </div>
+            </div>
+
+            <div class="method">
+                <span class="security-level medium">⚠️ ACCEPTABLE: Encrypted Database Storage</span>
+                <h2>3. WordPress Options API (Encrypted)</h2>
+                <p>Store API keys in the database, but always encrypt them first. This is suitable when users need to input keys through the admin panel.</p>
+                
+                <h3>Storing encrypted keys:</h3>
+                <div class="code-block"><span class="code-keyword">function</span> <span class="code-function">my_plugin_encrypt_key</span>(<span class="code-keyword">$key</span>) {<br>
+    <span class="code-comment">// Use WordPress auth key as encryption key</span><br>
+    <span class="code-keyword">$encryption_key</span> = <span class="code-function">hash</span>(<span class="code-string">'sha256'</span>, <span class="code-function">AUTH_KEY</span>);<br>
+    <span class="code-keyword">$iv</span> = <span class="code-function">openssl_random_pseudo_bytes</span>(16);<br>
+    <br>
+    <span class="code-keyword">$encrypted</span> = <span class="code-function">openssl_encrypt</span>(<br>
+        <span class="code-keyword">$key</span>,<br>
+        <span class="code-string">'AES-256-CBC'</span>,<br>
+        <span class="code-keyword">$encryption_key</span>,<br>
+        0,<br>
+        <span class="code-keyword">$iv</span><br>
+    );<br>
+    <br>
+    <span class="code-keyword">return</span> <span class="code-function">base64_encode</span>(<span class="code-keyword">$iv</span> . <span class="code-keyword">$encrypted</span>);<br>
+}<br>
+<br>
+<span class="code-keyword">function</span> <span class="code-function">my_plugin_decrypt_key</span>(<span class="code-keyword">$encrypted_key</span>) {<br>
+    <span class="code-keyword">$encryption_key</span> = <span class="code-function">hash</span>(<span class="code-string">'sha256'</span>, <span class="code-function">AUTH_KEY</span>);<br>
+    <span class="code-keyword">$data</span> = <span class="code-function">base64_decode</span>(<span class="code-keyword">$encrypted_key</span>);<br>
+    <span class="code-keyword">$iv</span> = <span class="code-function">substr</span>(<span class="code-keyword">$data</span>, 0, 16);<br>
+    <span class="code-keyword">$encrypted</span> = <span class="code-function">substr</span>(<span class="code-keyword">$data</span>, 16);<br>
+    <br>
+    <span class="code-keyword">return</span> <span class="code-function">openssl_decrypt</span>(<br>
+        <span class="code-keyword">$encrypted</span>,<br>
+        <span class="code-string">'AES-256-CBC'</span>,<br>
+        <span class="code-keyword">$encryption_key</span>,<br>
+        0,<br>
+        <span class="code-keyword">$iv</span><br>
+    );<br>
+}<br>
+<br>
+<span class="code-comment">// Save encrypted key</span><br>
+<span class="code-keyword">$encrypted</span> = <span class="code-function">my_plugin_encrypt_key</span>(<span class="code-keyword">$api_key</span>);<br>
+<span class="code-function">update_option</span>(<span class="code-string">'my_plugin_api_key'</span>, <span class="code-keyword">$encrypted</span>);<br>
+<br>
+<span class="code-comment">// Retrieve and decrypt</span><br>
+<span class="code-keyword">$encrypted</span> = <span class="code-function">get_option</span>(<span class="code-string">'my_plugin_api_key'</span>);<br>
+<span class="code-keyword">$api_key</span> = <span class="code-function">my_plugin_decrypt_key</span>(<span class="code-keyword">$encrypted</span>);</div>
+
+                <div class="warning">
+                    <strong>⚠️ Note:</strong> Keys are still in the database and can be decrypted if AUTH_KEY is compromised. This provides defense-in-depth, not absolute security.
+                </div>
+            </div>
+
+            <div class="method">
+                <span class="security-level medium">⚠️ ACCEPTABLE: Separate Config File</span>
+                <h2>4. Dedicated Configuration File</h2>
+                <p>Create a separate configuration file outside the plugin directory.</p>
+                
+                <h3>Create config file (e.g., wp-content/api-config.php):</h3>
+                <div class="code-block"><span class="code-keyword">&lt;?php</span>
+<span class="code-comment">// Never commit this file to version control</span>
+<span class="code-keyword">return</span> [
+    <span class="code-string">'openai_api_key'</span> => <span class="code-string">'sk-proj-xxx'</span>,
+    <span class="code-string">'stripe_secret'</span> => <span class="code-string">'sk_test_xxx'</span>,
+    <span class="code-string">'mailchimp_key'</span> => <span class="code-string">'xxx'</span>,
+];</div>
+
+                <h3>Load in plugin:</h3>
+                <div class="code-block"><span class="code-keyword">$config_file</span> = <span class="code-function">WP_CONTENT_DIR</span> . <span class="code-string">'/api-config.php'</span>;
+
+<span class="code-keyword">if</span> (<span class="code-function">file_exists</span>(<span class="code-keyword">$config_file</span>)) {
+    <span class="code-keyword">$api_keys</span> = <span class="code-function">require</span> <span class="code-keyword">$config_file</span>;
+    <span class="code-keyword">$api_key</span> = <span class="code-keyword">$api_keys</span>[<span class="code-string">'openai_api_key'</span>] ?? <span class="code-string">''</span>;
+}</div>
+
+                <h3>Add to .gitignore:</h3>
+                <div class="code-block">wp-content/api-config.php</div>
+
+                <div class="info">
+                    <strong>💡 Tip:</strong> Provide a sample file (api-config-sample.php) in your repository with placeholder values.
+                </div>
+            </div>
+
+            <div class="method">
+                <span class="security-level low">❌ AVOID: Plain Database Storage</span>
+                <h2>5. WordPress Options API (Unencrypted) - NOT RECOMMENDED</h2>
+                <p>Storing unencrypted keys in the database is the least secure option.</p>
+                
+                <div class="code-block"><span class="code-comment">// Save key</span><br>
+<span class="code-function">update_option</span>(<span class="code-string">'my_plugin_api_key'</span>, <span class="code-keyword">$api_key</span>);<br>
+
+<span class="code-comment">// Retrieve key</span><br>
+<span class="code-keyword">$api_key</span> = <span class="code-function">get_option</span>(<span class="code-string">'my_plugin_api_key'</span>);</div>
+
+                <div class="danger">
+                    <strong>❌ Problems:</strong> Visible in database backups, accessible via SQL injection, exposed in database exports, visible to anyone with database access. Only use this if you also encrypt the values.
+                </div>
+            </div>
+
+            <h2 style="margin-top: 40px; margin-bottom: 20px;">Security Comparison</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Security Level</th>
+                        <th>User-Configurable</th>
+                        <th>Version Control Safe</th>
+                        <th>Multi-Environment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Environment Variables</td>
+                        <td><span class="checkmark">✓✓✓ Excellent</span></td>
+                        <td><span class="crossmark">✗ No</span></td>
+                        <td><span class="checkmark">✓ Yes</span></td>
+                        <td><span class="checkmark">✓ Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td>wp-config.php Constants</td>
+                        <td><span class="checkmark">✓✓✓ Excellent</span></td>
+                        <td><span class="crossmark">✗ No</span></td>
+                        <td><span class="checkmark">✓ Yes</span></td>
+                        <td><span class="checkmark">✓ Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td>Encrypted Database</td>
+                        <td><span class="checkmark">✓✓ Good</span></td>
+                        <td><span class="checkmark">✓ Yes</span></td>
+                        <td><span class="checkmark">✓ Yes</span></td>
+                        <td><span class="crossmark">✗ No</span></td>
+                    </tr>
+                    <tr>
+                        <td>Config File</td>
+                        <td><span class="checkmark">✓✓ Good</span></td>
+                        <td><span class="crossmark">✗ No</span></td>
+                        <td><span class="checkmark">✓ With .gitignore</span></td>
+                        <td><span class="checkmark">✓ Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td>Plain Database</td>
+                        <td><span class="crossmark">✗ Poor</span></td>
+                        <td><span class="checkmark">✓ Yes</span></td>
+                        <td><span class="checkmark">✓ Yes</span></td>
+                        <td><span class="crossmark">✗ No</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="best-practices">
+                <h3>🎯 Best Practices Checklist</h3>
+                <ul>
+                    <li><strong>Never hardcode:</strong> Don't put API keys directly in plugin PHP files</li>
+                    <li><strong>.gitignore everything:</strong> Add wp-config.php, .env files, and custom config files to .gitignore</li>
+                    <li><strong>Validate permissions:</strong> Check user capabilities before saving/displaying keys</li>
+                    <li><strong>Use nonces:</strong> Protect forms that save API keys with WordPress nonces</li>
+                    <li><strong>Sanitize inputs:</strong> Always sanitize API keys when saving: <code>sanitize_text_field()</code></li>
+                    <li><strong>Mask in admin:</strong> Display keys as ******* in admin interface</li>
+                    <li><strong>HTTPS only:</strong> Never transmit API keys over non-HTTPS connections</li>
+                    <li><strong>Limit scope:</strong> Use API keys with minimal required permissions</li>
+                    <li><strong>Rotate regularly:</strong> Implement key rotation policies</li>
+                    <li><strong>Audit logging:</strong> Log when keys are accessed or modified</li>
+                </ul>
+            </div>
+
+            <div class="method">
+                <h2>Complete Example: Secure API Key Management Class</h2>
+                <div class="code-block"><span class="code-keyword">class</span> <span class="code-function">Secure_API_Manager</span> {
+    
+    <span class="code-keyword">private</span> <span class="code-keyword">$option_name</span> = <span class="code-string">'my_plugin_api_keys'</span>;
+    
+    <span class="code-keyword">public function</span> <span class="code-function">get_key</span>(<span class="code-keyword">$key_name</span>) {
+        <span class="code-comment">// Priority 1: Check for constant (wp-config.php)</span>
+        <span class="code-keyword">$constant_name</span> = <span class="code-function">strtoupper</span>(<span class="code-string">'MY_PLUGIN_'</span> . <span class="code-keyword">$key_name</span>);
+        <span class="code-keyword">if</span> (<span class="code-function">defined</span>(<span class="code-keyword">$constant_name</span>)) {
+            <span class="code-keyword">return</span> <span class="code-function">constant</span>(<span class="code-keyword">$constant_name</span>);
+        }
+        
+        <span class="code-comment">// Priority 2: Check environment variable</span>
+        <span class="code-keyword">$env_key</span> = <span class="code-function">getenv</span>(<span class="code-keyword">$constant_name</span>);
+        <span class="code-keyword">if</span> (<span class="code-keyword">$env_key</span> !== <span class="code-keyword">false</span>) {
+            <span class="code-keyword">return</span> <span class="code-keyword">$env_key</span>;
+        }
+        
+        <span class="code-comment">// Priority 3: Check encrypted database storage</span>
+        <span class="code-keyword">$keys</span> = <span class="code-function">get_option</span>(<span class="code-keyword">$this</span>-><span class="code-keyword">option_name</span>, []);
+        <span class="code-keyword">if</span> (<span class="code-function">isset</span>(<span class="code-keyword">$keys</span>[<span class="code-keyword">$key_name</span>])) {
+            <span class="code-keyword">return</span> <span class="code-keyword">$this</span>-><span class="code-function">decrypt</span>(<span class="code-keyword">$keys</span>[<span class="code-keyword">$key_name</span>]);
+        }
+        
+        <span class="code-keyword">return</span> <span class="code-string">''</span>;
+    }
+    
+    <span class="code-keyword">public function</span> <span class="code-function">save_key</span>(<span class="code-keyword">$key_name</span>, <span class="code-keyword">$key_value</span>) {
+        <span class="code-comment">// Verify user has permission</span>
+        <span class="code-keyword">if</span> (!<span class="code-function">current_user_can</span>(<span class="code-string">'manage_options'</span>)) {
+            <span class="code-keyword">return</span> <span class="code-keyword">false</span>;
+        }
+        
+        <span class="code-comment">// Sanitize input</span>
+        <span class="code-keyword">$key_value</span> = <span class="code-function">sanitize_text_field</span>(<span class="code-keyword">$key_value</span>);
+        
+        <span class="code-comment">// Encrypt and save</span>
+        <span class="code-keyword">$keys</span> = <span class="code-function">get_option</span>(<span class="code-keyword">$this</span>-><span class="code-keyword">option_name</span>, []);
+        <span class="code-keyword">$keys</span>[<span class="code-keyword">$key_name</span>] = <span class="code-keyword">$this</span>-><span class="code-function">encrypt</span>(<span class="code-keyword">$key_value</span>);
+        
+        <span class="code-keyword">return</span> <span class="code-function">update_option</span>(<span class="code-keyword">$this</span>-><span class="code-keyword">option_name</span>, <span class="code-keyword">$keys</span>);
+    }
+    
+    <span class="code-keyword">private function</span> <span class="code-function">encrypt</span>(<span class="code-keyword">$data</span>) {
+        <span class="code-keyword">$key</span> = <span class="code-function">hash</span>(<span class="code-string">'sha256'</span>, <span class="code-function">AUTH_KEY</span> . <span class="code-function">SECURE_AUTH_KEY</span>);
+        <span class="code-keyword">$iv</span> = <span class="code-function">openssl_random_pseudo_bytes</span>(16);
+        <span class="code-keyword">$encrypted</span> = <span class="code-function">openssl_encrypt</span>(<span class="code-keyword">$data</span>, <span class="code-string">'AES-256-CBC'</span>, <span class="code-keyword">$key</span>, 0, <span class="code-keyword">$iv</span>);
+        <span class="code-keyword">return</span> <span class="code-function">base64_encode</span>(<span class="code-keyword">$iv</span> . <span class="code-keyword">$encrypted</span>);
+    }
+    
+    <span class="code-keyword">private function</span> <span class="code-function">decrypt</span>(<span class="code-keyword">$data</span>) {
+        <span class="code-keyword">$key</span> = <span class="code-function">hash</span>(<span class="code-string">'sha256'</span>, <span class="code-function">AUTH_KEY</span> . <span class="code-function">SECURE_AUTH_KEY</span>);
+        <span class="code-keyword">$data</span> = <span class="code-function">base64_decode</span>(<span class="code-keyword">$data</span>);
+        <span class="code-keyword">$iv</span> = <span class="code-function">substr</span>(<span class="code-keyword">$data</span>, 0, 16);
+        <span class="code-keyword">$encrypted</span> = <span class="code-function">substr</span>(<span class="code-keyword">$data</span>, 16);
+        <span class="code-keyword">return</span> <span class="code-function">openssl_decrypt</span>(<span class="code-keyword">$encrypted</span>, <span class="code-string">'AES-256-CBC'</span>, <span class="code-keyword">$key</span>, 0, <span class="code-keyword">$iv</span>);
+    }
+    
+    <span class="code-keyword">public function</span> <span class="code-function">mask_key</span>(<span class="code-keyword">$key</span>) {
+        <span class="code-comment">// Show only last 4 characters</span>
+        <span class="code-keyword">if</span> (<span class="code-function">strlen</span>(<span class="code-keyword">$key</span>) > 4) {
+            <span class="code-keyword">return</span> <span class="code-function">str_repeat</span>(<span class="code-string">'*'</span>, <span class="code-function">strlen</span>(<span class="code-keyword">$key</span>) - 4) . <span class="code-function">substr</span>(<span class="code-keyword">$key</span>, -4);
+        }
+        <span class="code-keyword">return</span> <span class="code-function">str_repeat</span>(<span class="code-string">'*'</span>, <span class="code-function">strlen</span>(<span class="code-keyword">$key</span>));
+    }
+}</div>
+            </div>
+
+            <div class="info">
+                <h3>🔍 Quick Decision Guide</h3>
+                <p><strong>Use Environment Variables when:</strong> You have server access and multiple environments (dev/staging/prod)</p>

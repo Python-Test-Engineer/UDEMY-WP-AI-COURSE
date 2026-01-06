@@ -1,0 +1,283 @@
+/**
+ * Basic PHP AI Agent - Frontend Styles
+ * ChatGPT-style Dark Mode Theme
+ */
+
+/* Main wrapper */
+.basic-php-ai-agent-frontend-wrapper {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 20px 0;
+}
+
+/* Main container */
+.basic-php-ai-agent-container {
+    background-color: #343541;
+    color: #ececf1;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Header section */
+.basic-php-ai-agent-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #565869;
+    padding-bottom: 20px;
+}
+
+.basic-php-ai-agent-header h3 {
+    color: #ececf1;
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.basic-php-ai-agent-header p {
+    color: #8e8ea0;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* API Key Section */
+.basic-php-ai-agent-api-section {
+    background-color: #444654;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #565869;
+}
+
+.basic-php-ai-agent-api-section h4 {
+    color: #ececf1;
+    font-size: 16px;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+
+.basic-php-ai-agent-api-input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.basic-php-ai-agent-input {
+    flex: 1;
+    padding: 12px;
+    background-color: #40414f;
+    border: 1px solid #565869;
+    border-radius: 6px;
+    color: #ececf1;
+    font-size: 14px;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.basic-php-ai-agent-input:focus {
+    outline: none;
+    border-color: #10a37f;
+}
+
+.basic-php-ai-agent-input::placeholder {
+    color: #8e8ea0;
+}
+
+.basic-php-ai-agent-help-text {
+    color: #8e8ea0;
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Form container */
+.basic-php-ai-agent-form-container {
+    margin-bottom: 25px;
+}
+
+.basic-php-ai-agent-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input group */
+.basic-php-ai-agent-input-group {
+    width: 100%;
+}
+
+/* Textarea */
+.basic-php-ai-agent-textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #40414f;
+    border: 1px solid #565869;
+    border-radius: 6px;
+    color: #ececf1;
+    font-size: 16px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.basic-php-ai-agent-textarea:focus {
+    outline: none;
+    border-color: #10a37f;
+}
+
+.basic-php-ai-agent-textarea::placeholder {
+    color: #8e8ea0;
+}
+
+/* Button group */
+.basic-php-ai-agent-button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Buttons */
+.basic-php-ai-agent-button {
+    padding: 12px 32px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.basic-php-ai-agent-button-primary {
+    background-color: #10a37f;
+    color: #fff;
+}
+
+.basic-php-ai-agent-button-primary:hover:not(:disabled) {
+    background-color: #0d8c6c;
+}
+
+.basic-php-ai-agent-button-primary:disabled {
+    background-color: #565869;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.basic-php-ai-agent-button-secondary {
+    background-color: #565869;
+    color: #fff;
+    padding: 12px 20px;
+}
+
+.basic-php-ai-agent-button-secondary:hover {
+    background-color: #6e6f80;
+}
+
+/* Response container */
+.basic-php-ai-agent-response-container {
+    background-color: #444654;
+    border: 1px solid #565869;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 25px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.basic-php-ai-agent-response-header {
+    color: #ececf1;
+    font-size: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #565869;
+}
+
+.basic-php-ai-agent-response-content {
+    color: #ececf1;
+    font-size: 15px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Error container */
+.basic-php-ai-agent-error-container {
+    margin-top: 20px;
+}
+
+/* Notice styles */
+.basic-php-ai-notice {
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.basic-php-ai-notice p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.basic-php-ai-error {
+    background-color: #ef4444;
+    color: #fff;
+    border-left: 4px solid #dc2626;
+}
+
+/* Loading animation */
+.button-loading {
+    display: inline-block;
+}
+
+.button-loading::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .basic-php-ai-agent-container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .basic-php-ai-agent-header h3 {
+        font-size: 24px;
+    }
+    
+    .basic-php-ai-agent-textarea {
+        font-size: 14px;
+    }
+    
+    .basic-php-ai-agent-button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+}

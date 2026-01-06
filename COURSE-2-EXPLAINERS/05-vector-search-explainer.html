@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Similarity Search Methods</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .method-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .method-card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        .formula {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            border: 2px solid #e0e0e0;
+            overflow-x: auto;
+        }
+        
+        .visualization {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        canvas {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            max-width: 100%;
+        }
+        
+        .properties {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .property-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .property-item:last-child {
+            border-bottom: none;
+        }
+        
+        .property-label {
+            font-weight: bold;
+            color: #667eea;
+            display: inline-block;
+            width: 150px;
+        }
+        
+        .use-cases {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .use-cases h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .use-cases ul {
+            margin-left: 20px;
+        }
+        
+        .use-cases li {
+            margin: 5px 0;
+            color: #34495e;
+        }
+        
+        .interactive-demo {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #667eea;
+        }
+        
+        .demo-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .demo-controls input {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            flex: 1;
+            min-width: 100px;
+        }
+        
+        .demo-controls button {
+            padding: 10px 25px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.2s;
+        }
+        
+        .demo-controls button:hover {
+            background: #5568d3;
+        }
+        
+        .results {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        
+        .result-item {
+            padding: 10px;
+            background: white;
+            margin: 8px 0;
+            border-radius: 4px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Vector Similarity Search Methods</h1>
+            <p class="subtitle">Understanding distance metrics for semantic search and embeddings</p>
+        </header>
+        
+        <div class="content">
+            <!-- Cosine Similarity -->
+            <div class="method-card">
+                <h2>Cosine Similarity</h2>
+                <p>Measures the cosine of the angle between two vectors, focusing on direction rather than magnitude.</p>
+                
+                <div class="formula">
+                    similarity = (A · B) / (||A|| × ||B||)
+                    <br><br>
+                    distance = 1 - similarity
+                </div>
+                
+                <div class="properties">
+                    <div class="property-item">
+                        <span class="property-label">Range:</span>
+                        Similarity: [-1, 1], Distance: [0, 2]
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Normalized:</span>
+                        Yes (magnitude-independent)
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Best for:</span>
+                        Text embeddings, semantic search
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Complexity:</span>
+                        O(n) where n is vector dimension
+                    </div>
+                </div>
+                
+                <div class="use-cases">
+                    <h3>Common Use Cases:</h3>
+                    <ul>
+                        <li>Document similarity (TF-IDF, word embeddings)</li>
+                        <li>Recommendation systems</li>
+                        <li>Semantic search with language models</li>
+                        <li>When magnitude doesn't matter (direction is key)</li>
+                    </ul>
+                </div>
+                
+                <div class="visualization">
+                    <canvas id="cosineCanvas" width="400" height="300"></canvas>
+                </div>
+            </div>
+            
+            <!-- Euclidean Distance -->
+            <div class="method-card">
+                <h2>Euclidean Distance (L2)</h2>
+                <p>Straight-line distance between two points in n-dimensional space.</p>
+                
+                <div class="formula">
+                    distance = √(Σ(A[i] - B[i])²)
+                </div>
+                
+                <div class="properties">
+                    <div class="property-item">
+                        <span class="property-label">Range:</span>
+                        [0, ∞)
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Normalized:</span>
+                        No (sensitive to magnitude)
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Best for:</span>
+                        Image embeddings, spatial data
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Complexity:</span>
+                        O(n) where n is vector dimension
+                    </div>
+                </div>
+                
+                <div class="use-cases">
+                    <h3>Common Use Cases:</h3>
+                    <ul>
+                        <li>K-nearest neighbors (KNN)</li>
+                        <li>Image similarity (when normalized)</li>
+                        <li>Geographic/spatial data</li>
+                        <li>When absolute distance matters</li>
+                    </ul>
+                </div>
+                
+                <div class="visualization">
+                    <canvas id="euclideanCanvas" width="400" height="300"></canvas>
+                </div>
+            </div>
+            
+            <!-- Manhattan Distance -->
+            <div class="method-card">
+                <h2>Manhattan Distance (L1)</h2>
+                <p>Sum of absolute differences along each dimension, like grid-based movement.</p>
+                
+                <div class="formula">
+                    distance = Σ|A[i] - B[i]|
+                </div>
+                
+                <div class="properties">
+                    <div class="property-item">
+                        <span class="property-label">Range:</span>
+                        [0, ∞)
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Normalized:</span>
+                        No
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Best for:</span>
+                        Sparse data, high dimensions
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Complexity:</span>
+                        O(n) - faster than Euclidean
+                    </div>
+                </div>
+                
+                <div class="use-cases">
+                    <h3>Common Use Cases:</h3>
+                    <ul>
+                        <li>High-dimensional sparse vectors</li>
+                        <li>Feature selection</li>
+                        <li>City block distance problems</li>
+                        <li>When outliers should have less impact</li>
+                    </ul>
+                </div>
+                
+                <div class="visualization">
+                    <canvas id="manhattanCanvas" width="400" height="300"></canvas>
+                </div>
+            </div>
+            
+            <!-- Dot Product -->
+            <div class="method-card">
+                <h2>Dot Product</h2>
+                <p>Measures both angle and magnitude, often used with normalized vectors.</p>
+                
+                <div class="formula">
+                    dot_product = Σ(A[i] × B[i])
+                </div>
+                
+                <div class="properties">
+                    <div class="property-item">
+                        <span class="property-label">Range:</span>
+                        (-∞, ∞), or [-1, 1] if normalized
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Normalized:</span>
+                        Only if vectors are pre-normalized
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Best for:</span>
+                        Fast similarity when vectors are normalized
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Complexity:</span>
+                        O(n) - fastest computation
+                    </div>
+                </div>
+                
+                <div class="use-cases">
+                    <h3>Common Use Cases:</h3>
+                    <ul>
+                        <li>Maximum Inner Product Search (MIPS)</li>
+                        <li>Pre-normalized embeddings</li>
+                        <li>When you want both angle and magnitude</li>
+                        <li>Neural network similarity layers</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Interactive Demo -->
+            <div class="interactive-demo">
+                <h2>🧮 Interactive Calculator</h2>
+                <p>Enter two vectors to compare all distance metrics:</p>
+                
+                <div class="demo-controls">
+                    <input type="text" id="vectorA" placeholder="Vector A (e.g., 1,2,3)" value="1,2,3">
+                    <input type="text" id="vectorB" placeholder="Vector B (e.g., 4,5,6)" value="4,5,6">
+                    <button onclick="calculateDistances()">Calculate</button>
+                </div>
+                
+                <div id="calculationResults" class="results"></div>
+            </div>
+            
+            <!-- Comparison Table -->
+            <div class="method-card">
+                <h2>📊 Quick Comparison</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Normalized</th>
+                            <th>Speed</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cosine</strong></td>
+                            <td>✅ Yes</td>
+                            <td>Fast</td>
+                            <td>Text, Semantic Search</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Euclidean</strong></td>
+                            <td>❌ No</td>
+                            <td>Medium</td>
+                            <td>Images, Spatial Data</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Manhattan</strong></td>
+                            <td>❌ No</td>
+                            <td>Fast</td>
+                            <td>High Dimensions, Sparse</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dot Product</strong></td>
+                            <td>⚠️ Optional</td>
+                            <td>Fastest</td>
+                            <td>Pre-normalized Vectors</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Visualizations
+        function drawCosine() {
+            const canvas = document.getElementById('cosineCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw axes
+            ctx.strokeStyle = '#ccc';
+            ctx.beginPath();
+            ctx.moveTo(50, 250);
+            ctx.lineTo(350, 250);
+            ctx.moveTo(50, 250);
+            ctx.lineTo(50, 50);
+            ctx.stroke();
+            
+            // Draw vectors
+            const v1 = {x: 150, y: -100};
+            const v2 = {x: 100, y: -150};
+            
+            ctx.strokeStyle = '#667eea';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(50, 250);
+            ctx.lineTo(50 + v1.x, 250 + v1.y);
+            ctx.stroke();
+            
+            ctx.strokeStyle = '#764ba2';
+            ctx.beginPath();
+            ctx.moveTo(50, 250);
+            ctx.lineTo(50 + v2.x, 250 + v2.y);
+            ctx.stroke();
+            
+            // Draw angle arc
+            ctx.strokeStyle = '#ff6b6b';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(50, 250, 40, -Math.PI/2 - Math.atan2(v1.y, v1.x), -Math.PI/2 - Math.atan2(v2.y, v2.x));
+            ctx.stroke();
+            
+            // Labels
+            ctx.fillStyle = '#333';
+            ctx.font = '14px Arial';
+            ctx.fillText('Vector A', 200, 140);
+            ctx.fillText('Vector B', 140, 90);
+            ctx.fillText('θ (angle)', 80, 230);
+            ctx.fillText('Cosine measures the angle', 100, 30);
+        }
+        
+        function drawEuclidean() {
+            const canvas = document.getElementById('euclideanCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw axes
+            ctx.strokeStyle = '#ccc';
+            ctx.beginPath();
+            ctx.moveTo(50, 250);
+            ctx.lineTo(350, 250);
+            ctx.moveTo(50, 250);
+            ctx.lineTo(50, 50);
+            ctx.stroke();
+            
+            // Points
+            const p1 = {x: 100, y: 180};
+            const p2 = {x: 280, y: 100};
+            
+            // Draw distance line
+            ctx.strokeStyle = '#ff6b6b';
+            ctx.lineWidth = 3;
+            ctx.setLineDash([5, 5]);
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            
+            // Draw points
+            ctx.fillStyle = '#667eea';
+            ctx.beginPath();
+            ctx.arc(p1.x, p1.y, 8, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.fillStyle = '#764ba2';
+            ctx.beginPath();
+            ctx.arc(p2.x, p2.y, 8, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Labels
+            ctx.fillStyle = '#333';
+            ctx.font = '14px Arial';
+            ctx.fillText('Point A', p1.x - 30, p1.y - 15);
+            ctx.fillText('Point B', p2.x + 10, p2.y - 15);
+            ctx.fillText('Straight-line distance', 150, 150);
+        }
+        
+        function drawManhattan() {
+            const canvas = document.getElementById('manhattanCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw grid
+            ctx.strokeStyle = '#eee';
+            ctx.lineWidth = 1;
+            for (let i = 50; i <= 350; i += 30) {
+                ctx.beginPath();
+                ctx.moveTo(i, 50);
+                ctx.lineTo(i, 250);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(50, i);
+                ctx.lineTo(350, i);
+                ctx.stroke();
+            }
+            
+            // Points
+            const p1 = {x: 80, y: 220};
+            const p2 = {x: 290, y: 80};
+            
+            // Draw Manhattan path
+            ctx.strokeStyle = '#ff6b6b';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+            
+            // Draw points
+            ctx.fillStyle = '#667eea';
+            ctx.beginPath();
+            ctx.arc(p1.x, p1.y, 8, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.fillStyle = '#764ba2';
+            ctx.beginPath();
+            ctx.arc(p2.x, p2.y, 8, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Labels
+            ctx.fillStyle = '#333';
+            ctx.font = '14px Arial';
+            ctx.fillText('Point A', p1.x - 30, p1.y + 25);
+            ctx.fillText('Point B', p2.x + 10, p2.y - 15);
+            ctx.fillText('Grid-based distance', 140, 30);
+        }
+        
+        // Calculator
+        function calculateDistances() {
+            const aStr = document.getElementById('vectorA').value;
+            const bStr = document.getElementById('vectorB').value;
+            
+            try {
+                const a = aStr.split(',').map(x => parseFloat(x.trim()));
+                const b = bStr.split(',').map(x => parseFloat(x.trim()));
+                
+                if (a.length !== b.length) {
+                    throw new Error('Vectors must have same length');
+                }
+                
+                // Cosine Similarity
+                const dotProd = a.reduce((sum, val, i) => sum + val * b[i], 0);
+                const magA = Math.sqrt(a.reduce((sum, val) => sum + val * val, 0));
+                const magB = Math.sqrt(b.reduce((sum, val) => sum + val * val, 0));
+                const cosineSim = dotProd / (magA * magB);
+                const cosineDist = 1 - cosineSim;
+                
+                // Euclidean Distance
+                const euclidean = Math.sqrt(a.reduce((sum, val, i) => sum + Math.pow(val - b[i], 2), 0));
+                
+                // Manhattan Distance
+                const manhattan = a.reduce((sum, val, i) => sum + Math.abs(val - b[i]), 0);
+                
+                // Dot Product
+                const dot = dotProd;
+                
+                const results = `
+                    <div class="result-item">
+                        <strong>Cosine Similarity:</strong> ${cosineSim.toFixed(4)}<br>
+                        <strong>Cosine Distance:</strong> ${cosineDist.toFixed(4)}
+                    </div>
+                    <div class="result-item">
+                        <strong>Euclidean Distance:</strong> ${euclidean.toFixed(4)}
+                    </div>
+                    <div class="result-item">
+                        <strong>Manhattan Distance:</strong> ${manhattan.toFixed(4)}
+                    </div>
+                    <div class="result-item">
+                        <strong>Dot Product:</strong> ${dot.toFixed(4)}
+                    </div>
+                `;
+                
+                document.getElementById('calculationResults').innerHTML = results;
+            } catch (e) {
+                document.getElementById('calculationResults').innerHTML = 
+                    '<div class="result-item" style="color: red;">Error: ' + e.message + '</div>';
+            }
+        }
+        
+        // Initialize visualizations
+        drawCosine();
+        drawEuclidean();
+        drawManhattan();
+        
+        // Initial calculation
+        calculateDistances();
+    </script>
+</body>
+</html>

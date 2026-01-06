@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress Plugin Architecture: Tips, Refactoring, and Best Practices</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.6;
+            margin: 15px 0;
+            white-space: pre-wrap;
+        }
+
+        .keyword {
+            color: #ff79c6;
+        }
+
+        .string {
+            color: #50fa7b;
+        }
+
+        .comment {
+            color: #6272a4;
+        }
+
+        .variable {
+            color: #f1fa8c;
+        }
+
+        .function {
+            color: #8be9fd;
+        }
+
+        .number {
+            color: #bd93f9;
+        }
+
+        .constant {
+            color: #ff5555;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example-box {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        ul,
+        ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .step-container {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .visual-example {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #667eea;
+        }
+
+        .flow-diagram {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .flow-step {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .flow-step.core {
+            background: #4caf50;
+        }
+
+        .flow-step.extended {
+            background: #ff9800;
+        }
+
+        .arrow {
+            display: inline-block;
+            color: #667eea;
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+
+        .file-structure {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .technique-card {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+        }
+
+        .technique-card h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        strong {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🛠️ WordPress Plugin Architecture: Tips, Refactoring, and Best Practices</h1>
+        <p class="subtitle">Mastering WordPress plugin development with proper architecture, file organization, and refactoring strategies</p>
+
+        <div class="section">
+            <h2>WordPress Plugin Foundations</h2>
+            <p>A WordPress plugin is a PHP application that extends WordPress functionality. Good plugin architecture follows object-oriented principles, proper separation of concerns, and WordPress coding standards.</p>
+
+            <div class="info-box">
+                <strong>Core Plugin Components:</strong>
+                <ul>
+                    <li><strong>Main Plugin File</strong>: Entry point with plugin header and activation hooks</li>
+                    <li><strong>Classes</strong>: Organized functionality in PHP classes</li>
+                    <li><strong>Hooks & Filters</strong>: WordPress integration points</li>
+                    <li><strong>Assets</strong>: JavaScript, CSS, and media files</li>
+                    <li><strong>Templates</strong>: Custom output formatting</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Getting Plugin URL and Directory Paths</h2>
+            <p>WordPress provides essential functions to work with plugin paths and URLs. Understanding these is crucial for loading assets, including files, and creating proper links.</p>
+
+            <div class="technique-card">
+                <h4>📁 Plugin Directory Functions</h4>
+                <pre class="code-block"><span class="comment">// Get the absolute path to the plugin directory</span>
+<span class="variable">$plugin_dir</span> = <span class="function">plugin_dir_path</span>(<span class="variable">__FILE__</span>);
+
+<span class="comment">// Get the URL to the plugin directory</span>
+<span class="variable">$plugin_url</span> = <span class="function">plugin_dir_url</span>(<span class="variable">__FILE__</span>);
+
+<span class="comment">// Get path to WordPress plugin directory</span>
+<span class="variable">$plugins_dir</span> = <span class="function">WP_PLUGIN_DIR</span>; <span class="comment">// e.g., /var/www/html/wp-content/plugins/</span>
+<span class="variable">$plugins_url</span> = <span class="function">WP_PLUGIN_URL</span>; <span class="comment">// e.g., https://example.com/wp-content/plugins/</span>
+
+<span class="comment">// Alternative method for main plugin file</span>
+<span class="variable">$main_file</span> = <span class="function">dirname</span>(<span class="function">dirname</span>(<span class="variable">__FILE__</span>)) . <span class="string">'/my-plugin.php'</span>;
+<span class="variable">$plugin_dir_alt</span> = <span class="function">plugin_dir_path</span>(<span class="variable">$main_file</span>);</pre>
+            </div>
+
+            <div class="technique-card">
+                <h4>🔗 Loading Assets with Plugin URLs</h4>
+                <pre class="code-block"><span class="keyword">class</span> <span class="variable">MyPlugin</span> {
+  <span class="keyword">private</span> <span class="variable">$plugin_url</span>;
+
+  <span class="keyword">public function</span> <span class="function">__construct</span>() {
+    <span class="variable">$this</span>->plugin_url = <span class="function">plugin_dir_url</span>(<span class="variable">__FILE__</span>);
+    <span class="function">add_action</span>(<span class="string">'wp_enqueue_scripts'</span>, [<span class="variable">$this</span>, <span class="string">'enqueue_scripts'</span>]);
+  }
+
+  <span class="keyword">public function</span> <span class="function">enqueue_scripts</span>() {
+    <span class="function">wp_enqueue_script</span>(
+      <span class="string">'my-plugin-js'</span>,
+      <span class="variable">$this</span>->plugin_url . <span class="string">'assets/js/script.js'</span>,
+      [<span class="string">'jquery'</span>],
+      <span class="string">'1.0.0'</span>,
+      <span class="keyword">true</span>
+    );
+
+    <span class="function">wp_enqueue_style</span>(
+      <span class="string">'my-plugin-css'</span>,
+      <span class="variable">$this</span>->plugin_url . <span class="string">'assets/css/style.css'</span>,
+      [],
+      <span class="string">'1.0.0'</span>
+    );
+  }
+}</pre>
+            </div>
+
+            <div class="technique-card">
+                <h4>📂 Including PHP Files Safely</h4>
+                <div class="code-block">
+                    <span class="comment">// Correct way to include plugin files</span>
+                    <span class="variable">$plugin_dir</span> = <span class="function">plugin_dir_path</span>(<span class="variable">__FILE__</span>);
+
+                    <span class="comment">// Include class files</span>
+                    <span class="keyword">require_once</span> <span class="variable">$plugin_dir</span> . <span class="string">'includes/class-main-plugin.php'</span>;
+                    <span class="keyword">require_once</span> <span class="variable">$plugin_dir</span> . <span class="string">'includes/class-admin.php'</span>;
+
+                    <span class="comment">// Better: Check if file exists before including</span>
+                    <span class="variable">$files_to_include</span> = [
+                        <span class="string">'includes/class-main-plugin.php'</span>,
+                        <span class="string">'includes/class-admin.php'</span>,
+                        <span class="string">'includes/class-public.php'</span>
+                    ];
+
+                    <span class="keyword">foreach</span> (<span class="variable">$files_to_include</span> <span class="keyword">as</span> <span class="variable">$file</span>) {
+                        <span class="variable">$file_path</span> = <span class="variable">$plugin_dir</span> . <span class="variable">$file</span>;
+                        <span class="keyword">if</span> (<span class="function">file_exists</span>(<span class="variable">$file_path</span>)) {
+                            <span class="keyword">require_once</span> <span class="variable">$file_path</span>;
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Common Mistakes:</strong>
+                <ul>
+                    <li>Using hardcoded paths like <code>wp-content/plugins/my-plugin/</code> - breaks with custom installations</li>
+                    <li>Assuming URLs always have <code>https://</code> - use WordPress functions for protocol handling</li>
+                    <li>Not checking if files exist before including them</li>
+                    <li>Mixing direct path access with WordPress functions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Plugin Architecture Patterns</h2>
+
+            <div class="technique-card">
+                <h4>🏗️ Controller Pattern</h4>
+                <p>Separate business logic (controllers) from data access (models) and presentation (views).</p>
+                <div class="code-block">
+                    <span class="keyword">class</span> <span class="variable">MyPlugin_Controller</span> {
+                        <span class="keyword">private</span> <span class="variable">$model</span>;
+                        <span class="keyword">private</span> <span class="variable">$view</span>;
+
+                        <span class="keyword">public function</span> <span class="function">process_request</span>() {
+                            <span class="variable">$data</span> = <span class="variable">$this</span>->model->get_data();
+                            <span class="variable">$this</span>->view->render(<span class="variable">$data</span>);
+                        }
+                    }
+
+                    <span class="keyword">class</span> <span class="variable">MyPlugin_Model</span> {
+                        <span class="keyword">public function</span> <span class="function">get_data</span>() {
+                            <span class="keyword">return</span> <span class="function">get_option</span>(<span class="string">'my_plugin_data'</span>);
+                        }
+                    }
+
+                    <span class="keyword">class</span> <span class="variable">MyPlugin_View</span> {
+                        <span class="keyword">public function</span> <span class="function">render</span>(<span class="variable">$data</span>) {
+                            <span class="keyword">include</span> <span class="function">plugin_dir_path</span>(<span class="variable">__FILE__</span>) . <span class="string">'templates/output.php'</span>;
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="technique-card">
+                <h4>🔧 Service Provider Pattern</h4>
+                <p>Centralize registration of hooks, services, and dependencies.</p>
+                <div class="code-block">
+                    <span class="keyword">class</span> <span class="variable">MyPlugin_Provider</span> {
+                        <span class="keyword">public function</span> <span class="function">register</span>() {
+                            <span class="function">add_action</span>(<span class="string">'init'</span>, [<span class="variable">$this</span>, <span class="string">'register_post_types'</span>]);
+                            <span class="function">add_action</span>(<span class="string">'admin_menu'</span>, [<span class="variable">$this</span>, <span class="string">'add_admin_menu'</span>]);
+                            <span class="function">add_shortcode</span>(<span class="string">'my_shortcode'</span>, [<span class="variable">$this</span>, <span class="string">'render_shortcode'</span>]);
+                        }
+
+                        <span class="keyword">public function</span> <span class="function">register_post_types</span>() {
+                            <span class="function">register_post_type</span>(<span class="string">'portfolio_item'</span>, <span class="variable">$args</span>);
+                        }
+
+                        <span class="keyword">public function</span> <span class="function">add_admin_menu</span>() {
+                            <span class="function">add_menu_page</span>(<span class="string">'My Plugin'</span>, <span class="string">'My Plugin'</span>, <span class="string">'manage_options'</span>,
+                                        <span class="string">'my-plugin'</span>, [<span class="variable">$this</span>, <span class="string">'admin_page'</span>]);
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="technique-card">
+                <h4>📦 Dependency Injection</h4>
+                <p>Pass dependencies to classes rather than creating them internally.</p>
+                <div class="code-block">
+                    <span class="keyword">class</span> <span class="variable">MyPlugin_API_Handler</span> {
+                        <span class="keyword">private</span> <span class="variable">$logger</span>;
+                        <span class="keyword">private</span> <span class="variable">$cache</span>;
+
+                        <span class="keyword">public function</span> <span class="function">__construct</span>(<span class="variable">$logger</span> = <span class="keyword">null</span>, <span class="variable">$cache</span> = <span class="keyword">null</span>) {
+                            <span class="variable">$this</span>->logger = <span class="variable">$logger</span> ?: <span class="keyword">new</span> <span class="variable">MyPlugin_Logger</span>();
+                            <span class="variable">$this</span>->cache = <span class="variable">$cache</span> ?: <span class="keyword">new</span> <span class="variable">MyPlugin_Cache</span>();
+                        }
+
+                        <span class="keyword">public function</span> <span class="function">api_call</span>(<span class="variable">$endpoint</span>) {
+                            <span class="variable">$cached</span> = <span class="variable">$this</span>->cache->get(<span class="variable">$endpoint</span>);
+                            <span class="keyword">if</span> (<span class="variable">$cached</span>) {
+                                <span class="variable">$this</span>->logger->info(<span class="string">"Using cached data for {$endpoint}"</span>);
+                                <span class="keyword">return</span> <span class="variable">$cached</span>;
+                            }
+
+                            <span class="comment">// Make API call...</span>
+                            <span class="variable">$this</span>->cache->set(<span class="variable">$endpoint</span>, <span class="variable">$result</span>);
+                            <span class="keyword">return</span> <span class="variable">$result</span>;
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Plugin File Organization</h2>
+
+            <div class="technique-card">
+                <h4>📁 Recommended Directory Structure</h4>
+                <div class="file-structure">
+                    my-awesome-plugin/<br>
+                    │<br>
+                    ├── my-awesome-plugin.php        # Main plugin file<br>
+                    ├── uninstall.php               # Cleanup on uninstall<br>
+                    ├──<br>
+                    ├── assets/                      # Static files<br>
+                    │   ├── css/<br>
+                    │   ├── js/<br>
+                    │   └── images/<br>
+                    ├──<br>
+                    ├── includes/                    # Core functionality<br>
+                    │   ├── class-main-plugin.php<br>
+                    │   ├── class-admin.php<br>
+                    │   ├── class-public.php<br>
+                    │   └── class-api-handler.php<br>
+                    ├──<br>
+                    ├── templates/                   # View templates<br>
+                    │   ├── admin-settings.php<br>
+                    │   └── public-display.php<br>
+                    ├──<br>
+                    ├── languages/                   # Translation files<br>
+                    │   └── my-awesome-plugin.pot<br>
+                    ├──<br>
+                    └── vendor/                      # Third-party libraries<br>
+                </div>
+            </div>
+
+            <div class="technique-card">
+                <h4>🏛️ Namespacing Convention</h4>
+                <div class="code-block">
+                    <span class="comment">// Consistent class naming with plugin prefix</span>
+                    <span class="keyword">class</span> <span class="variable">MyAwesomePlugin_Main</span> { }
+                    <span class="keyword">class</span> <span class="variable">MyAwesomePlugin_Admin</span> { }
+                    <span class="keyword">class</span> <span class="variable">MyAwesomePlugin_API</span> { }
+                    <span class="keyword">class</span> <span class="variable">MyAwesomePlugin_DB</span> { }
+
+                    <span class="comment">// Function prefixing</span>
+                    <span class="keyword">function</span> <span class="function">my_awesome_plugin_activate</span>() { }
+                    <span class="keyword">function</span> <span class="function">my_awesome_plugin_save_settings</span>() { }
+
+                    <span class="comment">// Hook naming</span>
+                    <span class="function">add_action</span>(<span class="string">'wp_enqueue_scripts'</span>, <span class="string">'my_awesome_plugin_enqueue_scripts'</span>);
+                    <span class="function">add_filter</span>(<span class="string">'the_content'</span>, <span class="string">'my_awesome_plugin_filter_content'</span>);
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Refactoring Legacy Plugins</h2>
+            <p>Many WordPress plugins start as simple functions but grow into unwieldy codebases. Refactoring improves maintainability and performance.</p>
+
+            <div class="step-container">
+                <span class="step-number">1</span>
+                <strong>Identify Refactoring Candidates</strong>
+                <p>Look for these red flags in plugin code:</p>
+                <ul>
+                    <li>Single massive file with hundreds of lines</li>
+                    <li>Global functions scattered throughout</li>
+                    <li>Direct database queries in template files</li>
+                    <li>Hardcoded strings and magic numbers</li>
+                    <li>Repeated code patterns</li>
+                </ul>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">2</span>
+                <strong>Break Down Functions into Classes</strong>
+                <div class="code-block">
+                    <span class="comment">// Before: Procedural approach</span>
+                    <span class="keyword">function</span> <span class="function">my_plugin_admin_menu</span>() {
+                        <span class="function">add_menu_page</span>(<span class="string">'My Plugin'</span>, <span class="string">'My Plugin'</span>, <span class="string">'manage_options'</span>, <span class="string">'my-plugin'</span>, <span class="string">'my_plugin_admin_page'</span>);
+                    }
+
+                    <span class="keyword">function</span> <span class="function">my_plugin_admin_page</span>() {
+                        <span class="keyword">if</span> (<span class="function">isset</span>(<span class="variable">$_POST</span>[<span class="string">'submit'</span>])) {
+                            <span class="function">update_option</span>(<span class="string">'my_setting'</span>, <span class="function">sanitize_text_field</span>(<span class="variable">$_POST</span>[<span class="string">'my_setting'</span>]));
+                        }
+                        <span class="keyword">include</span> <span class="function">plugin_dir_path</span>(<span class="variable">__FILE__</span>) . <span class="string">'templates/admin.php'</span>;
+                    }
+
+                    <span class="comment">// After: Object-oriented approach</span>
+                    <span class="keyword">class</span> <span class="variable">MyPlugin_Admin</span> {
+                        <span class="keyword">public function</span> <span class="function">init</span>() {
+                            <span class="function">add_action</span>(<span class="string">'admin_menu'</span>, [<span class="variable">$this</span>, <span class="string">'add_admin_menu'</span>]);
+                        }
+
+                        <span class="keyword">public function</span> <span class="function">add_admin_menu</span>() {
+                            <span class="function">add_menu_page</span>(<span class="string">'My Plugin'</span>, <span class="string">'My Plugin'</span>, <span class="string">'manage_options'</span>,
+                                        <span class="string">'my-plugin'</span>, [<span class="variable">$this</span>, <span class="string">'render_admin_page'</span>]);
+                        }
+
+                        <span class="keyword">public function</span> <span class="function">render_admin_page</span>() {
+                            <span class="keyword">if</span> (<span class="function">isset</span>(<span class="variable">$_POST</span>[<span class="string">'submit'</span>])) {
+                                <span class="variable">$this</span>->save_settings();
+                            }
+
+                            <span class="variable">$this</span>->render_template(<span class="string">'admin-page'</span>, [
+                                <span class="string">'settings'</span> => <span class="function">get_option</span>(<span class="string">'my_plugin_settings'</span>)
+                            ]);
+                        }
+
+                        <span class="keyword">private function</span> <span class="function">save_settings</span>() {
+                            <span class="comment">// Validation and saving logic</span>
+                        }
+
+                        <span class="keyword">private function</span> <span class="function">render_template</span>(<span class="variable">$template</span>, <span class="variable">$data</span> = []) {
+                            <span class="function">extract</span>(<span class="variable">$data</span>);
+                            <span class="keyword">include</span> <span class="function">plugin_dir_path</span>(<span class="variable">__DIR__</span>) . <span class="string">"templates/{$template}.php"</span>;
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">3</span>
+                <strong>Extract Database Operations</strong>
+                <div class="code-block">
+                    <span class="comment">// Before: Database queries everywhere</span>
+                    <span class="keyword">global</span> <span class="variable">$wpdb</span>;
+                    <span class="variable">$results</span> = <span class="variable">$wpdb</span>-><span class="function">get_results</span>(<span class="string">"SELECT * FROM {$wpdb->posts} WHERE post_type = 'my_post_type'"</span>);
+
+                    <span class="comment">// After: Repository pattern</span>
+                    <span class="keyword">class</span> <span class="variable">MyPlugin_Post_Repository</span> {
+                        <span class="keyword">public function</span> <span class="function">get_all_posts</span>() {
+                            <span class="keyword">return</span> <span class="function">get_posts</span>([
+                                <span class="string">'post_type'</span> => <span class="string">'my_post_type'</span>,
+                                <span class="string">'numberposts'</span> => -<span class="number">1</span>,
+                                <span class="string">'post_status'</span> => <span class="string">'publish'</span>
+                            ]);
+                        }
+
+                        <span class="keyword">public function</span> <span class="function">get_post_by_id</span>(<span class="variable">$id</span>) {
+                            <span class="keyword">return</span> <span class="function">get_post</span>(<span class="variable">$id</span>);
+                        }
+
+                        <span class="keyword">public function</span> <span class="function">create_post</span>(<span class="variable">$data</span>) {
+                            <span class="keyword">return</span> <span class="function">wp_insert_post</span>(<span class="variable">$data</span>);
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">4</span>
+                <strong>Separate Concerns</strong>
+                <p>Create dedicated classes for different responsibilities:</p>
+                <ul>
+                    <li><strong>Controllers</strong>: Handle user input and orchestrate operations</li>
+                    <li><strong>Models/Repositories</strong>: Data access and business logic</li>
+                    <li><strong>Services</strong>: External API communications, caching, logging</li>
+                    <li><strong>Views</strong>: Output formatting and templates</li>
+                </ul>
+            </div>
+
+            <div class="step-container">
+                <span class="step-number">5</span>
+                <strong>Add Error Handling and Logging</strong>
+                <div class="code-block">
+                    <span class="keyword">class</span> <span class="variable">MyPlugin_Logger</span> {
+                        <span class="keyword">public static function</span> <span class="function">log</span>(<span class="variable">$message</span>, <span class="variable">$level</span> = <span class="string">'info'</span>) {
+                            <span class="keyword">if</span> (<span class="constant">WP_DEBUG</span> && <span class="constant">WP_DEBUG_LOG</span>) {
+                                <span class="function">error_log</span>(<span class="string">"[MyPlugin] {$level}: {$message}"</span>);
+                            }
+                        }
+                    }
+
+                    <span class="keyword">class</span> <span class="variable">MyPlugin_Exception</span> <span class="keyword">extends</span> <span class="constant">Exception</span> {
+                        <span class="keyword">public function</span> <span class="function">__construct</span>(<span class="variable">$message</span>, <span class="variable">$code</span> = <span class="number">0</span>) {
+                            <span class="variable">MyPlugin_Logger::log</span>(<span class="variable">$message</span>, <span class="string">'error'</span>);
+                            <span class="keyword">parent</span>::<span class="function">__construct</span>(<span class="variable">$message</span>, <span class="variable">$code</span>);
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Architecture Best Practices</h2>
+
+            <div class="success-box">
+                <strong>✅ Dependency Management</strong>
+                <ul>
+                    <li>Use Composer for PHP dependencies</li>
+                    <li>Consider plugin dependencies and version requirements</li>
+                    <li>Create interfaces for testability</li>
+                    <li>Avoid tight coupling between components</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Performance Optimization</strong>
+                <ul>
+                    <li>Lazy load components when not needed</li>
+                    <li>Cache expensive operations</li>
+                    <li>Use WordPress object cache (wp_cache_*)</li>
+                    <li>Optimize database queries with proper indexing</li>
+                    <li>Load assets conditionally</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Security First</strong>
+                <ul>
+                    <li>Sanitize and validate all user input</li>
+                    <li>Use prepared statements for database queries</li>
+                    <li>Escape output data</li>
+                    <li>Implement capability checks</li>
+                    <li>Validate nonces for form submissions</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>✅ Maintainability</strong>
+                <ul>
+                    <li>Follow WordPress coding standards</li>
+                    <li>Document all public methods and classes</li>
+                    <li>Use meaningful variable and function names</li>
+                    <li>Keep functions small and focused</li>
+                    <li>Write unit tests for core functionality</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Activation, Deactivation, and Uninstall</h2>
+
+            <div class="technique-card">
+                <h4>🚀 Plugin Lifecycle Hooks</h4>
+                <div class="code-block">
+                    <span class="comment">// Main plugin file</span>
+                    <span class="keyword">register_activation_hook</span>(<span class="variable">__FILE__</span>, <span class="string">'my_plugin_activate'</span>);
+                    <span class="keyword">register_deactivation_hook</span>(<span class="variable">__FILE__</span>, <span class="string">'my_plugin_deactivate'</span>);
+                    <span class="keyword">register_uninstall_hook</span>(<span class="variable">__FILE__</span>, <span class="string">'my_plugin_uninstall'</span>);
+
+                    <span class="keyword">function</span> <span class="function">my_plugin_activate</span>() {
+                        <span class="comment">// Create database tables if needed</span>
+                        <span class="variable">MyPlugin_Installer::activate</span>();
+
+                        <span class="comment">// Set default options</span>
+                        <span class="function">add_option</span>(<span class="string">'my_plugin_version'</span>, <span class="string">'1.0.0'</span>);
+                        <span class="function">add_option</span>(<span class="string">'my_plugin_settings'</span>, [
+                            <span class="string">'enabled'</span> => <span class="keyword">true</span>,
+                            <span class="string">'api_key'</span> => <span class="string">''</span>
+                        ]);
+
+                        <span class="comment">// Schedule cron jobs</span>
+                        <span class="keyword">if</span> (!<span class="function">wp_next_scheduled</span>(<span class="string">'my_plugin_cron'</span>)) {
+                            <span class="function">wp_schedule_event</span>(<span class="function">time</span>(), <span class="string">'daily'</span>, <span class="string">'my_plugin_cron'</span>);
+                        }
+                    }
+
+                    <span class="keyword">function</span> <span class="function">my_plugin_deactivate</span>() {
+                        <span class="comment">// Clear scheduled events</span>
+                        <span class="variable">$timestamp</span> = <span class="function">wp_next_scheduled</span>(<span class="string">'my_plugin_cron'</span>);
+                        <span class="keyword">if</span> (<span class="variable">$timestamp</span>) {
+                            <span class="function">wp_unschedule_event</span>(<span class="variable">$timestamp</span>, <span class="string">'my_plugin_cron'</span>);
+                        }
+
+                        <span class="comment">// Clear caches</span>
+                        <span class="function">wp_cache_flush</span>();
+                    }
+                </div>
+            </div>
+
+            <div class="technique-card">
+                <h4>🗑️ Proper Uninstall Handling</h4>
+                <div class="code-block">
+                    <span class="comment">// uninstall.php (in plugin root)</span>
+                    <span class="keyword">if</span> (!<span class="function">defined</span>(<span class="string">'WP_UNINSTALL_PLUGIN'</span>)) {
+                        <span class="function">exit</span>;
+                    }
+
+                    <span class="comment">// Remove database tables (if created by plugin)</span>
+                    <span class="global">$wpdb</span>;
+                    <span class="variable">$table_name</span> = <span class="variable">$wpdb</span>->prefix . <span class="string">'my_plugin_data'</span>;
+                    <span class="variable">$wpdb</span>-><span class="function">query</span>(<span class="string">"DROP TABLE IF EXISTS {$table_name}"</span>);
+
+                    <span class="comment">// Remove all plugin options</span>
+                    <span class="function">delete_option</span>(<span class="string">'my_plugin_version'</span>);
+                    <span class="function">delete_option</span>(<span class="string">'my_plugin_settings'</span>);
+
+                    <span class="comment">// Remove user meta if applicable</span>
+                    <span class="function">delete_metadata</span>(<span class="string">'user'</span>, <span class="number">0</span>, <span class="string">'my_plugin_user_data'</span>, <span class="string">''</span>, <span class="keyword">true</span>);
+
+                    <span class="comment">// Clear any transients</span>
+                    <span class="function">delete_transient</span>(<span class="string">'my_plugin_cache'</span>);
+
+                    <span class="comment">// Remove custom post types and taxonomies (optional)</span>
+                    <span class="comment">// unregister_post_type('my_custom_post_type');</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Testing and Quality Assurance</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Testing Type</th>
+                        <th>Purpose</th>
+                        <th>Tools</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Unit Tests</strong></td>
+                        <td>Test individual functions and methods</td>
+                        <td>PHPUnit, WP-CLI, BrainMonkey</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Integration Tests</strong></td>
+                        <td>Test component interactions</td>
+                        <td>WP Testing Framework</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Acceptance Tests</strong></td>
+                        <td>Test from user's perspective</td>
+                        <td>Codeception, Behat</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Performance Tests</strong></td>
+                        <td>Measure speed and resource usage</td>
+                        <td>WP Performance Profiler</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <strong>Code Quality Tools:</strong>
+                <ul>
+                    <li><strong>PHPStan</strong> - Static analysis for type checking</li>
+                    <li><strong>PHPCS</strong> - WordPress coding standards validation</li>
+                    <li><strong>PHPmd</strong> - Mess detection and code quality</li>
+                    <li><strong>Psalm</strong> - Advanced static analysis with taint checking</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Advanced Patterns and Techniques</h2>
+
+            <div class="technique-card">
+                <h4>🔌 Plugin Extensibility</h4>
+                <div class="code-block">
+                    <span class="comment">// Allow other plugins/themes to extend functionality</span>
+
+                    <span class="keyword">class</span> <span class="variable">MyPlugin_Extensible</span> {
+                        <span class="keyword">public function</span> <span class="function">get_allowed_post_types</span>() {
+                            <span class="variable">$defaults</span> = [<span class="string">'post'</span>, <span class="string">'page'</span>];
+
+                            <span class="comment">// Allow customization via filter</span>
+                            <span class="keyword">return</span> <span class="function">apply_filters</span>(<span class="string">'my_plugin_allowed_post_types'</span>, <span class="variable">$defaults</span>);
+                        }
+
+                        <span class="keyword">public function</span> <span class="function">register_shortcode</span>() {
+                            <span class="function">add_shortcode</span>(<span class="string">'my_plugin_content'</span>, [<span class="variable">$this</span>, <span class="string">'render_shortcode'</span>]);
+                        }
+
+                        <span class="keyword">public function</span> <span class="function">render_shortcode</span>(<span class="variable">$atts</span>, <span class="variable">$content</span>) {
+                            <span class="variable">$atts</span> = <span class="function">shortcode_atts</span>([
+                                <span class="string">'id'</span> => <span class="string">''</span>,
+                                <span class="string">'class'</span> => <span class="string">'my-plugin-content'</span>
+                            ], <span class="variable">$atts</span>);
+
+                            <span class="comment">// Allow customization of output</span>
+                            <span class="variable">$output</span> = <span class="function">apply_filters</span>(<span class="string">'my_plugin_shortcode_output'</span>,
+                                                  <span class="string">'<div class="'</span> . <span class="variable">$atts</span>[<span class="string">'class'</span>] . <span class="string">'">'</span> . <span class="variable">$content</span> . <span class="string">'</div>'</span>,
+                                                  <span class="variable">$atts</span>, <span class="variable">$content</span>);
+
+                            <span class="comment">// Let developers add custom processing</span>
+                            <span class="keyword">return</span> <span class="function">apply_filters</span>(<span class="string">'my_plugin_before_shortcode_output'</span>, <span class="variable">$output</span>);
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="technique-card">
+                <h4>🌐 Internationalization (i18n)</h4>
+                <div class="code-block">
+                    <span class="comment">// Load text domain</span>
+                    <span class="keyword">function</span> <span class="function">my_plugin_load_textdomain</span>() {
+                        <span class="function">load_plugin_textdomain</span>(
+                            <span class="string">'my-plugin'</span>,
+                            <span class="keyword">false</span>,
+                            <span class="function">dirname</span>(<span class="function">plugin_basename</span>(<span class="variable">__FILE__</span>)) . <span class="string">'/languages/'</span>
+                        );
+                    }
+                    <span class="function">add_action</span>(<span class="string">'plugins_loaded'</span>, <span class="string">'my_plugin_load_textdomain'</span>);
+
+                    <span class="comment">// Use translation functions</span>
+                    <span class="variable">$title</span> = <span class="function">__</span>(<span class="string">'My Plugin Settings'</span>, <span class="string">'my-plugin'</span>);
+                    <span class="variable">$message</span> = <span class="function">sprintf</span>(
+                        <span class="function">__</span>(<span class="string">'Found %d results for "%s"'</span>, <span class="string">'my-plugin'</span>),
+                        <span class="variable">$count</span>,
+                        <span class="variable">$search_term</span>
+                    );
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
