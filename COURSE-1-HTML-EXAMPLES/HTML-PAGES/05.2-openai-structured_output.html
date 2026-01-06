@@ -18,11 +18,13 @@
          padding: 20px;
          background: #f5f5f5;
       }
+
       h1 {
          color: #333;
          font-size: 2em;
          margin-bottom: 30px;
       }
+
       input[type="text"] {
          width: 100%;
          padding: 12px;
@@ -32,6 +34,7 @@
          font-size: 16px;
          font-family: 'Fira Code', monospace;
       }
+
       button {
          background: #007bff;
          color: white;
@@ -42,59 +45,71 @@
          cursor: pointer;
          margin: 10px 0;
       }
+
       button:hover {
          background: #0056b3;
       }
+
       #result {
          background: white;
          padding: 20px;
          border-radius: 5px;
          margin-top: 20px;
-         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
+
       #jsonOutput {
          background: #1e1e1e;
          color: #d4d4d4;
          padding: 20px;
          border-radius: 5px;
          margin-top: 20px;
-         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
          font-family: 'Fira Code', monospace;
          overflow-x: auto;
       }
+
       #jsonOutput h3 {
          color: #4ec9b0;
          margin-top: 0;
       }
+
       #jsonOutput pre {
          margin: 0;
          white-space: pre-wrap;
          word-wrap: break-word;
       }
+
       .city-card {
          border-left: 4px solid #007bff;
          padding-left: 15px;
       }
+
       .city-card h2 {
          margin: 0 0 10px 0;
          color: #007bff;
       }
+
       .city-info {
          margin: 10px 0;
       }
+
       .landmarks {
          margin-top: 15px;
       }
+
       .landmarks ul {
          list-style-type: none;
          padding: 0;
       }
+
       .landmarks li {
          background: #f8f9fa;
          padding: 8px;
          margin: 5px 0;
          border-radius: 3px;
       }
+
       .error {
          color: red;
       }
@@ -106,14 +121,14 @@
 
    <input type="text" id="apiKey" placeholder="Enter your OpenAI API key" value="" autocomplete="off"
       data-form-type="other">
-   <input type="text" id="prompt" placeholder="Ask about a city (e.g., 'Tell me about Paris')" 
+   <input type="text" id="prompt" placeholder="Ask about a city (e.g., 'Tell me about Paris')"
       value="Tell me about London">
 
    <button id="sendBtn" type="submit">Get City Information</button>
 
    <br>
-   <div id="result"></div>
    <div id="jsonOutput"></div>
+   <div id="result"></div>
 
    <script>
 
@@ -171,13 +186,13 @@
                body: JSON.stringify({
                   model: 'gpt-4o-mini',
                   messages: [
-                     { 
-                        role: 'system', 
-                        content: 'You are a helpful assistant that provides structured information about cities.' 
+                     {
+                        role: 'system',
+                        content: 'You are a helpful assistant that provides structured information about cities.'
                      },
-                     { 
-                        role: 'user', 
-                        content: prompt 
+                     {
+                        role: 'user',
+                        content: prompt
                      }
                   ],
                   response_format: {
@@ -201,10 +216,11 @@
             } else {
                // Parse the structured JSON response
                const cityInfo = JSON.parse(data.choices[0].message.content);
-               
+
                // Display the structured data in a nice format
                resultDiv.innerHTML = `
                   <div class="city-card">
+                     <h1>JSON Schema Structured Output formatted</h1>
                      <h2>${cityInfo.city_name}, ${cityInfo.country}</h2>
                      <div class="city-info">
                         <strong>Population:</strong> ${cityInfo.population.toLocaleString()}
@@ -220,10 +236,10 @@
                      </div>
                   </div>
                `;
-               
+
                // Display the raw JSON output
                document.getElementById('jsonOutput').innerHTML = `
-                  <h3>Structured JSON Output:</h3>
+                  <h3>Raw Structured JSON Output Returned:</h3>
                   <pre>${JSON.stringify(cityInfo, null, 2)}</pre>
                `;
             }
