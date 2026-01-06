@@ -1,9 +1,10 @@
 <?php
 /**
- * Template Name: Agent with Rag
- */
+ * Template Name: Basic Agent 02
+* Description: An enhanced AI agent page that interacts with OpenAI's API directly from the browser with improved styling and functionality.
+  */
 
-// This is for learning purposes only. In production enqueue CSS and JS scripts properly via functions.php or other methods.
+// Enqueue all CSS and JS rather than directly here. This is just for demo purposes.
 
 get_header(); ?>
 
@@ -146,7 +147,6 @@ input[type="text"]::placeholder {
       You are a helpful assistant. You always answer in a concise manner. 
       You never refuse to answer but do not make things up - just say 'I don't know'. You always try to help the user as much as possible. 
       Convert markdown to HTML when needed so that ouput is properly formatted.Ensure there is a new line after each sentence.
-
       Include relevant context from the information provided below when answering the user's question.
   
       `;
@@ -193,5 +193,7 @@ input[type="text"]::placeholder {
       }
    });
 </script>
+</body>
 
+</html>
 <?php get_footer(); ?>

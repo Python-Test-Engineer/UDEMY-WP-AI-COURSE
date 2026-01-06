@@ -1,9 +1,10 @@
 <?php
 /**
- * Template Name: Agent with Tool Calling Demo
+ * Template Name: Basic Agent 03
+* Description: An advanced AI agent page that demonstrates tool calling with OpenAI's API directly from the browser.
  */
- 
-// This is for learning purposes only. In production enqueue CSS and JS scripts properly via functions.php or other methods.
+
+// Enqueue all CSS and JS rather than directly here. This is just for demo purposes.
 
 get_header(); ?>
 
