@@ -10,32 +10,32 @@ This WordPress plugin provides an OpenAI integration with a modular architecture
 ### File Structure
 ```
 02-wp-basic-agent/
-├── wp-basic-agent.php                # Main plugin file
-├── index.php                         # Security file
-├── README.md                         # Documentation
+├── wp-basic-agent.php              # Main plugin file
+├── index.php                       # Security file
+├── README.md                       # Documentation
 │
 ├── admin/
-│   ├── functions/                    # PHP functionality
-│   │   ├── admin-hooks.php           # Admin menu registration
-│   │   ├── agent.php                 # OpenAI API handler (AJAX)
-│   │   ├── render-admin-page.php     # Page renderer
-│   │   ├── enqueue_assets.php        # Asset loading
-│   │   ├── basic_page_activate.php   # Activation hook
+│   ├── functions/                  # PHP functionality
+│   │   ├── admin-hooks.php         # Admin menu registration
+│   │   ├── agent.php               # OpenAI API handler (AJAX)
+│   │   ├── render-admin-page.php   # Page renderer
+│   │   ├── enqueue_assets.php      # Asset loading
+│   │   ├── basic_page_activate.php # Activation hook
 │   │   └── basic_page_deactivate.php # Deactivation hook
 │   │
-│   ├── templates/                    # HTML templates
+│   ├── templates/                  # HTML templates
 │   │   └── openai-settings-template.php
 │   │
-│   ├── includes/                     # Reusable includes
-│   │   └── inc-system-prompt.php     # AI system prompt
+│   ├── includes/                   # Reusable includes
+│   │   └── inc-system-prompt.php   # AI system prompt
 │   │
-│   └── assets/                       # Frontend assets
+│   └── assets/                     # Frontend assets
 │       ├── css/
-│       │   └── admin-styles.css      # Custom styling
+│       │   └── admin-styles.css    # Custom styling
 │       └── js/
-│           └── openai.js             # AJAX form handling
+│           └── openai.js           # AJAX form handling
 │
-└── classes/                          # Reserved for future OOP
+└── classes/                        # Reserved for future OOP
     └── .gitkeep
 ```
 

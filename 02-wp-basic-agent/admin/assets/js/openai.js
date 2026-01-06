@@ -1,77 +1,23 @@
-
-// Toggle API Key Visibility function
-function toggleApiKeyVisibility() {
-    console.log('Toggle function called!');
-    const keyInput = document.getElementById('wp_basic_agent_api_key');
-    const toggleBtn = document.getElementById('toggle_api_key_visibility');
-
-    console.log('Key input element:', keyInput);
-    console.log('Toggle button element:', toggleBtn);
-
-    if (!keyInput) {
-        console.log('Key input not found!');
-        return;
-    }
-    if (!toggleBtn) {
-        console.log('Toggle button not found!');
-        return;
-    }
-
-    // Toggle the input type
-    const currentType = keyInput.getAttribute('type');
-    console.log('Current type:', currentType);
-
-    const newType = currentType === 'password' ? 'text' : 'password';
-    console.log('Setting new type to:', newType);
-
-    keyInput.setAttribute('type', newType);
-
-    // Update button text and title
-    if (newType === 'password') {
-        toggleBtn.textContent = 'Show';
-        toggleBtn.title = 'Show API Key';
-        console.log('Switched to password mode');
-    } else {
-        toggleBtn.textContent = 'Hide';
-        toggleBtn.title = 'Hide API Key';
-        console.log('Switched to text mode');
-    }
-}
-
 // Simplified JavaScript for OpenAI form handling
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM loaded, setting up toggle button');
-
-    // Handle API Key visibility toggle
-    const toggleBtn = document.getElementById('toggle_api_key_visibility');
-    console.log('Found toggle button:', toggleBtn);
-
-    if (toggleBtn) {
-        console.log('Adding click listener to toggle button');
-        toggleBtn.addEventListener('click', toggleApiKeyVisibility);
-        console.log('Click listener added successfully');
-    } else {
-        console.log('Toggle button not found in DOM!');
-    }
-
     // Handle OpenAI form submission
     const form = document.getElementById('openai-form');
     if (form) {
-        form.addEventListener('submit', async function (e) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
-
+            
             const resultDiv = document.getElementById('result');
             const loading = document.getElementById('loading');
             const submitBtn = form.querySelector('button[type="submit"]');
             const prompt = document.getElementById('prompt').value;
-
+            
             if (!prompt) return;
-
+            
             // Show loading
             loading.style.display = 'inline-block';
             submitBtn.disabled = true;
-            resultDiv.innerHTML = 'Getting response...';
-
+            resultDiv.innerHTML = '';
+            
             try {
                 const response = await fetch(ajaxurl, {
                     method: 'POST',
@@ -82,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         prompt: prompt
                     })
                 });
-
+                
                 const data = await response.json();
-
+                
                 // Extract just the message text from the response
                 if (data.success && data.data && data.data.choices && data.data.choices[0]) {
                     const message = data.data.choices[0].message.content;
@@ -97,6 +43,52 @@ document.addEventListener('DOMContentLoaded', function () {
             } finally {
                 loading.style.display = 'none';
                 submitBtn.disabled = false;
+            }
+        });
+    }
+    
+    // Toggle API Key Visibility
+    const toggleBtn = document.getElementById('toggle_key_visibility');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+            const keyInput = document.getElementById('openai_api_key_display');
+            const icon = this.querySelector('.dashicons');
+            const isShowing = keyInput.getAttribute('data-showing') === 'true';
+            
+            if (isShowing) {
+                keyInput.value = keyInput.getAttribute('data-masked');
+                keyInput.setAttribute('data-showing', 'false');
+                icon.classList.remove('dashicons-hidden');
+                icon.classList.add('dashicons-visibility');
+            } else {
+                toggleBtn.disabled = true;
+                icon.classList.add('dashicons-update');
+                icon.style.animation = 'rotation 2s infinite linear';
+                
+                fetch(ajaxurl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({
+                        action: 'get_full_openai_key',
+                        nonce: wpBasicAgent.nonce
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        keyInput.value = data.data.full_key;
+                        keyInput.setAttribute('data-showing', 'true');
+                        icon.classList.remove('dashicons-visibility');
+                        icon.classList.add('dashicons-hidden');
+                    } else {
+                        alert('Error: ' + data.data.message);
+                    }
+                })
+                .finally(() => {
+                    toggleBtn.disabled = false;
+                    icon.classList.remove('dashicons-update');
+                    icon.style.animation = '';
+                });
             }
         });
     }

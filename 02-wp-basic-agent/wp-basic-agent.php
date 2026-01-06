@@ -24,20 +24,31 @@ function wp_basic_agent_process_forms() {
         return;
     }
     
-    // Note: Show/hide toggle is now handled by JavaScript only
-    // No PHP form processing needed for show/hide functionality
+    // Handle API key visibility toggle (PHP-only show/hide functionality)
+    if (isset($_POST['toggle_api_key_visibility']) && check_admin_referer('wp_basic_agent_toggle_nonce')) {
+        // Get current visibility state from transient
+        $is_visible = get_transient('wp_basic_agent_show_key_' . get_current_user_id());
+        
+        // Toggle the visibility state
+        if ($is_visible) {
+            delete_transient('wp_basic_agent_show_key_' . get_current_user_id());
+        } else {
+            set_transient('wp_basic_agent_show_key_' . get_current_user_id(), true, 3600); // 1 hour
+        }
+        
+        // Redirect to prevent form resubmission
+        wp_redirect(admin_url('admin.php?page=basic-agent-settings'));
+        exit;
+    }
     
     // Handle API key save
-    if (isset($_POST['save_basic_agent_api_key'])) {
-        // Verify nonce manually to avoid "expired" error page
-        if (wp_verify_nonce($_POST['_wpnonce'], 'wp_basic_agent_save_key_nonce')) {
-            $api_key = sanitize_text_field($_POST['wp_basic_agent_api_key']);
-            update_option('wp_basic_agent_api_key', $api_key);
-
-            // Store success message in transient
-            set_transient('wp_basic_agent_message', 'API Key saved successfully!', 30);
-        }
-        // Always redirect to prevent form resubmission, regardless of nonce validity
+    if (isset($_POST['save_basic_agent_api_key']) && check_admin_referer('wp_basic_agent_save_key_nonce')) {
+        $api_key = sanitize_text_field($_POST['wp_basic_agent_api_key']);
+        update_option('wp_basic_agent_api_key', $api_key);
+        
+        // Store success message in transient
+        set_transient('wp_basic_agent_message', 'API Key saved successfully!', 30);
+        
         wp_redirect(admin_url('admin.php?page=basic-agent-settings'));
         exit;
     }

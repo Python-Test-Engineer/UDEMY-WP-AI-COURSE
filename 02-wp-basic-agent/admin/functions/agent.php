@@ -25,7 +25,7 @@ function wp_basic_agent_openai_proxy() {
     if (empty($prompt)) {
         wp_send_json_error(array('message' => 'No prompt provided'));
     }
-    #region PROMPT
+    
     // System prompt
     include plugin_dir_path(__FILE__) . '../includes/inc-system-prompt.php';
     
@@ -38,10 +38,9 @@ function wp_basic_agent_openai_proxy() {
         ),
         'max_tokens' => 1024
     );
-    #endregion PROMPT
-
+    
     // ********** AI BIT **********
-    #region AI BIT
+
     // Make request to OpenAI
     $response = wp_remote_post('https://api.openai.com/v1/chat/completions', array(
         'headers' => array(
@@ -53,7 +52,7 @@ function wp_basic_agent_openai_proxy() {
     ));
     
     // ********** AI BIT **********
-    #endregion AI BIT
+    
     // Check for errors
     if (is_wp_error($response)) {
         wp_send_json_error(array('message' => $response->get_error_message()));
