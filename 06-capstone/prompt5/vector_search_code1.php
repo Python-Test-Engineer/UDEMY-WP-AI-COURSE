@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: ✅ 20 UDEMY CAPSTONE
+ * Plugin Name: ✅ 06 UDEMY CAPSTONE
  * Description: Manages a custom table for RAG processing of WordPress posts with Full-Text Search and Vector Search
  * Version: 1.4
  * Author: Your Name
@@ -457,13 +457,13 @@ class Posts_RAG_Manager {
      */
     public function add_admin_menu() {
         add_menu_page(
-            'CAPSTONE POST RAG MANAGER',
-            '20 CAPSTONE',
+            'Posts RAG Manager',
+            '06 RAG',
             'manage_options',
             'posts-rag-manager',
             array($this, 'admin_page'),
             'dashicons-admin-tools',
-            4.70
+            4
         );
     }
     
@@ -536,11 +536,11 @@ class Posts_RAG_Manager {
                 
                 <h3>Full-Text Search</h3>
                 <p>Search using MySQL full-text index (keyword matching):</p>
-                <code><?php echo esc_url(rest_url('posts-rag/v1/search')); ?>?query=FOAM&limit=3</code>
+                <code><?php echo esc_url(rest_url('posts-rag/v1/search')); ?>?query=YOUR_SEARCH_QUERY&limit=3</code>
                 
                 <h3 style="margin-top: 15px;">Vector Search</h3>
                 <p>Search using semantic similarity (requires embeddings):</p>
-                <code><?php echo esc_url(rest_url('posts-rag/v1/vector-search')); ?>?query=FOAM&limit=3</code>
+                <code><?php echo esc_url(rest_url('posts-rag/v1/vector-search')); ?>?query=YOUR_SEARCH_QUERY&limit=3</code>
                 
                 <p class="description" style="margin-top: 10px;">
                     <strong>Parameters:</strong> <strong>query</strong> (required), <strong>limit</strong> (optional, default: 3, max: 20)
