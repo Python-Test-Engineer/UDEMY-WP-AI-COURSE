@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: ✅ 010 UDEMY @wordpress/scripts
+ * Plugin Name: ✅ 10 UDEMY @wordpress/scripts
  * Description: A custom plugin with JS app built using @wordpress/scripts
  * Version: 1.0.0
  * Author: Craig West
