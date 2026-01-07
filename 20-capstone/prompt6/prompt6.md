@@ -1,3 +1,6 @@
+Here are two rest apis that get results based on Full Text Search and Vector Cosine Search. Examples of the JSON response is also included for each REST API
+
+
 https://mydigitalagent.co.uk/dev/wp-json/posts-rag/v1/search?query=FOAM&limit=3
 
 {
@@ -68,3 +71,20 @@ https://mydigitalagent.co.uk/dev/wp-json/posts-rag/v1/vector-search?query=FOAM&l
 ],
 "count": 3
 }
+
+For the attacged plugin file, create an additional admin page for this plugin that uses the saved api key already done in the plugin that provides an input for the query and an output area that displays the returned JSON object that is a result of using the FTS API and Vector API to get response.
+
+fts_id has the post_ids for the results from the https://mydigitalagent.co.uk/dev/wp-json/posts-rag/v1/search?query=FOAM&limit=3 for a given query
+
+vector_ids has all the post_ids from the https://mydigitalagent.co.uk/dev/wp-json/posts-rag/v1/vector-search?query=FOAM&limit=3 for a given query
+
+
+
+{
+"query": "What FOAM do ypu have?" 
+"fts_ids": [3,7,9],
+"vector_ids": [3,7,10,11]
+"context": "title and content of all the found posts combined"
+}
+
+Also have and additional area that display only the value of the "context".
