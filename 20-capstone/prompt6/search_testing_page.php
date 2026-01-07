@@ -786,7 +786,7 @@ class Posts_RAG_Manager {
         </script>
         <?php
     }
-    
+    #region SEARCH
     /**
      * Search Testing Admin Page
      */
@@ -929,6 +929,8 @@ class Posts_RAG_Manager {
                         query: query,
                         limit: limit
                     },
+                #endregion
+                #region  RESULT
                     success: function(response) {
                         if (response.success) {
                             var data = response.data;
@@ -970,7 +972,7 @@ class Posts_RAG_Manager {
                     }
                 });
             });
-            
+            #endregion
             // Allow Enter key to trigger search
             $('#search_query').on('keypress', function(e) {
                 if (e.which === 13) {
