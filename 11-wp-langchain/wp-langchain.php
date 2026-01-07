@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: ✅ 05 UDEMY LANGCHAIN 
+ * Plugin Name: ✅ 11 UDEMY LANGCHAIN 
  * Description: A WordPress plugin demonstrating LangChain.js integration
  * Version: 1.0.0
  * Author: Craig West
@@ -46,8 +46,8 @@ add_action('admin_enqueue_scripts', 'wpli_enqueue_admin_scripts');
 // Add admin menu for demonstration
 function wpli_add_admin_menu() {
     add_menu_page(
-        '05 UDEMY LangChain Demo',
-        '05 LANGCHAIN',
+        '11 UDEMY LangChain Demo',
+        '11 LANGCHAIN',
         'manage_options',
         'wp-langchain-demo',
         'wpli_admin_page',        // call back function below
