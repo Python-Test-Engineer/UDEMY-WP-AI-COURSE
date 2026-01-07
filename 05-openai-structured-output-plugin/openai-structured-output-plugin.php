@@ -46,7 +46,7 @@ class OpenAI_Structured_Output_Plugin {
             'openai-structured-output',                               // Menu slug
             array($this, 'admin_page_callback'),                      // Callback function
             'dashicons-location-alt',                                 // Icon (location/map icon)
-            3.5                                                       // Position (level 3.5)
+           3.95                                                     // Position (level 3.5)
         );
     }
 
