@@ -29,13 +29,13 @@
 	<title>DEV</title>
 	<link>https://mydigitalagent.co.uk/dev</link>
 	<description></description>
-	<pubDate>Tue, 30 Dec 2025 10:31:50 +0000</pubDate>
+	<pubDate>Wed, 07 Jan 2026 11:51:52 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://mydigitalagent.co.uk/dev</wp:base_site_url>
 	<wp:base_blog_url>https://mydigitalagent.co.uk/dev</wp:base_blog_url>
 
-		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[udemy-wp-ai]]></wp:author_login><wp:author_email><![CDATA[iwswordpress@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[udemy-wp-ai]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
+		<wp:author><wp:author_id>3</wp:author_id><wp:author_login><![CDATA[udemy]]></wp:author_login><wp:author_email><![CDATA[udemy@example.com]]></wp:author_email><wp:author_display_name><![CDATA[udemy admin]]></wp:author_display_name><wp:author_first_name><![CDATA[udemy]]></wp:author_first_name><wp:author_last_name><![CDATA[admin]]></wp:author_last_name></wp:author>
 
 		<wp:category>
 		<wp:term_id>2</wp:term_id>
@@ -3735,6 +3735,13 @@
 		<wp:term_name><![CDATA[memory foam]]></wp:term_name>
 	</wp:term>
 		<wp:term>
+		<wp:term_id>402</wp:term_id>
+		<wp:term_taxonomy><![CDATA[nav_menu]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[menu-1]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[Menu 1]]></wp:term_name>
+	</wp:term>
+		<wp:term>
 		<wp:term_id>243</wp:term_id>
 		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[midjourney]]></wp:term_slug>
@@ -4854,14 +4861,16 @@
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
 		<wp:term_name><![CDATA[Zoom]]></wp:term_name>
 	</wp:term>
-		
+			<wp:term><wp:term_id>402</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[menu-1]]></wp:term_slug><wp:term_name><![CDATA[Menu 1]]></wp:term_name>
+</wp:term>
+
 	
 
 		<item>
 		<title><![CDATA[Sample Page]]></title>
 		<link>https://mydigitalagent.co.uk/dev/sample-page/</link>
 		<pubDate>Sat, 13 Dec 2025 20:44:40 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=2</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -4915,7 +4924,7 @@
 		<title><![CDATA[Privacy Policy]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?page_id=3</link>
 		<pubDate>Sat, 13 Dec 2025 20:44:40 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=3</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:heading -->
@@ -4995,12 +5004,12 @@
 		<wp:post_id>3</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-13 20:44:40]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-13 20:44:40]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-13 20:44:40]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-13 20:44:40]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-01-06 12:03:10]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-06 12:03:10]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[privacy-policy]]></wp:post_name>
-		<wp:status><![CDATA[draft]]></wp:status>
+		<wp:post_name><![CDATA[privacy-policy__trashed-2]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
@@ -5010,12 +5019,24 @@
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[draft]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767700990]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[privacy-policy]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Sample Page]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?page_id=8</link>
 		<pubDate>Sat, 06 Dec 2025 08:10:04 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=2</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -5081,7 +5102,7 @@
 		<title><![CDATA[Privacy Policy]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?page_id=9</link>
 		<pubDate>Sat, 06 Dec 2025 08:10:04 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=3</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:heading -->
@@ -5190,10 +5211,620 @@
 		</wp:postmeta>
 							</item>
 					<item>
+		<title><![CDATA[gen-press]]></title>
+		<link>https://mydigitalagent.co.uk/dev/gen-press/</link>
+		<pubDate>Wed, 10 Dec 2025 04:54:23 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/gen-press/</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>230</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-10 04:54:23]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-10 04:54:23]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-10 04:54:23]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-10 04:54:23]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gen-press]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[custom_css]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
+		<title><![CDATA[gen-child]]></title>
+		<link>https://mydigitalagent.co.uk/dev/gen-child/</link>
+		<pubDate>Sat, 13 Dec 2025 21:27:50 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/gen-child/</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>312</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-13 21:27:50]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-13 21:27:50]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-13 21:31:06]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-13 21:31:06]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gen-child]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[custom_css]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
+		<title><![CDATA[Home]]></title>
+		<link>https://mydigitalagent.co.uk/dev/home/</link>
+		<pubDate>Thu, 01 Jan 2026 14:03:02 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=519</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>519</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-01 15:10:26]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-01 14:03:02]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 15:10:26]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 15:10:26]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[home]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="menu-1"><![CDATA[Menu 1]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[519]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://mydigitalagent.co.uk/dev/]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[]]></title>
+		<link>https://mydigitalagent.co.uk/dev/?p=523</link>
+		<pubDate></pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=523</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>523</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-01 14:02:47]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[0000-00-00 00:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 14:02:47]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[0000-00-00 00:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[]]></wp:post_name>
+		<wp:status><![CDATA[draft]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_orphaned]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767276167]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[html01]]></title>
+		<link>https://mydigitalagent.co.uk/dev/html01/</link>
+		<pubDate>Thu, 01 Jan 2026 15:07:46 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=527</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>527</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-01 15:07:46]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-01 15:07:46]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 15:09:39]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 15:09:39]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[html01]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
+		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[html02]]></title>
+		<link>https://mydigitalagent.co.uk/dev/html02/</link>
+		<pubDate>Thu, 01 Jan 2026 15:09:27 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=529</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>529</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-01 15:09:27]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-01 15:09:27]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 15:09:28]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 15:09:28]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[html02]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
+		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[html03]]></title>
+		<link>https://mydigitalagent.co.uk/dev/html03/</link>
+		<pubDate>Thu, 01 Jan 2026 15:09:52 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=531</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>531</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-01 15:09:52]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-01 15:09:52]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 15:09:53]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 15:09:53]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[html03]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
+		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[]]></title>
+		<link>https://mydigitalagent.co.uk/dev/533/</link>
+		<pubDate>Thu, 01 Jan 2026 15:10:26 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=533</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>533</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-01 15:10:26]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-01 15:10:26]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 15:10:26]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 15:10:26]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[533]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>4</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="menu-1"><![CDATA[Menu 1]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[531]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[]]></title>
+		<link>https://mydigitalagent.co.uk/dev/534/</link>
+		<pubDate>Thu, 01 Jan 2026 15:10:26 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=534</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>534</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-01 15:10:26]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-01 15:10:26]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 15:10:26]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 15:10:26]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[534]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="menu-1"><![CDATA[Menu 1]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[529]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[]]></title>
+		<link>https://mydigitalagent.co.uk/dev/535/</link>
+		<pubDate>Thu, 01 Jan 2026 15:10:26 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=535</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>535</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-01 15:10:26]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-01 15:10:26]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 15:10:26]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 15:10:26]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[535]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="menu-1"><![CDATA[Menu 1]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[527]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[system]]></title>
+		<link>https://mydigitalagent.co.uk/dev/?post_type=acf-field-group&#038;p=570</link>
+		<pubDate>Tue, 06 Jan 2026 14:45:05 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?post_type=acf-field-group&#038;p=570</guid>
+		<description></description>
+		<content:encoded><![CDATA[a:9:{s:8:"location";a:1:{i:0;a:1:{i:0;a:3:{s:5:"param";s:9:"post_type";s:8:"operator";s:2:"==";s:5:"value";s:4:"post";}}}s:8:"position";s:6:"normal";s:5:"style";s:7:"default";s:15:"label_placement";s:3:"top";s:21:"instruction_placement";s:5:"label";s:14:"hide_on_screen";s:0:"";s:11:"description";s:0:"";s:12:"show_in_rest";i:0;s:13:"display_title";s:0:"";}]]></content:encoded>
+		<excerpt:encoded><![CDATA[system]]></excerpt:encoded>
+		<wp:post_id>570</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-06 14:45:05]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-06 14:45:05]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-06 14:58:28]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-06 14:58:28]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[group_695d1fb008433]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[acf-field-group]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[exclude]]></title>
+		<link>https://mydigitalagent.co.uk/dev/?post_type=acf-field&#038;p=571</link>
+		<pubDate>Tue, 06 Jan 2026 14:45:05 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?post_type=acf-field&#038;p=571</guid>
+		<description></description>
+		<content:encoded><![CDATA[a:15:{s:10:"aria-label";s:0:"";s:4:"type";s:8:"checkbox";s:12:"instructions";s:0:"";s:8:"required";i:0;s:17:"conditional_logic";i:0;s:7:"wrapper";a:3:{s:5:"width";s:0:"";s:5:"class";s:0:"";s:2:"id";s:0:"";}s:7:"choices";a:1:{s:7:"exclude";s:7:"exclude";}s:13:"default_value";a:1:{i:0;s:5:"false";}s:13:"return_format";s:5:"value";s:12:"allow_custom";i:0;s:17:"allow_in_bindings";i:0;s:6:"layout";s:8:"vertical";s:6:"toggle";i:0;s:11:"save_custom";i:0;s:25:"custom_choice_button_text";s:14:"Add new choice";}]]></content:encoded>
+		<excerpt:encoded><![CDATA[exclude]]></excerpt:encoded>
+		<wp:post_id>571</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-06 14:45:05]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-06 14:45:05]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-06 14:45:05]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-06 14:45:05]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[field_695d1fc5ca30c]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>570</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[acf-field]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
+		<title><![CDATA[importance]]></title>
+		<link>https://mydigitalagent.co.uk/dev/?post_type=acf-field&#038;p=575</link>
+		<pubDate>Tue, 06 Jan 2026 14:47:48 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?post_type=acf-field&#038;p=575</guid>
+		<description></description>
+		<content:encoded><![CDATA[a:12:{s:10:"aria-label";s:0:"";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";i:0;s:17:"conditional_logic";i:0;s:7:"wrapper";a:3:{s:5:"width";s:0:"";s:5:"class";s:0:"";s:2:"id";s:0:"";}s:13:"default_value";s:0:"";s:9:"maxlength";s:0:"";s:17:"allow_in_bindings";i:0;s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";}]]></content:encoded>
+		<excerpt:encoded><![CDATA[importance]]></excerpt:encoded>
+		<wp:post_id>575</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-06 14:47:48]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-06 14:47:48]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-06 14:58:28]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-06 14:58:28]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[field_695d2097990b6]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>570</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[acf-field]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
+		<title><![CDATA[plugin03]]></title>
+		<link>https://mydigitalagent.co.uk/dev/plugin03/</link>
+		<pubDate>Tue, 06 Jan 2026 15:12:35 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=578</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:shortcode -->
+[tool_calling]
+<!-- /wp:shortcode -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>578</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-06 15:12:35]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-06 15:12:35]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-06 15:13:14]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-06 15:13:14]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[plugin03]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
+		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[plugin01]]></title>
+		<link>https://mydigitalagent.co.uk/dev/plugin01/</link>
+		<pubDate>Tue, 06 Jan 2026 15:15:59 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=580</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:shortcode -->
+[basic_php_ai_agent]
+<!-- /wp:shortcode -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>580</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-06 15:15:59]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-06 15:15:59]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-06 15:16:36]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-06 15:16:36]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[plugin01]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
+		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[plugin02]]></title>
+		<link>https://mydigitalagent.co.uk/dev/plugin02/</link>
+		<pubDate>Tue, 06 Jan 2026 15:17:38 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=582</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:shortcode -->
+[wp_basic_agent]
+<!-- /wp:shortcode -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>582</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-06 15:17:38]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-06 15:17:38]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-06 15:17:39]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-06 15:17:39]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[plugin02]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
+		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
 		<title><![CDATA[Holiday in France]]></title>
 		<link>https://mydigitalagent.co.uk/dev/holiday-in-france/</link>
 		<pubDate>Sat, 06 Dec 2025 13:03:30 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?p=67</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -5203,8 +5834,8 @@
 		<wp:post_id>67</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-06 13:03:30]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-06 13:03:30]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-06 13:03:30]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-06 13:03:30]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-01-06 14:59:30]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-06 14:59:30]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[holiday-in-france]]></wp:post_name>
@@ -5215,12 +5846,36 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="category" nicename="holidays"><![CDATA[holidays]]></category>
-						</item>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[footnotes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[exclude]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:7:"exclude";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_exclude]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_695d1fc5ca30c]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[importance]]></wp:meta_key>
+		<wp:meta_value><![CDATA[very low]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_importance]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_695d2097990b6]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
 					<item>
 		<title><![CDATA[Python computer language]]></title>
 		<link>https://mydigitalagent.co.uk/dev/python-computer-language/</link>
 		<pubDate>Sat, 06 Dec 2025 13:04:15 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?p=70</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -5245,10 +5900,130 @@
 		<category domain="post_tag" nicename="python"><![CDATA[python]]></category>
 						</item>
 					<item>
+		<title><![CDATA[Visiting National Parks]]></title>
+		<link>https://mydigitalagent.co.uk/dev/visiting-national-parks/</link>
+		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/visiting-national-parks/</guid>
+		<description></description>
+		<content:encoded><![CDATA[National parks preserve natural wonders and offer incredible outdoor experiences. Planning visits during weekdays avoids overwhelming weekend crowds. Booking accommodations and permits well in advance ensures availability. Understanding park-specific regulations protects ecosystems and wildlife. Proper preparation for weather and terrain prevents dangerous situations. Ranger-led programs provide educational insights about environments. Leaving no trace ensures parks remain pristine for future visitors.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>73</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[visiting-national-parks]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="post_tag" nicename="camping"><![CDATA[camping]]></category>
+		<category domain="post_tag" nicename="national-parks"><![CDATA[national parks]]></category>
+		<category domain="post_tag" nicename="rangers"><![CDATA[rangers]]></category>
+		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
+		<category domain="post_tag" nicename="yellowstone"><![CDATA[Yellowstone]]></category>
+		<category domain="post_tag" nicename="yosemite"><![CDATA[Yosemite]]></category>
+						</item>
+					<item>
+		<title><![CDATA[Travel Apps That Help]]></title>
+		<link>https://mydigitalagent.co.uk/dev/travel-apps-that-help/</link>
+		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/travel-apps-that-help/</guid>
+		<description></description>
+		<content:encoded><![CDATA[Smartphone apps simplify many aspects of modern travel planning and navigation. Flight tracking apps alert you to delays and gate changes. Currency converters prevent confusion during purchases. Offline maps ensure navigation without internet connectivity. Accommodation booking apps offer last-minute deals. Language translation apps facilitate basic communication. Budget tracking apps help monitor spending. Digital tools enhance rather than replace spontaneous exploration.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>74</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[travel-apps-that-help]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="post_tag" nicename="booking-com"><![CDATA[Booking.com]]></category>
+		<category domain="post_tag" nicename="google-maps"><![CDATA[Google Maps]]></category>
+		<category domain="post_tag" nicename="smartphones"><![CDATA[smartphones]]></category>
+		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
+		<category domain="post_tag" nicename="travel-apps"><![CDATA[travel apps]]></category>
+		<category domain="post_tag" nicename="tripadvisor"><![CDATA[TripAdvisor]]></category>
+						</item>
+					<item>
+		<title><![CDATA[Beach Destinations Guide]]></title>
+		<link>https://mydigitalagent.co.uk/dev/beach-destinations-guide/</link>
+		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/beach-destinations-guide/</guid>
+		<description></description>
+		<content:encoded><![CDATA[Coastal destinations offer relaxation, water sports, and stunning natural beauty. Caribbean islands provide warm weather year-round. Mediterranean beaches combine history with seaside charm. Southeast Asian shores offer incredible value for budget travelers. Researching beach conditions and safety prevents disappointing or dangerous situations. Reef-safe sunscreen protects marine ecosystems. Beach vacations suit families, couples, and solo travelers equally well.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>75</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[beach-destinations-guide]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="post_tag" nicename="beaches"><![CDATA[beaches]]></category>
+		<category domain="post_tag" nicename="caribbean"><![CDATA[Caribbean]]></category>
+		<category domain="post_tag" nicename="islands"><![CDATA[islands]]></category>
+		<category domain="post_tag" nicename="resorts"><![CDATA[resorts]]></category>
+		<category domain="post_tag" nicename="thailand"><![CDATA[Thailand]]></category>
+		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
+						</item>
+					<item>
+		<title><![CDATA[Mountain Travel Adventures]]></title>
+		<link>https://mydigitalagent.co.uk/dev/mountain-travel-adventures/</link>
+		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/mountain-travel-adventures/</guid>
+		<description></description>
+		<content:encoded><![CDATA[Mountain destinations provide breathtaking scenery and outdoor recreation opportunities. Alpine villages offer charm and authentic local culture. Hiking trails range from easy walks to challenging climbs. Altitude sickness affects some visitors and requires acclimatization. Proper gear protects against unpredictable mountain weather. Ski resorts transform into summer hiking destinations. Mountain environments demand respect and preparation.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>76</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[mountain-travel-adventures]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="post_tag" nicename="alps"><![CDATA[Alps]]></category>
+		<category domain="post_tag" nicename="hiking"><![CDATA[hiking]]></category>
+		<category domain="post_tag" nicename="mountain-climbing"><![CDATA[mountain climbing]]></category>
+		<category domain="post_tag" nicename="rocky-mountains"><![CDATA[Rocky Mountains]]></category>
+		<category domain="post_tag" nicename="ski-resorts"><![CDATA[ski resorts]]></category>
+		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
+						</item>
+					<item>
 		<title><![CDATA[html ai agent]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?page_id=146</link>
 		<pubDate>Sun, 07 Dec 2025 07:54:17 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=146</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -5286,9 +6061,9 @@
 							</item>
 					<item>
 		<title><![CDATA[chatbot]]></title>
-		<link>https://mydigitalagent.co.uk/dev/chatbot/</link>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=205</link>
 		<pubDate>Tue, 09 Dec 2025 13:13:46 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=205</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:shortcode -->
@@ -5302,12 +6077,12 @@
 		<wp:post_id>205</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-09 13:13:46]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-09 13:13:46]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-09 13:13:46]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-09 13:13:46]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 14:02:37]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 14:02:37]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[chatbot]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[chatbot__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
@@ -5321,36 +6096,24 @@
 		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
 		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767276157]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[chatbot]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[gen-press]]></title>
-		<link>https://mydigitalagent.co.uk/dev/gen-press/</link>
-		<pubDate>Wed, 10 Dec 2025 04:54:23 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/gen-press/</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>230</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-10 04:54:23]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-10 04:54:23]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-10 04:54:23]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-10 04:54:23]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[gen-press]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[custom_css]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														</item>
-					<item>
 		<title><![CDATA[basic-agent]]></title>
-		<link>https://mydigitalagent.co.uk/dev/basic-agent/</link>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=254</link>
 		<pubDate>Thu, 11 Dec 2025 17:40:46 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=254</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -5358,12 +6121,12 @@
 		<wp:post_id>254</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-11 17:40:46]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-11 17:40:46]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-11 17:40:46]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-11 17:40:46]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 14:02:35]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 14:02:35]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[basic-agent]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[basic-agent__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
@@ -5373,12 +6136,24 @@
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767276155]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[basic-agent]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[chat-with-memory]]></title>
-		<link>https://mydigitalagent.co.uk/dev/chat-with-memory/</link>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=257</link>
 		<pubDate>Thu, 11 Dec 2025 18:20:10 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=257</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -5386,12 +6161,12 @@
 		<wp:post_id>257</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-11 18:20:10]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-11 18:20:10]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-11 18:20:10]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-11 18:20:10]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 14:02:32]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 14:02:32]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[chat-with-memory]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[chat-with-memory__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
@@ -5401,12 +6176,24 @@
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767276152]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[chat-with-memory]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[plugin01]]></title>
-		<link>https://mydigitalagent.co.uk/dev/plugin01/</link>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=259</link>
 		<pubDate>Thu, 11 Dec 2025 21:37:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=259</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:shortcode -->
@@ -5420,12 +6207,12 @@
 		<wp:post_id>259</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-11 21:37:02]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-11 21:37:02]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-11 21:37:02]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-11 21:37:02]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 15:07:25]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 15:07:25]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[plugin01]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[plugin01__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
@@ -5439,12 +6226,24 @@
 		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
 		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767280045]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[plugin01]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[plugin02]]></title>
-		<link>https://mydigitalagent.co.uk/dev/plugin02/</link>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=263</link>
 		<pubDate>Thu, 11 Dec 2025 21:51:35 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=263</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:shortcode -->
@@ -5454,12 +6253,12 @@
 		<wp:post_id>263</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-11 21:51:35]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-11 21:51:35]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-11 21:51:35]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-11 21:51:35]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 15:07:27]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 15:07:27]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[plugin02]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[plugin02__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
@@ -5473,12 +6272,24 @@
 		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
 		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767280047]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[plugin02]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[plugin03]]></title>
-		<link>https://mydigitalagent.co.uk/dev/plugin03/</link>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=267</link>
 		<pubDate>Thu, 11 Dec 2025 22:02:43 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=267</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:shortcode -->
@@ -5488,12 +6299,12 @@
 		<wp:post_id>267</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-11 22:02:43]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-11 22:02:43]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-11 22:02:43]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-11 22:02:43]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 15:07:29]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 15:07:29]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[plugin03]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[plugin03__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
@@ -5507,12 +6318,24 @@
 		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
 		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767280049]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[plugin03]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[plugin09]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?page_id=297</link>
 		<pubDate>Sat, 13 Dec 2025 11:02:41 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=297</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:shortcode -->
@@ -5556,34 +6379,10 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[gen-child]]></title>
-		<link>https://mydigitalagent.co.uk/dev/gen-child/</link>
-		<pubDate>Sat, 13 Dec 2025 21:27:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/gen-child/</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>312</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-13 21:27:50]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-13 21:27:50]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-13 21:31:06]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-13 21:31:06]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[gen-child]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[custom_css]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														</item>
-					<item>
 		<title><![CDATA[6A]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?page_id=371</link>
 		<pubDate>Wed, 17 Dec 2025 15:09:10 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=371</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:shortcode -->
@@ -5627,9 +6426,9 @@
 							</item>
 					<item>
 		<title><![CDATA[htmx]]></title>
-		<link>https://mydigitalagent.co.uk/dev/htmx/</link>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=416</link>
 		<pubDate>Thu, 18 Dec 2025 15:10:11 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=416</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:shortcode -->
@@ -5639,12 +6438,12 @@
 		<wp:post_id>416</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-18 15:10:11]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-18 15:10:11]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-18 19:39:16]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-18 19:39:16]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 14:02:22]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 14:02:22]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[htmx]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[htmx__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
@@ -5658,12 +6457,24 @@
 		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
 		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767276142]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[htmx]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[05 RAG]]></title>
-		<link>https://mydigitalagent.co.uk/dev/simple-rag/</link>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=443</link>
 		<pubDate>Fri, 19 Dec 2025 22:13:32 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=443</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:shortcode -->
@@ -5673,12 +6484,12 @@
 		<wp:post_id>443</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-19 22:13:32]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-19 22:13:32]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-20 08:09:33]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-20 08:09:33]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 14:02:27]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 14:02:27]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[simple-rag]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[simple-rag__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
@@ -5692,12 +6503,24 @@
 		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
 		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767276147]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[simple-rag]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[12 langchain agent]]></title>
-		<link>https://mydigitalagent.co.uk/dev/langchain-agent/</link>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=506</link>
 		<pubDate>Sun, 21 Dec 2025 08:11:03 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=506</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:shortcode -->
@@ -5711,12 +6534,12 @@
 		<wp:post_id>506</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-21 08:11:03]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-21 08:11:03]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-21 08:26:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-21 08:26:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 14:02:30]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 14:02:30]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[langchain-agent]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[langchain-agent__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
@@ -5734,132 +6557,124 @@
 		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
 		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767276150]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[langchain-agent]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Visiting National Parks]]></title>
-		<link>https://mydigitalagent.co.uk/dev/visiting-national-parks/</link>
-		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/visiting-national-parks/</guid>
+		<title><![CDATA[plugin03]]></title>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=540</link>
+		<pubDate>Thu, 01 Jan 2026 16:16:57 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=540</guid>
 		<description></description>
-		<content:encoded><![CDATA[National parks preserve natural wonders and offer incredible outdoor experiences. Planning visits during weekdays avoids overwhelming weekend crowds. Booking accommodations and permits well in advance ensures availability. Understanding park-specific regulations protects ecosystems and wildlife. Proper preparation for weather and terrain prevents dangerous situations. Ranger-led programs provide educational insights about environments. Leaving no trace ensures parks remain pristine for future visitors.]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:shortcode -->
+[wp_tool_use]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>73</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
+		<wp:post_id>540</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-01 16:16:57]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-01 16:16:57]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 17:19:39]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 17:19:39]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[visiting-national-parks]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[plugin03__trashed-2]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_tag" nicename="camping"><![CDATA[camping]]></category>
-		<category domain="post_tag" nicename="national-parks"><![CDATA[national parks]]></category>
-		<category domain="post_tag" nicename="rangers"><![CDATA[rangers]]></category>
-		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
-		<category domain="post_tag" nicename="yellowstone"><![CDATA[Yellowstone]]></category>
-		<category domain="post_tag" nicename="yosemite"><![CDATA[Yosemite]]></category>
-						</item>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
+		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767287979]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[plugin03]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
 					<item>
-		<title><![CDATA[Travel Apps That Help]]></title>
-		<link>https://mydigitalagent.co.uk/dev/travel-apps-that-help/</link>
-		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/travel-apps-that-help/</guid>
+		<title><![CDATA[plugin3]]></title>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=547</link>
+		<pubDate>Thu, 01 Jan 2026 16:42:26 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=547</guid>
 		<description></description>
-		<content:encoded><![CDATA[Smartphone apps simplify many aspects of modern travel planning and navigation. Flight tracking apps alert you to delays and gate changes. Currency converters prevent confusion during purchases. Offline maps ensure navigation without internet connectivity. Accommodation booking apps offer last-minute deals. Language translation apps facilitate basic communication. Budget tracking apps help monitor spending. Digital tools enhance rather than replace spontaneous exploration.]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:shortcode -->
+[tool_calling]
+<!-- /wp:shortcode -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>74</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
+		<wp:post_id>547</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-01 16:42:26]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-01 16:42:26]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-06 11:53:08]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-06 11:53:08]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[travel-apps-that-help]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[plugin3__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_tag" nicename="booking-com"><![CDATA[Booking.com]]></category>
-		<category domain="post_tag" nicename="google-maps"><![CDATA[Google Maps]]></category>
-		<category domain="post_tag" nicename="smartphones"><![CDATA[smartphones]]></category>
-		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
-		<category domain="post_tag" nicename="travel-apps"><![CDATA[travel apps]]></category>
-		<category domain="post_tag" nicename="tripadvisor"><![CDATA[TripAdvisor]]></category>
-						</item>
-					<item>
-		<title><![CDATA[Beach Destinations Guide]]></title>
-		<link>https://mydigitalagent.co.uk/dev/beach-destinations-guide/</link>
-		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/beach-destinations-guide/</guid>
-		<description></description>
-		<content:encoded><![CDATA[Coastal destinations offer relaxation, water sports, and stunning natural beauty. Caribbean islands provide warm weather year-round. Mediterranean beaches combine history with seaside charm. Southeast Asian shores offer incredible value for budget travelers. Researching beach conditions and safety prevents disappointing or dangerous situations. Reef-safe sunscreen protects marine ecosystems. Beach vacations suit families, couples, and solo travelers equally well.]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>75</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[beach-destinations-guide]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_tag" nicename="beaches"><![CDATA[beaches]]></category>
-		<category domain="post_tag" nicename="caribbean"><![CDATA[Caribbean]]></category>
-		<category domain="post_tag" nicename="islands"><![CDATA[islands]]></category>
-		<category domain="post_tag" nicename="resorts"><![CDATA[resorts]]></category>
-		<category domain="post_tag" nicename="thailand"><![CDATA[Thailand]]></category>
-		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
-						</item>
-					<item>
-		<title><![CDATA[Mountain Travel Adventures]]></title>
-		<link>https://mydigitalagent.co.uk/dev/mountain-travel-adventures/</link>
-		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/mountain-travel-adventures/</guid>
-		<description></description>
-		<content:encoded><![CDATA[Mountain destinations provide breathtaking scenery and outdoor recreation opportunities. Alpine villages offer charm and authentic local culture. Hiking trails range from easy walks to challenging climbs. Altitude sickness affects some visitors and requires acclimatization. Proper gear protects against unpredictable mountain weather. Ski resorts transform into summer hiking destinations. Mountain environments demand respect and preparation.]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>76</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[mountain-travel-adventures]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_tag" nicename="alps"><![CDATA[Alps]]></category>
-		<category domain="post_tag" nicename="hiking"><![CDATA[hiking]]></category>
-		<category domain="post_tag" nicename="mountain-climbing"><![CDATA[mountain climbing]]></category>
-		<category domain="post_tag" nicename="rocky-mountains"><![CDATA[Rocky Mountains]]></category>
-		<category domain="post_tag" nicename="ski-resorts"><![CDATA[ski resorts]]></category>
-		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
-						</item>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
+		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767700388]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[plugin3]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
 					<item>
 		<title><![CDATA[City Break Itineraries]]></title>
 		<link>https://mydigitalagent.co.uk/dev/city-break-itineraries/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/city-break-itineraries/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Short city breaks maximize limited vacation time with concentrated experiences. Prioritizing must-see attractions prevents trying to do everything. Using public transportation immerses you in local life. Neighborhood exploration reveals authentic character beyond tourist zones. Booking skip-the-line tickets saves precious hours. Balancing planned activities with spontaneous discoveries creates memorable trips. Even weekend trips provide refreshing changes of scenery.]]></content:encoded>
@@ -5889,7 +6704,7 @@
 		<title><![CDATA[Travel During Holidays]]></title>
 		<link>https://mydigitalagent.co.uk/dev/travel-during-holidays/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/travel-during-holidays/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Traveling during holidays offers unique cultural experiences despite larger crowds. Christmas markets transform European cities into winter wonderlands. Experiencing local holiday traditions provides authentic cultural immersion. Booking well in advance secures accommodation during peak periods. Prices increase significantly during major holidays. Some attractions close for celebrations requiring itinerary adjustments. Holiday travel creates special memories worth extra planning efforts.]]></content:encoded>
@@ -5919,7 +6734,7 @@
 		<title><![CDATA[Cruise Ship Experiences]]></title>
 		<link>https://mydigitalagent.co.uk/dev/cruise-ship-experiences/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/cruise-ship-experiences/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Cruise vacations offer convenience of visiting multiple destinations without constant packing. All-inclusive pricing simplifies budgeting and planning. Onboard entertainment provides activities during sea days. Shore excursions introduce highlights of port cities. Cabin selection significantly impacts comfort and experience. Dining options range from casual to formal. Cruises suit travelers seeking structured vacations with variety.]]></content:encoded>
@@ -5949,7 +6764,7 @@
 		<title><![CDATA[Road Trip Planning]]></title>
 		<link>https://mydigitalagent.co.uk/dev/road-trip-planning/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/road-trip-planning/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Road trips offer flexibility and discovery impossible with other travel methods. Planning routes with interesting stops prevents monotonous driving. Checking vehicle condition before departure avoids breakdowns. Booking accommodations strategically balances spontaneity with availability. Downloading offline maps ensures navigation in remote areas. Packing emergency supplies provides peace of mind. Road trips create adventures and memories at your own pace.]]></content:encoded>
@@ -5979,7 +6794,7 @@
 		<title><![CDATA[Creating Family Traditions]]></title>
 		<link>https://mydigitalagent.co.uk/dev/creating-family-traditions/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/creating-family-traditions/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Family traditions create lasting memories and strengthen bonds across generations. Weekly game nights offer consistent quality time together. Annual vacation destinations become eagerly anticipated events. Holiday rituals provide comfort and continuity throughout life. Even simple traditions like Sunday breakfast together build connection. Children carry these traditions into their own families eventually. Starting new traditions is never too late or too early.]]></content:encoded>
@@ -6009,7 +6824,7 @@
 		<title><![CDATA[Parenting in the Digital Age]]></title>
 		<link>https://mydigitalagent.co.uk/dev/parenting-in-the-digital-age/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/parenting-in-the-digital-age/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Balancing technology use with childhood development presents modern parenting challenges. Setting screen time limits helps children develop healthy habits early. Engaging with content together creates opportunities for important conversations. Teaching digital citizenship prepares kids for online world realities. Modeling healthy technology use matters more than lectures. Creating tech-free zones preserves family connection time. Open communication about online experiences builds trust.]]></content:encoded>
@@ -6039,7 +6854,7 @@
 		<title><![CDATA[Multigenerational Living Benefits]]></title>
 		<link>https://mydigitalagent.co.uk/dev/multigenerational-living-benefits/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/multigenerational-living-benefits/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Multigenerational households offer unique advantages for all family members involved. Grandparents provide childcare support while maintaining purposeful engagement. Children benefit from diverse perspectives and stronger family connections. Cost sharing makes housing more affordable for everyone. Different generations learn from each other's experiences and viewpoints. While challenges exist, communication and respect make arrangements successful. This living situation reflects many cultures' traditional values.]]></content:encoded>
@@ -6069,7 +6884,7 @@
 		<title><![CDATA[Sibling Relationships Through Life]]></title>
 		<link>https://mydigitalagent.co.uk/dev/sibling-relationships-through-life/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/sibling-relationships-through-life/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Sibling bonds evolve significantly from childhood through adulthood. Early rivalry often transforms into deep friendship over time. Shared history creates understanding that others cannot replicate. Geographic distance challenges but doesn't eliminate these important connections. Making effort to stay connected pays emotional dividends throughout life. Supporting each other during difficult times strengthens bonds. Appreciating siblings becomes easier with maturity.]]></content:encoded>
@@ -6099,7 +6914,7 @@
 		<title><![CDATA[Teaching Kids Financial Literacy]]></title>
 		<link>https://mydigitalagent.co.uk/dev/teaching-kids-financial-literacy/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/teaching-kids-financial-literacy/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Financial education provides children with essential life skills for future success. Allowances teach basic money management and decision-making consequences. Involving kids in family budget discussions demonstrates real-world financial planning. Saving for goals helps children understand delayed gratification benefits. Opening a bank account makes abstract concepts tangible. Discussing needs versus wants develops critical thinking. Starting financial conversations early builds confidence.]]></content:encoded>
@@ -6129,7 +6944,7 @@
 		<title><![CDATA[Family Meal Time Importance]]></title>
 		<link>https://mydigitalagent.co.uk/dev/family-meal-time-importance/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/family-meal-time-importance/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Regular family meals provide benefits beyond basic nutrition. Conversations during dinner strengthen communication skills and family bonds. Children who eat with families regularly perform better academically. Shared meals model healthy eating habits and social skills. Creating a no-device policy during meals encourages genuine connection. Even simple meals together beat elaborate food eaten separately. Prioritizing this time requires intention but rewards everyone.]]></content:encoded>
@@ -6159,7 +6974,7 @@
 		<title><![CDATA[Blended Family Dynamics]]></title>
 		<link>https://mydigitalagent.co.uk/dev/blended-family-dynamics/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/blended-family-dynamics/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Blended families require patience, communication, and flexibility from all members. Establishing new family routines creates shared identity. Respecting existing parent-child relationships prevents resentment. Stepparents build relationships gradually rather than forcing immediate bonds. Children need time adjusting to new family structures. Clear communication about expectations reduces conflicts. Success requires commitment from adults to prioritize children's wellbeing.]]></content:encoded>
@@ -6189,7 +7004,7 @@
 		<title><![CDATA[Family Game Night Ideas]]></title>
 		<link>https://mydigitalagent.co.uk/dev/family-game-night-ideas/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/family-game-night-ideas/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Regular game nights create fun traditions and strengthen family connections. Board games teach strategy, patience, and good sportsmanship. Rotating who chooses games ensures everyone's preferences get included. Age-appropriate selections allow full family participation. Friendly competition builds memories without excessive stress. Turning off devices during games maximizes engagement. Consistency matters more than elaborate planning.]]></content:encoded>
@@ -6219,7 +7034,7 @@
 		<title><![CDATA[Raising Confident Children]]></title>
 		<link>https://mydigitalagent.co.uk/dev/raising-confident-children/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/raising-confident-children/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Building children's confidence requires balancing support with appropriate challenges. Praising effort rather than innate ability encourages growth mindset. Allowing children to struggle builds resilience and problem-solving skills. Listening without immediately solving problems validates their feelings. Encouraging diverse activities helps children discover strengths. Modeling confidence and self-acceptance teaches through example. Confidence develops gradually through consistent parenting approaches.]]></content:encoded>
@@ -6249,7 +7064,7 @@
 		<title><![CDATA[Homework Help Strategies]]></title>
 		<link>https://mydigitalagent.co.uk/dev/homework-help-strategies/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/homework-help-strategies/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Supporting children with homework requires balancing assistance with independence. Creating quiet, organized study spaces improves focus and productivity. Establishing consistent homework routines builds good habits. Asking guiding questions rather than providing answers develops thinking skills. Communicating with teachers clarifies expectations and addresses concerns. Breaking large assignments into manageable steps prevents overwhelm. Your role supports rather than completes their work.]]></content:encoded>
@@ -6279,7 +7094,7 @@
 		<title><![CDATA[Family Vacation Planning]]></title>
 		<link>https://mydigitalagent.co.uk/dev/family-vacation-planning/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/family-vacation-planning/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Planning family vacations that satisfy everyone requires compromise and creativity. Including children in planning builds excitement and buy-in. Balancing activities with downtime prevents exhaustion. Choosing accommodations with space for everyone reduces stress. Setting realistic expectations about behavior prevents disappointment. Building flexibility into itineraries accommodates unexpected situations. Vacations create shared memories that last lifetimes.]]></content:encoded>
@@ -6309,7 +7124,7 @@
 		<title><![CDATA[Teen Communication Tips]]></title>
 		<link>https://mydigitalagent.co.uk/dev/teen-communication-tips/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/teen-communication-tips/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Maintaining open communication with teenagers requires patience and strategic approaches. Creating judgment-free spaces encourages honest conversations. Active listening without immediate advice shows respect for their perspectives. Choosing appropriate times for serious discussions increases receptiveness. Respecting privacy within reasonable boundaries builds trust. Sharing your own experiences creates connection. Teenage years challenge parents but strengthen relationships when navigated thoughtfully.]]></content:encoded>
@@ -6339,7 +7154,7 @@
 		<title><![CDATA[Grandparent-Grandchild Bonds]]></title>
 		<link>https://mydigitalagent.co.uk/dev/grandparent-grandchild-bonds/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/grandparent-grandchild-bonds/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Relationships between grandparents and grandchildren offer unique joys and benefits. Grandparents provide unconditional love without daily parenting pressures. Sharing family history connects children to their heritage. Different generational perspectives enrich children's worldviews. Technology helps maintain connections across distances. Special activities create treasured memories. These relationships benefit both generations profoundly.]]></content:encoded>
@@ -6369,7 +7184,7 @@
 		<title><![CDATA[Pet Care Responsibilities]]></title>
 		<link>https://mydigitalagent.co.uk/dev/pet-care-responsibilities/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/pet-care-responsibilities/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Family pets teach children responsibility while providing companionship. Assigning age-appropriate care tasks builds accountability. Discussing commitment required before getting pets prevents impulsive decisions. Regular veterinary care maintains pet health and demonstrates responsibility. Pets reduce stress and encourage physical activity. Loss of pets provides opportunities to discuss grief. Pet ownership creates lasting memories and important life lessons.]]></content:encoded>
@@ -6399,7 +7214,7 @@
 		<title><![CDATA[Family Budget Management]]></title>
 		<link>https://mydigitalagent.co.uk/dev/family-budget-management/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/family-budget-management/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Managing family finances requires planning, communication, and discipline. Creating realistic budgets based on actual income prevents overspending. Involving appropriate family members in financial decisions teaches responsibility. Emergency funds provide security during unexpected situations. Distinguishing needs from wants helps prioritize spending. Regular budget reviews allow adjustments as circumstances change. Financial stress decreases when families plan together.]]></content:encoded>
@@ -6429,7 +7244,7 @@
 		<title><![CDATA[Extracurricular Activity Balance]]></title>
 		<link>https://mydigitalagent.co.uk/dev/extracurricular-activity-balance/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/extracurricular-activity-balance/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Children benefit from extracurricular activities but over-scheduling causes stress. Allowing children to pursue genuine interests rather than parent aspirations increases enjoyment. Balancing activities with free play time supports healthy development. Teaching commitment while respecting reasonable limits builds character. Considering family schedule impacts prevents chaos. Quality participation matters more than quantity. Unstructured time allows creativity and rest.]]></content:encoded>
@@ -6459,7 +7274,7 @@
 		<title><![CDATA[Single Parent Strategies]]></title>
 		<link>https://mydigitalagent.co.uk/dev/single-parent-strategies/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/single-parent-strategies/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Single parenting presents unique challenges requiring resilience and resourcefulness. Building support networks provides practical and emotional assistance. Maintaining consistent routines creates stability for children. Prioritizing self-care prevents burnout and models healthy behavior. Communicating age-appropriately about family situations helps children understand. Celebrating successes acknowledges accomplishments despite difficulties. Single parents raise successful, happy children through dedication and love.]]></content:encoded>
@@ -6489,7 +7304,7 @@
 		<title><![CDATA[Family Meeting Benefits]]></title>
 		<link>https://mydigitalagent.co.uk/dev/family-meeting-benefits/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/family-meeting-benefits/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Regular family meetings improve communication and collaborative decision-making. Establishing meeting schedules creates consistency everyone can expect. Rotating facilitators gives children leadership experience. Discussing upcoming events prevents scheduling conflicts. Addressing concerns before they escalate resolves issues early. Celebrating achievements recognizes individual and family accomplishments. Family meetings strengthen unity and belonging.]]></content:encoded>
@@ -6519,7 +7334,7 @@
 		<title><![CDATA[Teaching Life Skills]]></title>
 		<link>https://mydigitalagent.co.uk/dev/teaching-life-skills/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/teaching-life-skills/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Preparing children for independence requires teaching practical life skills systematically. Age-appropriate cooking lessons build confidence and self-sufficiency. Laundry and cleaning skills prevent college or adult living struggles. Basic first aid knowledge prepares children for emergencies. Money management skills prevent future financial mistakes. Time management abilities improve academic and professional success. Life skills education demonstrates trust in children's growing capabilities.]]></content:encoded>
@@ -6549,7 +7364,7 @@
 		<title><![CDATA[Family Volunteering Together]]></title>
 		<link>https://mydigitalagent.co.uk/dev/family-volunteering-together/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/family-volunteering-together/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Volunteering as a family teaches compassion while strengthening bonds. Finding age-appropriate opportunities ensures everyone can meaningfully participate. Regular volunteering commitments build responsibility and consistency. Discussing experiences afterward reinforces lessons learned. Exposure to different situations broadens children's perspectives. Service work demonstrates family values through action. Shared purpose creates meaningful family memories.]]></content:encoded>
@@ -6579,7 +7394,7 @@
 		<title><![CDATA[PHILOSOPHY Understanding Machine Learning Basics]]></title>
 		<link>https://mydigitalagent.co.uk/dev/understanding-machine-learning-basics/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/understanding-machine-learning-basics/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Machine learning enables computers to improve through experience without explicit programming. Algorithms identify patterns in vast datasets humans cannot process efficiently. Training data quality directly impacts model accuracy and reliability. Supervised learning uses labeled examples while unsupervised learning finds hidden patterns independently. Applications range from email filtering to medical diagnosis. Understanding basics helps you navigate our increasingly AI-driven world confidently.]]></content:encoded>
@@ -6613,7 +7428,7 @@
 		<title><![CDATA[ARTIFICIAL INTELLIGENCE in Healthcare Transformation]]></title>
 		<link>https://mydigitalagent.co.uk/dev/ai-in-healthcare-transformation/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/ai-in-healthcare-transformation/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Artificial intelligence is revolutionizing medical diagnosis and treatment planning. Algorithms analyze medical images faster and sometimes more accurately than human experts. Predictive models identify patients at risk for specific conditions. Drug discovery processes accelerate through AI-powered molecular analysis. Personalized treatment plans consider individual genetic profiles. While AI assists doctors, human judgment remains essential. Technology augments rather than replaces medical professionals.]]></content:encoded>
@@ -6647,7 +7462,7 @@
 		<title><![CDATA[Ethics in ARTIFICIAL INTELLIGENCE]]></title>
 		<link>https://mydigitalagent.co.uk/dev/ethics-in-artificial-intelligence/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/ethics-in-artificial-intelligence/</guid>
 		<description></description>
 		<content:encoded><![CDATA[As AI systems become more powerful, ethical considerations grow increasingly important. Bias in training data can perpetuate or amplify societal prejudices. Privacy concerns arise when algorithms process sensitive personal information. Transparency in decision-making processes builds public trust. Accountability becomes complex when AI systems make autonomous decisions. Balancing innovation with responsibility requires ongoing dialogue. Establishing ethical frameworks now shapes technology's future impact.]]></content:encoded>
@@ -6681,7 +7496,7 @@
 		<title><![CDATA[Natural Language Processing Advances]]></title>
 		<link>https://mydigitalagent.co.uk/dev/natural-language-processing-advances/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/natural-language-processing-advances/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Natural language processing enables computers to understand and generate human language remarkably well. Chatbots handle customer service inquiries with increasing sophistication. Translation services break down language barriers in real-time. Sentiment analysis helps businesses understand customer feedback at scale. Voice assistants respond to commands with growing accuracy. These advances transform how we interact with technology daily. Progress continues accelerating rapidly.]]></content:encoded>
@@ -6711,7 +7526,7 @@
 		<title><![CDATA[ARTIFICIAL INTELLIGENCE and Creative Industries]]></title>
 		<link>https://mydigitalagent.co.uk/dev/ai-and-creative-industries/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/ai-and-creative-industries/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Artificial intelligence is making surprising inroads into traditionally human creative domains. Algorithms compose music, generate artwork, and even write poetry. These tools augment human creativity rather than replacing it entirely. Designers use AI to explore variations and possibilities quickly. Writers employ AI assistants for brainstorming and editing. Questions about authorship and originality emerge. The relationship between human and machine creativity continues evolving.]]></content:encoded>
@@ -6745,7 +7560,7 @@
 		<title><![CDATA[Future of AI Development]]></title>
 		<link>https://mydigitalagent.co.uk/dev/future-of-ai-development/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/future-of-ai-development/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Artificial intelligence development continues at breathtaking pace with uncertain ultimate destination. Researchers debate whether artificial general intelligence is achievable or even desirable. Quantum computing could exponentially increase AI capabilities. Regulation struggles to keep pace with technological advancement. Education systems must prepare students for AI-integrated workplaces. International cooperation on AI governance becomes increasingly necessary. The decisions we make today shape tomorrow's technological landscape.]]></content:encoded>
@@ -6775,7 +7590,7 @@
 		<title><![CDATA[ARTIFICIAL INTELLIGENCE in Autonomous Vehicles]]></title>
 		<link>https://mydigitalagent.co.uk/dev/ai-in-autonomous-vehicles/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/ai-in-autonomous-vehicles/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Self-driving cars represent one of AI's most visible and challenging applications. Computer vision systems identify pedestrians, vehicles, and road conditions. Machine learning algorithms predict other drivers' behaviors. Sensor fusion combines data from cameras, radar, and lidar. Safety concerns and liability questions slow widespread adoption. Autonomous vehicles could dramatically reduce traffic accidents and congestion. Full autonomy remains years away despite significant progress.]]></content:encoded>
@@ -6809,7 +7624,7 @@
 		<title><![CDATA[AI-Powered Personal Assistants]]></title>
 		<link>https://mydigitalagent.co.uk/dev/ai-powered-personal-assistants/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/ai-powered-personal-assistants/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Virtual assistants integrate AI into daily life through smartphones and smart speakers. Voice recognition accuracy has improved dramatically in recent years. Natural language understanding allows conversational interactions. Integration with smart home devices enables hands-free control. Privacy concerns arise from always-listening microphones. Personalization improves through continuous learning about user preferences. Assistants become more capable and helpful over time.]]></content:encoded>
@@ -6839,7 +7654,7 @@
 		<title><![CDATA[PHILOSOPHY of Machine Learning in Finance]]></title>
 		<link>https://mydigitalagent.co.uk/dev/machine-learning-in-finance/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/machine-learning-in-finance/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Financial institutions increasingly rely on machine learning for various applications. Fraud detection systems identify suspicious transactions in real-time. Algorithmic trading executes trades based on market pattern analysis. Credit scoring models assess loan default risks. Robo-advisors provide automated investment advice. Risk management systems predict market volatility. AI transforms finance while requiring careful oversight and regulation.]]></content:encoded>
@@ -6873,7 +7688,7 @@
 		<title><![CDATA[ARTIFICIAL INTELLIGENCE and Job Market Impact]]></title>
 		<link>https://mydigitalagent.co.uk/dev/ai-and-job-market-impact/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/ai-and-job-market-impact/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Artificial intelligence will significantly reshape employment across industries. Automation threatens routine jobs while creating new roles. Reskilling and lifelong learning become essential for career resilience. Some jobs will be augmented rather than replaced by AI. Understanding AI capabilities helps workers adapt successfully. Education systems must prepare students for AI-integrated workplaces. The transition requires thoughtful policy responses and support systems.]]></content:encoded>
@@ -6907,7 +7722,7 @@
 		<title><![CDATA[Deep Learning Explained]]></title>
 		<link>https://mydigitalagent.co.uk/dev/deep-learning-explained/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/deep-learning-explained/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Deep learning uses neural networks with multiple layers to process information. These systems learn hierarchical representations of data automatically. Image recognition capabilities now rival human performance. Training deep networks requires substantial computational resources. Transfer learning allows applying knowledge from one domain to another. Deep learning drives many recent AI breakthroughs. Understanding these fundamentals helps demystify modern AI.]]></content:encoded>
@@ -6937,7 +7752,7 @@
 		<title><![CDATA[ARTIFICIAL INTELLIGENCE in Education Technology]]></title>
 		<link>https://mydigitalagent.co.uk/dev/ai-in-education-technology/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/ai-in-education-technology/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Artificial intelligence personalizes learning experiences for individual students. Adaptive learning platforms adjust difficulty based on performance. Automated grading systems save teachers time on routine assessments. Intelligent tutoring systems provide customized instruction and feedback. Early warning systems identify students at risk of falling behind. AI enhances rather than replaces human teachers. Technology makes quality education more accessible globally.]]></content:encoded>
@@ -6971,7 +7786,7 @@
 		<title><![CDATA[Computer Vision Applications]]></title>
 		<link>https://mydigitalagent.co.uk/dev/computer-vision-applications/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/computer-vision-applications/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Computer vision enables machines to interpret and understand visual information. Facial recognition systems identify individuals in photos and videos. Object detection powers autonomous vehicles and security systems. Medical image analysis assists radiologists with diagnosis. Quality control systems inspect manufacturing products. Augmented reality applications overlay digital information on physical environments. Computer vision transforms industries from retail to agriculture.]]></content:encoded>
@@ -7001,7 +7816,7 @@
 		<title><![CDATA[ARTIFICIAL INTELLIGENCE and Cybersecurity]]></title>
 		<link>https://mydigitalagent.co.uk/dev/ai-and-cybersecurity/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/ai-and-cybersecurity/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Artificial intelligence enhances cybersecurity defenses against evolving threats. Machine learning models detect anomalous network behavior patterns. Predictive algorithms identify vulnerabilities before exploitation. Automated response systems contain breaches faster than human analysts. However, attackers also leverage AI for sophisticated attacks. The cybersecurity field becomes an AI arms race. Human expertise remains crucial for strategy and oversight.]]></content:encoded>
@@ -7035,7 +7850,7 @@
 		<title><![CDATA[Explainable ARTIFICIAL INTELIGENCE Importance]]></title>
 		<link>https://mydigitalagent.co.uk/dev/explainable-ai-importance/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/explainable-ai-importance/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Understanding how AI systems reach decisions becomes increasingly critical. Black box models make accurate predictions but lack transparency. Explainable AI techniques reveal reasoning behind algorithmic decisions. Transparency builds trust in high-stakes applications like healthcare and finance. Regulatory requirements may mandate explainability for certain uses. Balancing accuracy with interpretability presents ongoing challenges. Research focuses on making powerful AI systems more understandable.]]></content:encoded>
@@ -7069,7 +7884,7 @@
 		<title><![CDATA[ARTIFICIAL INTELLIGENCE in Retail and E-commerce]]></title>
 		<link>https://mydigitalagent.co.uk/dev/ai-in-retail-and-e-commerce/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/ai-in-retail-and-e-commerce/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Retail businesses leverage AI to personalize shopping experiences and optimize operations. Recommendation engines suggest products based on browsing and purchase history. Chatbots handle customer service inquiries instantly. Demand forecasting optimizes inventory management. Visual search allows finding products through images. Dynamic pricing adjusts costs based on demand and competition. AI transforms both online and physical retail experiences.]]></content:encoded>
@@ -7103,7 +7918,7 @@
 		<title><![CDATA[Reinforcement Learning Basics]]></title>
 		<link>https://mydigitalagent.co.uk/dev/reinforcement-learning-basics/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/reinforcement-learning-basics/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Reinforcement learning trains AI systems through trial and error interactions. Agents learn optimal behaviors by receiving rewards and penalties. This approach excels in gaming environments and robotics control. AlphaGo's victory over human champions demonstrated reinforcement learning's potential. Applications extend to resource optimization and autonomous systems. Training requires extensive computational resources and time. Reinforcement learning enables AI to master complex decision-making tasks.]]></content:encoded>
@@ -7133,7 +7948,7 @@
 		<title><![CDATA[ARTIFICIAL INTELLIGENCE  and Climate Change]]></title>
 		<link>https://mydigitalagent.co.uk/dev/ai-and-climate-change/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/ai-and-climate-change/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Artificial intelligence contributes to understanding and addressing climate challenges. Machine learning models improve weather and climate predictions. Optimization algorithms reduce energy consumption in buildings and transportation. AI analyzes satellite imagery to monitor deforestation and environmental changes. Smart grid systems balance renewable energy supply and demand. While AI can help fight climate change, training large models consumes significant energy.]]></content:encoded>
@@ -7167,7 +7982,7 @@
 		<title><![CDATA[Generative AI Applications]]></title>
 		<link>https://mydigitalagent.co.uk/dev/generative-ai-applications/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/generative-ai-applications/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Generative AI creates new content including text, images, audio, and video. Large language models generate human-like text for various purposes. Image generation systems create artwork from text descriptions. Music composition algorithms produce original scores. Deepfake technology raises concerns about misinformation. Creative professionals explore AI as collaborative tools. Generative AI democratizes content creation while raising authenticity questions.]]></content:encoded>
@@ -7197,7 +8012,7 @@
 		<title><![CDATA[ARTIFICIAL INTELLIGENCE Ethics and Regulation]]></title>
 		<link>https://mydigitalagent.co.uk/dev/ai-ethics-and-regulation/</link>
 		<pubDate>Sat, 06 Dec 2025 19:16:02 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/ai-ethics-and-regulation/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Governing artificial intelligence presents complex policy challenges worldwide. The European Union leads with comprehensive AI regulations. Balancing innovation with safety requires careful consideration. Algorithmic accountability standards hold systems responsible for outcomes. International cooperation prevents regulatory fragmentation. Public input shapes policies affecting society broadly. Effective AI governance protects rights while enabling beneficial development.]]></content:encoded>
@@ -7231,7 +8046,7 @@
 		<title><![CDATA[SMART Wireless Bluetooth Headphones]]></title>
 		<link>https://mydigitalagent.co.uk/dev/wireless-bluetooth-headphones/</link>
 		<pubDate>Mon, 08 Dec 2025 13:38:20 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/wireless-bluetooth-headphones/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Premium over-ear headphones with active noise cancellation and 30-hour battery life. Soft memory foam ear cushions provide all-day comfort during extended listening sessions. Foldable design includes protective hard travel case for portability. Built-in microphone enables clear phone calls and voice assistant access. Compatible with all Bluetooth-enabled devices including smartphones and laptops. Quick charge feature provides 5 hours of playback from just 10-minute charge. Available in multiple colors including black, silver, and blue finishes.]]></content:encoded>
@@ -7265,7 +8080,7 @@
 		<title><![CDATA[SMART Fitness Watch]]></title>
 		<link>https://mydigitalagent.co.uk/dev/smart-fitness-watch/</link>
 		<pubDate>Mon, 08 Dec 2025 13:38:20 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/smart-fitness-watch/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Track your health metrics with continuous heart rate monitoring, sleep quality tracking, and accurate step counting. Water-resistant up to 50 meters making it perfect for swimming and water sports. Built-in GPS tracking records running and cycling routes without phone. Receives smartphone notifications including calls, texts, and app alerts. Rechargeable battery lasts up to 7 days on single charge. Interchangeable bands available in multiple colors and materials. Syncs seamlessly with both iOS and Android companion apps.]]></content:encoded>
@@ -7299,7 +8114,7 @@
 		<title><![CDATA[Portable Power Bank 20000mAh]]></title>
 		<link>https://mydigitalagent.co.uk/dev/portable-power-bank-20000mah/</link>
 		<pubDate>Mon, 08 Dec 2025 13:38:20 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/portable-power-bank-20000mah/</guid>
 		<description></description>
 		<content:encoded><![CDATA[High-capacity portable charger with dual USB ports and USB-C output for versatile charging. Fast charging technology powers your devices quickly and efficiently. LED display shows remaining battery percentage at a glance. Charges iPhone 12 up to 4 times on single charge. Built-in safety features prevent overcharging and overheating. Compact size fits easily in backpacks and purses. Perfect companion for travel, camping, and emergency situations.]]></content:encoded>
@@ -7329,7 +8144,7 @@
 		<title><![CDATA[SMART 4K Streaming Media Player]]></title>
 		<link>https://mydigitalagent.co.uk/dev/4k-streaming-media-player/</link>
 		<pubDate>Mon, 08 Dec 2025 13:38:20 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/4k-streaming-media-player/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Stream your favorite content in stunning 4K Ultra HD resolution with HDR support. Access thousands of channels including Netflix, Hulu, Amazon Prime, and Disney Plus. Voice remote with built-in Alexa for hands-free control. Private listening mode through mobile app or headphone jack. Compact design hides behind TV for clean setup. Easy installation takes just minutes with included HDMI cable. Regular software updates add new features and channels automatically.]]></content:encoded>
@@ -7363,7 +8178,7 @@
 		<title><![CDATA[Mechanical Gaming Keyboard RGB]]></title>
 		<link>https://mydigitalagent.co.uk/dev/mechanical-gaming-keyboard-rgb/</link>
 		<pubDate>Mon, 08 Dec 2025 13:38:20 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/mechanical-gaming-keyboard-rgb/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Professional-grade mechanical keyboard with customizable RGB backlighting and tactile switches. Each key rated for 50 million keystrokes ensuring years of reliable use. Programmable macro keys enhance gaming performance and productivity. Detachable USB-C cable makes transportation easy. Aluminum frame provides durability and premium feel. Anti-ghosting technology ensures accurate input during intense gaming. Compatible with Windows, Mac, and Linux operating systems.]]></content:encoded>
@@ -7393,7 +8208,7 @@
 		<title><![CDATA[Wireless Charging Pad 15W]]></title>
 		<link>https://mydigitalagent.co.uk/dev/wireless-charging-pad-15w/</link>
 		<pubDate>Mon, 08 Dec 2025 13:38:20 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/wireless-charging-pad-15w/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Fast wireless charging pad delivers up to 15W output for compatible devices. Non-slip surface keeps phone securely in place while charging. LED indicator shows charging status without being distracting at night. Works with phone cases up to 5mm thick. Foreign object detection ensures safe charging. Includes USB-C cable and wall adapter. Compatible with iPhone 12 and newer, Samsung Galaxy, and other Qi-enabled devices.]]></content:encoded>
@@ -7423,7 +8238,7 @@
 		<title><![CDATA[SMART USB-C Hub 7-in-1 Adapter]]></title>
 		<link>https://mydigitalagent.co.uk/dev/usb-c-hub-7-in-1-adapter/</link>
 		<pubDate>Mon, 08 Dec 2025 13:38:20 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/usb-c-hub-7-in-1-adapter/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Expand your laptop connectivity with seven essential ports in compact aluminum design. Includes HDMI port supporting 4K displays at 60Hz. Three USB 3.0 ports for high-speed data transfer. SD and microSD card readers access photos and files. USB-C power delivery port charges laptop while using hub. Plug-and-play design requires no drivers or software. Perfect for MacBook Pro, Dell XPS, and other USB-C laptops.]]></content:encoded>
@@ -7457,7 +8272,7 @@
 		<title><![CDATA[SMART LED Light Bulbs 4-Pack]]></title>
 		<link>https://mydigitalagent.co.uk/dev/smart-led-light-bulbs-4-pack/</link>
 		<pubDate>Mon, 08 Dec 2025 13:38:20 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/smart-led-light-bulbs-4-pack/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Control lighting from anywhere using smartphone app or voice commands. 16 million colors and adjustable brightness create perfect ambiance. Schedule lights to turn on and off automatically. Energy-efficient LED technology lasts 25,000 hours. Works with Alexa, Google Assistant, and Apple HomeKit. No hub required - connects directly to WiFi. Standard E26 base fits most lamps and fixtures.]]></content:encoded>
@@ -7491,7 +8306,7 @@
 		<title><![CDATA[SMART Webcam 1080p HD with Microphone]]></title>
 		<link>https://mydigitalagent.co.uk/dev/webcam-1080p-hd-with-microphone/</link>
 		<pubDate>Mon, 08 Dec 2025 13:38:20 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/webcam-1080p-hd-with-microphone/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Crystal-clear 1080p video calling with auto-focus and light correction technology. Built-in dual microphones capture clear audio from up to 8 feet away. Wide 90-degree field of view fits multiple people in frame. Flexible clip mount fits monitors, laptops, and tripods. Plug-and-play USB connection works instantly without drivers. Privacy shutter protects when camera not in use. Compatible with Zoom, Skype, Microsoft Teams, and other platforms.]]></content:encoded>
@@ -7525,7 +8340,7 @@
 		<title><![CDATA[Bluetooth Speaker Waterproof]]></title>
 		<link>https://mydigitalagent.co.uk/dev/bluetooth-speaker-waterproof/</link>
 		<pubDate>Mon, 08 Dec 2025 13:38:20 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/bluetooth-speaker-waterproof/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Portable speaker delivers 360-degree sound with deep bass and crisp highs. IPX7 waterproof rating allows submersion up to 3 feet for 30 minutes. 12-hour battery life keeps music playing all day long. Wireless stereo pairing connects two speakers for immersive sound. Built-in microphone enables hands-free calling. Durable rubberized exterior withstands drops and bumps. Includes carabiner clip for attaching to backpacks.]]></content:encoded>
@@ -7555,7 +8370,7 @@
 		<title><![CDATA[Stainless Steel Cookware Set 10-Piece]]></title>
 		<link>https://mydigitalagent.co.uk/dev/stainless-steel-cookware-set-10-piece/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/stainless-steel-cookware-set-10-piece/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Professional-quality cookware set includes essential pots and pans for complete kitchen. Triple-layer base ensures even heat distribution preventing hot spots. Stainless steel construction is oven-safe up to 500 degrees. Tempered glass lids allow monitoring without releasing heat. Riveted handles stay cool during cooking. Dishwasher-safe for easy cleanup. Compatible with all cooktops including induction. Lifetime warranty covers defects.]]></content:encoded>
@@ -7585,7 +8400,7 @@
 		<title><![CDATA[Air Fryer 6-Quart Digital]]></title>
 		<link>https://mydigitalagent.co.uk/dev/air-fryer-6-quart-digital/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/air-fryer-6-quart-digital/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Healthy cooking with up to 85% less oil than traditional frying methods. Large 6-quart capacity feeds family of four to six people. Seven preset programs for fries, chicken, steak, fish, and more. Digital touchscreen controls with adjustable temperature up to 400°F. Non-stick basket removes easily for cleaning in dishwasher. Auto shut-off and overheat protection ensure safe operation. Includes recipe book with 50 delicious ideas.]]></content:encoded>
@@ -7615,7 +8430,7 @@
 		<title><![CDATA[Coffee Maker Programmable 12-Cup]]></title>
 		<link>https://mydigitalagent.co.uk/dev/coffee-maker-programmable-12-cup/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/coffee-maker-programmable-12-cup/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Wake up to fresh coffee with 24-hour programmable timer and auto-brew feature. Brews up to 12 cups in approximately 10 minutes. Pause-and-serve function allows pouring mid-brew without dripping. Permanent gold-tone filter eliminates need for paper filters. Water window shows exact amount before brewing. Keep-warm plate maintains optimal temperature for 2 hours. Easy-view water window and removable filter basket simplify filling and cleaning.]]></content:encoded>
@@ -7645,7 +8460,7 @@
 		<title><![CDATA[Vacuum Cleaner Cordless Stick]]></title>
 		<link>https://mydigitalagent.co.uk/dev/vacuum-cleaner-cordless-stick/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/vacuum-cleaner-cordless-stick/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Powerful cordless cleaning with up to 40 minutes of fade-free runtime. Converts to handheld vacuum for furniture, stairs, and car interior. LED headlights illuminate hidden dust and debris. HEPA filtration captures 99.97% of allergens and particles. Washable filter and dustbin reduce ongoing costs. Wall-mount charging dock keeps vacuum ready and organized. Lightweight design reduces arm fatigue during extended cleaning.]]></content:encoded>
@@ -7675,7 +8490,7 @@
 		<title><![CDATA[FOAM 2 Memory Pillow Set of 2]]></title>
 		<link>https://mydigitalagent.co.uk/dev/memory-foam-pillow-set-of-2/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/memory-foam-pillow-set-of-2/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Premium shredded memory foam adjusts to your preferred sleeping position and height. Breathable bamboo cover remains cool throughout the night. Hypoallergenic materials resist dust mites, mold, and allergens. Machine-washable cover removes easily with zipper. Maintains shape and support for years without flattening. CertiPUR-US certified foam meets safety and environmental standards. Suitable for side, back, and stomach sleepers.]]></content:encoded>
@@ -7709,7 +8524,7 @@
 		<title><![CDATA[Knife Set with Block 15-Piece]]></title>
 		<link>https://mydigitalagent.co.uk/dev/knife-set-with-block-15-piece/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/knife-set-with-block-15-piece/</guid>
 		<description></description>
 		<content:encoded><![CDATA[German stainless steel blades maintain sharp edge with minimal maintenance. Set includes chef knife, bread knife, utility knife, paring knife, and steak knives. Ergonomic handles provide comfortable grip and control. Wooden block stores knives safely and looks elegant on counter. Full tang construction ensures balance and durability. Hand-wash recommended to preserve blade sharpness. Professional quality at home kitchen price point.]]></content:encoded>
@@ -7739,7 +8554,7 @@
 		<title><![CDATA[Slow Cooker 6-Quart Programmable]]></title>
 		<link>https://mydigitalagent.co.uk/dev/slow-cooker-6-quart-programmable/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/slow-cooker-6-quart-programmable/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Set-it-and-forget-it cooking with programmable timer up to 20 hours. Large 6-quart capacity perfect for family meals and meal prep. Three heat settings provide cooking flexibility for different recipes. Automatic keep-warm mode activates after cooking completes. Removable ceramic pot is dishwasher-safe for easy cleanup. Glass lid allows monitoring without releasing heat and moisture. Ideal for soups, stews, roasts, and one-pot meals.]]></content:encoded>
@@ -7769,7 +8584,7 @@
 		<title><![CDATA[Non-Stick Bakeware Set 5-Piece]]></title>
 		<link>https://mydigitalagent.co.uk/dev/non-stick-bakeware-set-5-piece/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/non-stick-bakeware-set-5-piece/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Complete baking set includes cookie sheet, cake pans, and muffin tin. Premium non-stick coating ensures easy food release and quick cleanup. Heavy-duty steel construction prevents warping at high temperatures. Oven-safe up to 450 degrees Fahrenheit. Reinforced rolled edges provide strength and durability. Gray color hides scratches better than darker finishes. Dishwasher-safe though hand-washing extends coating life.]]></content:encoded>
@@ -7799,7 +8614,7 @@
 		<title><![CDATA[Digital Kitchen Scale 11lb Capacity]]></title>
 		<link>https://mydigitalagent.co.uk/dev/digital-kitchen-scale-11lb-capacity/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/digital-kitchen-scale-11lb-capacity/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Precise measurements up to 11 pounds with 0.1-ounce increments for accuracy. Measures in grams, ounces, pounds, and milliliters for recipe flexibility. Tare function zeros out container weight for ingredient-only measurements. Large backlit LCD display shows readings clearly in any lighting. Slim profile stores easily in drawers or cabinets. Auto-off feature preserves battery life. Stainless steel platform wipes clean easily.]]></content:encoded>
@@ -7829,7 +8644,7 @@
 		<title><![CDATA[Yoga Mat Extra Thick 1/2 Inch]]></title>
 		<link>https://mydigitalagent.co.uk/dev/yoga-mat-extra-thick-1-2-inch/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/yoga-mat-extra-thick-1-2-inch/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Extra-thick cushioning protects joints during yoga, Pilates, and floor exercises. Non-slip textured surface provides secure grip in any position. High-density foam maintains shape without compressing over time. Easy-to-clean material wipes down with damp cloth. Lightweight and portable with included carrying strap. Measures 72 inches long and 24 inches wide. Free from latex, phthalates, and harmful chemicals.]]></content:encoded>
@@ -7859,7 +8674,7 @@
 		<title><![CDATA[Adjustable Dumbbell Set 50lbs]]></title>
 		<link>https://mydigitalagent.co.uk/dev/adjustable-dumbbell-set-50lbs/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/adjustable-dumbbell-set-50lbs/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Space-saving design replaces 15 sets of traditional dumbbells in one compact unit. Adjusts from 5 to 50 pounds per dumbbell in 5-pound increments. Quick-change dial system switches weights in seconds. Durable construction withstands intense workouts for years. Includes storage tray keeping weights organized and floor protected. Perfect for home gym without taking up entire room. Saves money compared to buying individual dumbbell pairs.]]></content:encoded>
@@ -7889,7 +8704,7 @@
 		<title><![CDATA[Resistance Bands Set of 5]]></title>
 		<link>https://mydigitalagent.co.uk/dev/resistance-bands-set-of-5/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/resistance-bands-set-of-5/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Five resistance levels from extra-light to extra-heavy accommodate all fitness levels. Natural latex bands provide smooth, consistent resistance. Includes door anchor, handles, and ankle straps for exercise variety. Portable design fits in small bag for travel or outdoor workouts. Suitable for strength training, physical therapy, and stretching. Includes workout guide with 30 exercises. Lifetime replacement guarantee ensures satisfaction.]]></content:encoded>
@@ -7919,7 +8734,7 @@
 		<title><![CDATA[Running Shoes Cushioned Support]]></title>
 		<link>https://mydigitalagent.co.uk/dev/running-shoes-cushioned-support/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/running-shoes-cushioned-support/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Responsive cushioning absorbs impact protecting joints during runs. Breathable mesh upper keeps feet cool and dry during intense workouts. Supportive heel counter prevents excessive pronation and ankle rolling. Durable rubber outsole provides traction on various surfaces. Lightweight construction reduces fatigue on long runs. Reflective details enhance visibility for early morning or evening runs. Available in multiple widths and colors.]]></content:encoded>
@@ -7949,7 +8764,7 @@
 		<title><![CDATA[FOAM 3 Roller High Density]]></title>
 		<link>https://mydigitalagent.co.uk/dev/foam-roller-high-density/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/foam-roller-high-density/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Deep tissue massage releases muscle tension and improves flexibility. High-density foam maintains shape through years of regular use. Textured surface increases blood flow to targeted areas. Hollow core design provides firm support without excessive weight. Ideal for pre-workout warmup and post-workout recovery. Includes exercise guide demonstrating proper rolling techniques. Available in 12-inch, 18-inch, and 36-inch lengths.]]></content:encoded>
@@ -7983,7 +8798,7 @@
 		<title><![CDATA[Water Bottle Insulated 32oz]]></title>
 		<link>https://mydigitalagent.co.uk/dev/water-bottle-insulated-32oz/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/water-bottle-insulated-32oz/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Double-wall vacuum insulation keeps drinks cold for 24 hours or hot for 12 hours. Wide mouth opening fits ice cubes and allows easy cleaning. Powder-coated exterior provides secure grip and resists scratches. Leak-proof lid prevents spills in gym bags and backpacks. BPA-free materials ensure safe drinking. Fits standard cup holders in cars and bikes. Available in 15 vibrant colors.]]></content:encoded>
@@ -8013,7 +8828,7 @@
 		<title><![CDATA[Exercise Bike Stationary Indoor]]></title>
 		<link>https://mydigitalagent.co.uk/dev/exercise-bike-stationary-indoor/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/exercise-bike-stationary-indoor/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Smooth magnetic resistance provides quiet operation perfect for apartments. Adjustable seat and handlebars accommodate users from 5 feet to 6 feet 5 inches. Digital monitor tracks time, speed, distance, and calories burned. Heavy-duty flywheel creates realistic cycling experience. Tablet holder allows watching shows during workouts. Transportation wheels enable easy room-to-room movement. Supports up to 300 pounds.]]></content:encoded>
@@ -8043,7 +8858,7 @@
 		<title><![CDATA[Jump Rope Speed Training]]></title>
 		<link>https://mydigitalagent.co.uk/dev/jump-rope-speed-training/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/jump-rope-speed-training/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Professional-grade ball bearing system enables fast, smooth rotations for double-unders. Adjustable cable length customizes rope to your height. Comfortable foam handles prevent hand fatigue during long sessions. Lightweight design makes it perfect for travel workouts. Durable steel cable withstands intense training sessions. Improves cardiovascular fitness, coordination, and footwork. Includes carrying pouch and spare cable.]]></content:encoded>
@@ -8073,7 +8888,7 @@
 		<title><![CDATA[Yoga Blocks Set of 2 with Strap]]></title>
 		<link>https://mydigitalagent.co.uk/dev/yoga-blocks-set-of-2-with-strap/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/yoga-blocks-set-of-2-with-strap/</guid>
 		<description></description>
 		<content:encoded><![CDATA[High-density foam blocks provide stable support during challenging poses. Beveled edges offer comfortable grip from any angle. Lightweight yet sturdy construction weighs less than 5 ounces each. Included 8-foot strap assists with stretching and flexibility. Non-slip surface prevents blocks from sliding during use. Easy to clean with soap and water. Suitable for beginners and advanced practitioners.]]></content:encoded>
@@ -8103,7 +8918,7 @@
 		<title><![CDATA[Gym Bag Duffel with Shoe Compartment]]></title>
 		<link>https://mydigitalagent.co.uk/dev/gym-bag-duffel-with-shoe-compartment/</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/gym-bag-duffel-with-shoe-compartment/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Spacious main compartment holds clothes, towel, and workout essentials. Separate ventilated shoe compartment keeps clean items isolated. Multiple pockets organize small items like keys, phone, and wallet. Adjustable padded shoulder strap provides comfortable carrying. Water-resistant material protects contents from light rain. Durable construction withstands daily gym commutes. Available in black, navy, and gray.]]></content:encoded>
@@ -8133,7 +8948,7 @@
 		<title><![CDATA[Skincare Set 5-Step Routine]]></title>
 		<link>https://mydigitalagent.co.uk/dev/skincare-set-5-step-routine/</link>
 		<pubDate>Mon, 08 Dec 2025 13:42:40 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/skincare-set-5-step-routine/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Complete daily skincare regimen includes cleanser, toner, serum, moisturizer, and eye cream. Dermatologist-tested formulas suitable for sensitive skin. Hydrating ingredients like hyaluronic acid plump and smooth skin. Antioxidants protect against environmental damage and aging. Lightweight textures absorb quickly without greasy residue. Travel-friendly sizes perfect for trying before committing to full sizes. Cruelty-free and paraben-free formulations.]]></content:encoded>
@@ -8163,7 +8978,7 @@
 		<title><![CDATA[Hair Dryer Ionic 1875W]]></title>
 		<link>https://mydigitalagent.co.uk/dev/hair-dryer-ionic-1875w/</link>
 		<pubDate>Mon, 08 Dec 2025 13:42:40 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/hair-dryer-ionic-1875w/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Professional-grade motor dries hair quickly reducing heat damage exposure. Ionic technology reduces frizz and adds shine to finished style. Three heat settings and two speed settings provide styling control. Cool shot button sets style in place. Concentrator and diffuser attachments included for versatile styling. Lightweight ergonomic design reduces arm fatigue. Removable filter extends motor life and maintains performance.]]></content:encoded>
@@ -8193,7 +9008,7 @@
 		<title><![CDATA[Electric Toothbrush Rechargeable]]></title>
 		<link>https://mydigitalagent.co.uk/dev/electric-toothbrush-rechargeable/</link>
 		<pubDate>Mon, 08 Dec 2025 13:42:40 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/electric-toothbrush-rechargeable/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Sonic technology delivers 31,000 brush strokes per minute for superior cleaning. Built-in two-minute timer ensures dentist-recommended brushing duration. Pressure sensor protects gums from aggressive brushing. Three brushing modes accommodate different needs and sensitivities. Long-lasting battery provides three weeks of use per charge. Includes travel case and four replacement brush heads. Compatible with dentist-recommended brush head replacements.]]></content:encoded>
@@ -8220,10 +9035,163 @@
 		<category domain="post_tag" nicename="sonicare"><![CDATA[Sonicare]]></category>
 						</item>
 					<item>
+		<title><![CDATA[Makeup Brushes Professional Set]]></title>
+		<link>https://mydigitalagent.co.uk/dev/makeup-brushes-professional-set/</link>
+		<pubDate>Mon, 08 Dec 2025 13:42:40 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/makeup-brushes-professional-set/</guid>
+		<description></description>
+		<content:encoded><![CDATA[Twelve essential brushes cover all makeup application needs from foundation to detail work. Synthetic bristles work beautifully with cream and powder products. Ergonomic handles provide comfortable control during application. Durable ferrules securely hold bristles preventing shedding. Includes protective case keeping brushes clean during travel. Easy to clean with gentle soap and water. Suitable for beginners and professionals.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>188</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-08 13:42:40]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-08 13:42:40]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 13:42:40]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 13:42:40]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[makeup-brushes-professional-set]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
+		<category domain="post_tag" nicename="beauty-tools"><![CDATA[beauty tools]]></category>
+		<category domain="post_tag" nicename="brush-set"><![CDATA[brush set]]></category>
+		<category domain="post_tag" nicename="cosmetics"><![CDATA[cosmetics]]></category>
+		<category domain="post_tag" nicename="makeup-application"><![CDATA[makeup application]]></category>
+		<category domain="post_tag" nicename="makeup-brushes"><![CDATA[makeup brushes]]></category>
+						</item>
+					<item>
+		<title><![CDATA[Facial Cleansing Brush Silicone]]></title>
+		<link>https://mydigitalagent.co.uk/dev/facial-cleansing-brush-silicone/</link>
+		<pubDate>Mon, 08 Dec 2025 13:42:40 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/facial-cleansing-brush-silicone/</guid>
+		<description></description>
+		<content:encoded><![CDATA[Gentle silicone bristles deep clean pores without irritating sensitive skin. Sonic pulsations remove makeup and impurities more effectively than hands alone. Waterproof design allows use in shower for convenient routine. Rechargeable battery lasts up to three months per charge. Compact size perfect for travel. Multiple speed settings adjust intensity to preference. Antibacterial silicone resists bacteria growth between uses.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>189</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-08 13:42:40]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-08 13:42:40]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-06 14:45:39]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-06 14:45:39]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[facial-cleansing-brush-silicone]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
+		<category domain="post_tag" nicename="cleansing-brush"><![CDATA[cleansing brush]]></category>
+		<category domain="post_tag" nicename="face-cleaner"><![CDATA[face cleaner]]></category>
+		<category domain="post_tag" nicename="facial-brush"><![CDATA[facial brush]]></category>
+		<category domain="post_tag" nicename="foreo"><![CDATA[Foreo]]></category>
+		<category domain="post_tag" nicename="skincare-tools"><![CDATA[skincare tools]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[footnotes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[exclude]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:7:"exclude";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_exclude]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_695d1fc5ca30c]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Perfume Eau de Parfum Floral]]></title>
+		<link>https://mydigitalagent.co.uk/dev/perfume-eau-de-parfum-floral/</link>
+		<pubDate>Mon, 08 Dec 2025 13:42:40 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/perfume-eau-de-parfum-floral/</guid>
+		<description></description>
+		<content:encoded><![CDATA[Long-lasting fragrance with top notes of jasmine and bottom notes of vanilla. Sophisticated scent appropriate for daytime office or evening events. Elegant glass bottle with decorative cap looks beautiful on vanity. Eau de parfum concentration provides lasting wear without overwhelming. Spray nozzle delivers fine mist for even application. Available in 1.7 oz and 3.4 oz sizes. Makes perfect gift for special occasions.]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>190</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-08 13:42:40]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-08 13:42:40]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-06 14:46:02]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-06 14:46:02]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[perfume-eau-de-parfum-floral]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
+		<category domain="post_tag" nicename="eau-de-parfum"><![CDATA[eau de parfum]]></category>
+		<category domain="post_tag" nicename="fragrance"><![CDATA[fragrance]]></category>
+		<category domain="post_tag" nicename="luxury-beauty"><![CDATA[luxury beauty]]></category>
+		<category domain="post_tag" nicename="perfume"><![CDATA[perfume]]></category>
+		<category domain="post_tag" nicename="womens-perfume"><![CDATA[women's perfume]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[footnotes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[exclude]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:7:"exclude";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_exclude]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_695d1fc5ca30c]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[FOAM 1  Mattress Strong]]></title>
+		<link>https://mydigitalagent.co.uk/dev/strong-foam-mattress/</link>
+		<pubDate>Thu, 18 Dec 2025 09:11:30 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=398</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>This mattress is very comfortable yet very supportive.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>398</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-18 09:11:30]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-18 09:11:30]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-20 08:08:20]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-20 08:08:20]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[strong-foam-mattress]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
 		<title><![CDATA[Hello world!]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?p=1</link>
 		<pubDate>Sat, 13 Dec 2025 20:44:40 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=1</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -8306,7 +9274,7 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
 		<title><![CDATA[Custom Styles]]></title>
 		<link>https://mydigitalagent.co.uk/dev/wp-global-styles-twentytwentyfive/</link>
 		<pubDate>Sat, 06 Dec 2025 13:02:41 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/wp-global-styles-twentytwentyfive/</guid>
 		<description></description>
 		<content:encoded><![CDATA[{"version": 3, "isGlobalStylesUserThemeJSON": true }]]></content:encoded>
@@ -8331,7 +9299,7 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
 		<title><![CDATA[BLENDER HIGH SPEED 1600W]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?p=172</link>
 		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/blender-high-speed-1400w/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>Professional-grade motor blends toughest ingredients including ice and frozen fruit. Variable speed control and pulse function provide precise blending. 64-ounce BPA-free pitcher makes large batches for whole family. Self-cleaning feature simplifies cleanup with water and drop of soap. Hardened stainless steel blades stay sharp through years of use. Includes recipe book with smoothies, soups, and sauces. Ten-year warranty covers motor and parts.</p>
@@ -8384,100 +9352,10 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Makeup Brushes Professional Set]]></title>
-		<link>https://mydigitalagent.co.uk/dev/makeup-brushes-professional-set/</link>
-		<pubDate>Mon, 08 Dec 2025 13:42:40 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/makeup-brushes-professional-set/</guid>
-		<description></description>
-		<content:encoded><![CDATA[Twelve essential brushes cover all makeup application needs from foundation to detail work. Synthetic bristles work beautifully with cream and powder products. Ergonomic handles provide comfortable control during application. Durable ferrules securely hold bristles preventing shedding. Includes protective case keeping brushes clean during travel. Easy to clean with gentle soap and water. Suitable for beginners and professionals.]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>188</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-08 13:42:40]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-08 13:42:40]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-08 13:42:40]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-08 13:42:40]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[makeup-brushes-professional-set]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
-		<category domain="post_tag" nicename="beauty-tools"><![CDATA[beauty tools]]></category>
-		<category domain="post_tag" nicename="brush-set"><![CDATA[brush set]]></category>
-		<category domain="post_tag" nicename="cosmetics"><![CDATA[cosmetics]]></category>
-		<category domain="post_tag" nicename="makeup-application"><![CDATA[makeup application]]></category>
-		<category domain="post_tag" nicename="makeup-brushes"><![CDATA[makeup brushes]]></category>
-						</item>
-					<item>
-		<title><![CDATA[Facial Cleansing Brush Silicone]]></title>
-		<link>https://mydigitalagent.co.uk/dev/facial-cleansing-brush-silicone/</link>
-		<pubDate>Mon, 08 Dec 2025 13:42:40 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/facial-cleansing-brush-silicone/</guid>
-		<description></description>
-		<content:encoded><![CDATA[Gentle silicone bristles deep clean pores without irritating sensitive skin. Sonic pulsations remove makeup and impurities more effectively than hands alone. Waterproof design allows use in shower for convenient routine. Rechargeable battery lasts up to three months per charge. Compact size perfect for travel. Multiple speed settings adjust intensity to preference. Antibacterial silicone resists bacteria growth between uses.]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>189</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-08 13:42:40]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-08 13:42:40]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-08 13:42:40]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-08 13:42:40]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[facial-cleansing-brush-silicone]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
-		<category domain="post_tag" nicename="cleansing-brush"><![CDATA[cleansing brush]]></category>
-		<category domain="post_tag" nicename="face-cleaner"><![CDATA[face cleaner]]></category>
-		<category domain="post_tag" nicename="facial-brush"><![CDATA[facial brush]]></category>
-		<category domain="post_tag" nicename="foreo"><![CDATA[Foreo]]></category>
-		<category domain="post_tag" nicename="skincare-tools"><![CDATA[skincare tools]]></category>
-						</item>
-					<item>
-		<title><![CDATA[Perfume Eau de Parfum Floral]]></title>
-		<link>https://mydigitalagent.co.uk/dev/perfume-eau-de-parfum-floral/</link>
-		<pubDate>Mon, 08 Dec 2025 13:42:40 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/perfume-eau-de-parfum-floral/</guid>
-		<description></description>
-		<content:encoded><![CDATA[Long-lasting fragrance with top notes of jasmine and bottom notes of vanilla. Sophisticated scent appropriate for daytime office or evening events. Elegant glass bottle with decorative cap looks beautiful on vanity. Eau de parfum concentration provides lasting wear without overwhelming. Spray nozzle delivers fine mist for even application. Available in 1.7 oz and 3.4 oz sizes. Makes perfect gift for special occasions.]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>190</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-08 13:42:40]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-08 13:42:40]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-08 13:42:40]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-08 13:42:40]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[perfume-eau-de-parfum-floral]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
-		<category domain="post_tag" nicename="eau-de-parfum"><![CDATA[eau de parfum]]></category>
-		<category domain="post_tag" nicename="fragrance"><![CDATA[fragrance]]></category>
-		<category domain="post_tag" nicename="luxury-beauty"><![CDATA[luxury beauty]]></category>
-		<category domain="post_tag" nicename="perfume"><![CDATA[perfume]]></category>
-		<category domain="post_tag" nicename="womens-perfume"><![CDATA[women's perfume]]></category>
-						</item>
-					<item>
 		<title><![CDATA[Navigation]]></title>
 		<link>https://mydigitalagent.co.uk/dev/navigation-2/</link>
 		<pubDate>Sat, 06 Dec 2025 08:10:05 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/index.php/2025/12/06/navigation/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:page-list /-->]]></content:encoded>
@@ -8501,7 +9379,7 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
 		<title><![CDATA[BLENDER LOW SPEED]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?p=328</link>
 		<pubDate>Tue, 16 Dec 2025 16:36:57 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=328</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -8566,7 +9444,7 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
 		<title><![CDATA[BLENDER MEDIUM SPEED]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?p=333</link>
 		<pubDate>Tue, 16 Dec 2025 16:49:17 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
 		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=333</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -8623,37 +9501,6 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
 		<wp:meta_value><![CDATA[medium-speed-blender]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[FOAM 1  Mattress Strong]]></title>
-		<link>https://mydigitalagent.co.uk/dev/strong-foam-mattress/</link>
-		<pubDate>Thu, 18 Dec 2025 09:11:30 +0000</pubDate>
-		<dc:creator><![CDATA[udemy-wp-ai]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=398</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>This mattress is very comfortable yet very supportive.</p>
-<!-- /wp:paragraph -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>398</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-18 09:11:30]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-18 09:11:30]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-20 08:08:20]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-20 08:08:20]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[strong-foam-mattress]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 				</channel>
