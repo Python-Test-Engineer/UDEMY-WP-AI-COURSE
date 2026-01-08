@@ -511,15 +511,15 @@ class RAG_ChatGPT_Memory_Assistant {
                     console.log('✅ Adding citations section with', citations.length, 'citations');
                     messageHtml += `
                         <div class="citations-section">
-                            <h4>📎 Citations (Post IDs)</h4>
+                            <h4>📎 Citations</h4>
                             <div class="citation-list">
                     `;
                     
                     citations.forEach(function(citation, index) {
                         console.log(`📎 Citation ${index}:`, citation);
                         if (citation && typeof citation === 'object') {
-                            // Citation with permalink
-                            messageHtml += `<a href="${escapeHtml(citation.permalink)}" target="_blank" class="citation-badge" title="${escapeHtml(citation.title)}">Post ${citation.post_id}</a>`;
+                            // Citation with permalink and title
+                            messageHtml += `<a href="${escapeHtml(citation.permalink)}" target="_blank" class="citation-badge" title="Post ID: ${citation.post_id}">${escapeHtml(citation.title)}</a>`;
                         } else {
                             // Just post ID
                             messageHtml += `<span class="citation-badge">Post ${citation}</span>`;
@@ -776,20 +776,14 @@ class RAG_ChatGPT_Memory_Assistant {
     private function build_rag_summary($fts_results, $vector_results) {
         $summary_parts = array();
         $seen_ids = array();
-        $count = 0;
-        $max_items = 3;
         
         $all_results = array_merge($fts_results, $vector_results);
         
         foreach ($all_results as $result) {
-            if (!in_array($result['post_id'], $seen_ids) && $count < $max_items) {
-                $excerpt = substr($result['excerpt'], 0, 150);
-                if (strlen($result['excerpt']) > 150) {
-                    $excerpt .= '...';
-                }
-                $summary_parts[] = "• {$result['post_title']}: {$excerpt}";
+            if (!in_array($result['post_id'], $seen_ids)) {
+                // Display full excerpt without truncation
+                $summary_parts[] = "• {$result['post_title']}: {$result['excerpt']}";
                 $seen_ids[] = $result['post_id'];
-                $count++;
             }
         }
         
