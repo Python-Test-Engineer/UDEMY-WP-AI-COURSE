@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: ✅ 20 UDEMY CAPSTONE
- * Description: Manages a custom table for RAG processing of WordPress posts with Full-Text Search and Vector Search
+ * Plugin Name: ✅ 20 UDEMY CAPSTONE SET UP RAG MANAGER
+ * Description: Manages a custom table for RAG processing of WordPress posts with Full-Text Search and Vector Search. NEEDED to create custom table, FTS, Vector Search and REST API endpoints.
  * Version: 1.5
  * Author: Your Name
  */
