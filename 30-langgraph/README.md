@@ -1,16 +1,25 @@
-# WP-LangGraph - WordPress LangGraph-Style Plugin
+# WP-LangGraph - WordPress LangGraph-Style Plugin with Tools
 
-A simple WordPress plugin demonstrating a **graph-style workflow** using LangChain.js and OpenAI's GPT-4o-mini model.
+A WordPress plugin demonstrating **graph-style workflows** and **intelligent tool calling** using LangChain.js and OpenAI's GPT-4o-mini model.
 
 ## 🎯 What This Plugin Does
 
-This plugin creates a **3-step sequential workflow** that mimics LangGraph concepts:
+This plugin combines two powerful AI capabilities:
+
+### 🛠️ **Tool-Based Processing**
+The plugin intelligently detects when users need specific WordPress data and automatically executes appropriate tools:
+
+1. **Get Categories & Tags Statistics** - Lists all categories and tags with their post counts
+2. **Get Random Post (French Translation)** - Retrieves a random published post and translates it to French
+
+### 🔄 **Graph-Style Workflow**
+For general queries, it runs a **3-step sequential workflow** that mimics LangGraph concepts:
 
 1. **Analyzer Node** - Analyzes user input (topic, tone, key points)
 2. **Processor Node** - Creates a processing plan based on the analysis
 3. **Responder Node** - Generates a final comprehensive response
 
-Each "node" maintains and updates a shared state object as it processes through the workflow, demonstrating the core concept of state management in graph-based AI workflows.
+The plugin automatically chooses between tool execution and graph workflow based on user intent, demonstrating advanced AI decision-making and state management.
 
 ## 📋 Prerequisites
 

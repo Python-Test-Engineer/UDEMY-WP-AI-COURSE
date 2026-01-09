@@ -43,40 +43,55 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function renderApp(container) {
     console.log('🎨 Rendering application UI');
-    
+
     container.innerHTML = `
         <div class="langgraph-demo">
-            <h2>LangGraph-Style Multi-Step Processing Demo</h2>
-            
+            <h2>LangGraph-Style Multi-Step Processing with Tools Demo</h2>
+
+            <div class="tool-info" style="background: #e8f4fd; border: 1px solid #1e88e5; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+                <h3 style="margin-top: 0; color: #1e88e5;">🛠️ Available Tools:</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li><strong>Get statistics for categories and tags</strong> - Lists all categories and tags with their counts</li>
+                    <li><strong>Get a random post and translate to french</strong> - Gets a random post and translates it to French</li>
+                </ul>
+                <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">
+                    Try queries like: "Show me category statistics" or "Give me a random post in French"
+                </p>
+            </div>
+
             <div class="input-section">
                 <label for="user-input">Enter your text to process:</label>
-                <textarea 
-                    id="user-input" 
-                    rows="4" 
-                    placeholder="Type something interesting here... (e.g., 'Tell me about WordPress')"
-                >Tell me about WordPress</textarea>
-                
+                <textarea
+                    id="user-input"
+                    rows="4"
+                    placeholder="Type something interesting here... (e.g., 'Tell me about WordPress' or 'Show me category statistics')"
+                >Show me category statistics</textarea>
+
                 <button id="process-btn" class="process-button">
                     Process with Graph Workflow
                 </button>
             </div>
-            
+
             <div id="status" class="status-message"></div>
-            
+
+            <div id="tool-result" class="tool-result" style="display: none;">
+                <!-- Tool results will be displayed here -->
+            </div>
+
             <div id="graph-steps" class="graph-steps">
                 <!-- Steps will be displayed here -->
             </div>
-            
+
             <div id="final-result" class="final-result">
                 <!-- Final result will be displayed here -->
             </div>
         </div>
     `;
-    
+
     // Attach event listener to the button
     const processBtn = document.getElementById('process-btn');
     processBtn.addEventListener('click', handleProcessClick);
-    
+
     console.log('✅ UI rendered and event listeners attached');
 }
 
@@ -163,15 +178,186 @@ async function getApiKey() {
 }
 
 /**
+ * Check if the user input requires using a tool
+ */
+async function checkForToolUsage(userInput, apiKey) {
+    console.log('🔍 Checking if tools are needed for input:', userInput);
+
+    // Define available tools
+    const tools = [
+        {
+            name: 'get_categories_tags_stats',
+            description: 'Get statistics for categories and tags - lists number and name of all categories and tags'
+        },
+        {
+            name: 'get_random_post_french',
+            description: 'Get a random post and translate to french - gets a random post and returns it translated to French'
+        }
+    ];
+
+    // Create a prompt to determine if a tool should be used
+    const toolCheckPrompt = `Given the user's input, determine if any of the available tools should be used.
+
+Available tools:
+${tools.map(tool => `- ${tool.name}: ${tool.description}`).join('\n')}
+
+User input: "${userInput}"
+
+If a tool should be used, respond with ONLY the tool name (e.g., "get_categories_tags_stats").
+If no tool is needed, respond with "none".
+
+Look for keywords and intent that match the tool descriptions.`;
+
+    try {
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            },
+            body: JSON.stringify({
+                model: 'gpt-4o-mini',
+                messages: [{ role: 'user', content: toolCheckPrompt }],
+                max_tokens: 50,
+                temperature: 0.1
+            })
+        });
+
+        const data = await response.json();
+        const toolDecision = data.choices[0].message.content.trim().toLowerCase();
+
+        console.log('🔍 Tool decision:', toolDecision);
+
+        // Check if it's one of our tools
+        const matchedTool = tools.find(tool => toolDecision.includes(tool.name.toLowerCase()));
+
+        if (matchedTool) {
+            console.log('✅ Tool matched:', matchedTool.name);
+            return matchedTool.name;
+        }
+
+        console.log('❌ No tool needed, proceeding with normal workflow');
+        return null;
+
+    } catch (error) {
+        console.error('❌ Error checking for tool usage:', error);
+        return null; // Fall back to normal workflow
+    }
+}
+
+/**
+ * Execute a tool and return the result
+ */
+async function executeTool(toolName) {
+    console.log('🔧 Executing tool:', toolName);
+
+    const toolResultDiv = document.getElementById('tool-result');
+    toolResultDiv.style.display = 'block';
+
+    try {
+        let result;
+
+        if (toolName === 'get_categories_tags_stats') {
+            toolResultDiv.innerHTML = '<p>⏳ Getting categories and tags statistics...</p>';
+
+            const response = await fetch(ajaxurl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    action: 'wplg_get_categories_tags_stats'
+                })
+            });
+
+            const data = await response.json();
+
+            if (!data.success) {
+                throw new Error(data.data.message || 'Failed to get statistics');
+            }
+
+            result = data.data;
+
+            // Format the result
+            let formattedResult = '<h3>📊 Categories and Tags Statistics</h3>';
+
+            formattedResult += '<h4>Categories:</h4><ul>';
+            result.categories.forEach(cat => {
+                formattedResult += `<li><strong>${cat.name}</strong> (${cat.count} posts)</li>`;
+            });
+            formattedResult += '</ul>';
+
+            formattedResult += '<h4>Tags:</h4><ul>';
+            result.tags.forEach(tag => {
+                formattedResult += `<li><strong>${tag.name}</strong> (${tag.count} posts)</li>`;
+            });
+            formattedResult += '</ul>';
+
+            toolResultDiv.innerHTML = formattedResult;
+
+        } else if (toolName === 'get_random_post_french') {
+            toolResultDiv.innerHTML = '<p>⏳ Getting random post and translating to French...</p>';
+
+            const response = await fetch(ajaxurl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    action: 'wplg_get_random_post_french'
+                })
+            });
+
+            const data = await response.json();
+
+            if (!data.success) {
+                throw new Error(data.data.message || 'Failed to get random post');
+            }
+
+            result = data.data;
+
+            // Format the result
+            let formattedResult = '<h3>🇫🇷 Random Post Translated to French</h3>';
+            formattedResult += '<div class="translation-result">';
+            formattedResult += '<h4>Translated Content:</h4>';
+            formattedResult += `<div class="translated-text">${result.translated_text.replace(/\n/g, '<br>')}</div>`;
+            formattedResult += '</div>';
+
+            toolResultDiv.innerHTML = formattedResult;
+        }
+
+        console.log('✅ Tool executed successfully:', toolName);
+        return result;
+
+    } catch (error) {
+        console.error('❌ Tool execution failed:', error);
+        toolResultDiv.innerHTML = `<p class="error">❌ Error executing tool: ${error.message}</p>`;
+        throw error;
+    }
+}
+
+/**
  * Run a graph-style workflow
- * 
+ *
  * This simulates a LangGraph workflow with sequential nodes.
  * Each "node" is a function that processes the state and returns updated state.
  * This achieves the same result as LangGraph's StateGraph but works in browsers!
  */
 async function runGraphWorkflow(userInput, apiKey, stepsDiv) {
     console.log('🏗️ Building graph-style workflow');
-    
+
+    // First, check if a tool should be used
+    const requiredTool = await checkForToolUsage(userInput, apiKey);
+
+    if (requiredTool) {
+        console.log('🛠️ Tool required, executing:', requiredTool);
+        await executeTool(requiredTool);
+        return { tool_used: requiredTool };
+    }
+
+    // No tool needed, proceed with normal graph workflow
+    console.log('🔄 No tool needed, proceeding with normal graph workflow');
+
     // Initialize OpenAI with gpt-4o-mini model
     console.log('🤖 Initializing ChatOpenAI with gpt-4o-mini');
     const llm = new ChatOpenAI({
@@ -180,7 +366,7 @@ async function runGraphWorkflow(userInput, apiKey, stepsDiv) {
         openAIApiKey: apiKey,
     });
     console.log('✅ ChatOpenAI initialized');
-    
+
     // Create initial state (like LangGraph's state)
     console.log('📊 Creating initial workflow state');
     let state = {
@@ -191,14 +377,14 @@ async function runGraphWorkflow(userInput, apiKey, stepsDiv) {
         step_count: 0
     };
     console.log('   Initial state:', state);
-    
+
     /**
      * NODE 1: ANALYZER
      * This is like a node in LangGraph - it receives state and returns updated state
      */
     console.log('📍 NODE 1: ANALYZER - Starting');
     displayStep(stepsDiv, 1, 'Analyzer', 'Analyzing your input...', 'processing');
-    
+
     const analyzerPrompt = `Analyze the following text and identify:
 1. Main topic/theme
 2. Key points or questions
@@ -207,22 +393,22 @@ async function runGraphWorkflow(userInput, apiKey, stepsDiv) {
 Text to analyze: "${state.input}"
 
 Provide a brief, structured analysis.`;
-    
+
     console.log('   📤 Sending prompt to OpenAI (Analyzer)');
     const analyzerResponse = await llm.invoke(analyzerPrompt);
     state.analysis = analyzerResponse.content;
     state.step_count++;
-    
+
     console.log('   📥 Analysis complete:', state.analysis);
     displayStep(stepsDiv, 1, 'Analyzer', state.analysis, 'complete');
-    
+
     /**
      * NODE 2: PROCESSOR
      * Takes the state from Analyzer and processes it further
      */
     console.log('📍 NODE 2: PROCESSOR - Starting');
     displayStep(stepsDiv, 2, 'Processor', 'Processing the analysis...', 'processing');
-    
+
     const processorPrompt = `Based on this analysis of user input:
 
 Analysis: ${state.analysis}
@@ -235,22 +421,22 @@ Create a processing plan that outlines:
 3. Key points to emphasize
 
 Keep it brief and actionable.`;
-    
+
     console.log('   📤 Sending prompt to OpenAI (Processor)');
     const processorResponse = await llm.invoke(processorPrompt);
     state.processed = processorResponse.content;
     state.step_count++;
-    
+
     console.log('   📥 Processing complete:', state.processed);
     displayStep(stepsDiv, 2, 'Processor', state.processed, 'complete');
-    
+
     /**
      * NODE 3: RESPONDER
      * Final node that generates the end result
      */
     console.log('📍 NODE 3: RESPONDER - Starting');
     displayStep(stepsDiv, 3, 'Responder', 'Generating final response...', 'processing');
-    
+
     const responderPrompt = `Based on the analysis and processing plan below, generate a helpful, comprehensive response to the user's original input.
 
 Original input: "${state.input}"
@@ -260,26 +446,26 @@ Analysis: ${state.analysis}
 Processing plan: ${state.processed}
 
 Generate a well-structured, informative response that addresses the user's input directly.`;
-    
+
     console.log('   📤 Sending prompt to OpenAI (Responder)');
     const responderResponse = await llm.invoke(responderPrompt);
     state.final_response = responderResponse.content;
     state.step_count++;
-    
+
     console.log('   📥 Final response generated:', state.final_response);
     displayStep(stepsDiv, 3, 'Responder', state.final_response, 'complete');
-    
+
     // Display the final result in a special section
     const resultDiv = document.getElementById('final-result');
     resultDiv.innerHTML = `
         <h3>📋 Final Result</h3>
         <div class="final-content">${state.final_response}</div>
     `;
-    
+
     console.log('🎉 Graph workflow complete!');
     console.log('📊 Final state:', state);
     console.log('   Flow executed: INPUT -> Analyzer -> Processor -> Responder -> END');
-    
+
     return state;
 }
 

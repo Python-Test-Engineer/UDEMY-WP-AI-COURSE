@@ -95,19 +95,140 @@ add_action('wp_ajax_wplg_get_api_key', 'wplg_get_api_key');
 function wplg_save_test_data() {
     // Get the posted data
     $test_data = isset($_POST['test_data']) ? sanitize_text_field($_POST['test_data']) : '';
-    
+
     if (empty($test_data)) {
         wp_send_json_error(array(
             'message' => 'No data provided'
         ));
     }
-    
+
     // Save to options (just an example)
     update_option('wplg_last_test', $test_data);
-    
+
     wp_send_json_success(array(
         'message' => 'Data saved successfully',
         'data' => $test_data
     ));
 }
 add_action('wp_ajax_wplg_save_test_data', 'wplg_save_test_data');
+
+/**
+ * AJAX endpoint to get categories and tags statistics
+ */
+function wplg_get_categories_tags_stats() {
+    // Get all categories
+    $categories = get_categories(array(
+        'hide_empty' => false,
+    ));
+
+    $category_stats = array();
+    foreach ($categories as $category) {
+        $category_stats[] = array(
+            'name' => $category->name,
+            'count' => $category->count,
+            'id' => $category->term_id
+        );
+    }
+
+    // Get all tags
+    $tags = get_tags(array(
+        'hide_empty' => false,
+    ));
+
+    $tag_stats = array();
+    foreach ($tags as $tag) {
+        $tag_stats[] = array(
+            'name' => $tag->name,
+            'count' => $tag->count,
+            'id' => $tag->term_id
+        );
+    }
+
+    wp_send_json_success(array(
+        'categories' => $category_stats,
+        'tags' => $tag_stats
+    ));
+}
+add_action('wp_ajax_wplg_get_categories_tags_stats', 'wplg_get_categories_tags_stats');
+
+/**
+ * AJAX endpoint to get a random post and translate to French
+ */
+function wplg_get_random_post_french() {
+    // Get API key for translation
+    $api_key = get_option('wp_basic_agent_api_key', '');
+
+    if (empty($api_key)) {
+        wp_send_json_error(array(
+            'message' => 'No API key found for translation'
+        ));
+        return;
+    }
+
+    // Get a random post
+    $random_post = get_posts(array(
+        'numberposts' => 1,
+        'orderby' => 'rand',
+        'post_status' => 'publish'
+    ));
+
+    if (empty($random_post)) {
+        wp_send_json_error(array(
+            'message' => 'No published posts found'
+        ));
+        return;
+    }
+
+    $post = $random_post[0];
+    $post_content = $post->post_content;
+    $post_title = $post->post_title;
+
+    // Translate to French using OpenAI
+    $translation_prompt = "Translate the following English text to French. Provide only the translation, no additional text:\n\nTitle: {$post_title}\n\nContent: {$post_content}";
+
+    $response = wp_remote_post('https://api.openai.com/v1/chat/completions', array(
+        'headers' => array(
+            'Authorization' => 'Bearer ' . $api_key,
+            'Content-Type' => 'application/json',
+        ),
+        'body' => json_encode(array(
+            'model' => 'gpt-4o-mini',
+            'messages' => array(
+                array(
+                    'role' => 'user',
+                    'content' => $translation_prompt
+                )
+            ),
+            'max_tokens' => 2000,
+            'temperature' => 0.3
+        )),
+        'timeout' => 30
+    ));
+
+    if (is_wp_error($response)) {
+        wp_send_json_error(array(
+            'message' => 'Translation API request failed'
+        ));
+        return;
+    }
+
+    $body = wp_remote_retrieve_body($response);
+    $data = json_decode($body, true);
+
+    if (isset($data['error'])) {
+        wp_send_json_error(array(
+            'message' => 'Translation API error: ' . $data['error']['message']
+        ));
+        return;
+    }
+
+    $translated_text = $data['choices'][0]['message']['content'];
+
+    wp_send_json_success(array(
+        'original_title' => $post_title,
+        'original_content' => $post_content,
+        'translated_text' => $translated_text,
+        'post_id' => $post->ID
+    ));
+}
+add_action('wp_ajax_wplg_get_random_post_french', 'wplg_get_random_post_french');

@@ -40,15 +40,34 @@ if (!defined('ABSPATH')) {
             
             <h3><?php _e('This Demo:', 'wp-langgraph'); ?></h3>
             <p>
-                This simple demonstration shows a <strong>3-step sequential graph</strong>:
+                This advanced demonstration combines two AI capabilities:
+            </p>
+
+            <h4>🛠️ Tool-Based Processing</h4>
+            <p>
+                The plugin intelligently detects when you need WordPress data and automatically executes tools:
+            </p>
+            <ul style="margin-left: 20px;">
+                <li><strong>Get Categories & Tags Statistics:</strong> Lists all categories and tags with post counts</li>
+                <li><strong>Get Random Post (French Translation):</strong> Retrieves a random post and translates it to French</li>
+            </ul>
+
+            <h4>🔄 Graph-Style Workflow</h4>
+            <p>
+                For general queries, it runs a <strong>3-step sequential graph</strong>:
             </p>
             <ol style="margin-left: 20px;">
                 <li><strong>Analyzer:</strong> Analyzes the user's input text</li>
                 <li><strong>Processor:</strong> Processes the analysis results</li>
                 <li><strong>Responder:</strong> Generates a final response</li>
             </ol>
+
+            <p>
+                The plugin <strong>automatically chooses</strong> between tool execution and graph workflow based on your input!
+            </p>
+
             <p style="margin-top: 15px;">
-                <strong>Note:</strong> This plugin uses the OpenAI API key saved in the <em>02 AGENT JS</em> settings page. 
+                <strong>Note:</strong> This plugin uses the OpenAI API key saved in the <em>02 AGENT JS</em> settings page.
                 Please ensure you have saved your API key there first.
             </p>
         </div>
