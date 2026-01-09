@@ -42,7 +42,7 @@ add_action('admin_enqueue_scripts', 'wplg_enqueue_scripts');
 
 /**
  * Add admin menu page
- * Menu position: 30 (as requested)
+ * Menu position: 4.95 (as requested)
  */
 function wplg_add_admin_menu() {
     add_menu_page(
@@ -52,7 +52,7 @@ function wplg_add_admin_menu() {
         'wp-langgraph-demo',         // Menu slug
         'wplg_render_admin_page',    // Callback function
         'dashicons-networking',      // Icon (network icon for graph)
-        30                           // Position (as requested)
+        4.95                         // Position (as requested)
     );
 }
 add_action('admin_menu', 'wplg_add_admin_menu');
