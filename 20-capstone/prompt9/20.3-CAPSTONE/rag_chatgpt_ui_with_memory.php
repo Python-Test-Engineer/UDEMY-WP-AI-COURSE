@@ -27,8 +27,8 @@ class RAG_ChatGPT_Memory_Assistant {
     
     public function add_admin_menu() {
         add_menu_page(
-            '20.9 CAPSTONE MEMORY',
-            '20.9 MEMORY',
+            '20.3 CHAT WITH MEMORY',
+            '20.3 CHAT WITH MEMORY',
             'edit_posts',
             'rag-chatgpt-memory',
             array($this, 'render_admin_page'),

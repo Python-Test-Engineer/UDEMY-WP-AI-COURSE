@@ -538,7 +538,7 @@ class Posts_RAG_Manager {
     public function add_admin_menu() {
         add_menu_page(
             'CAPSTONE POST RAG MANAGER',
-            '20 CAPSTONE',
+            '20 CAPSTONE SET UP',
             'manage_options',
             'posts-rag-manager',
             array($this, 'admin_page'),

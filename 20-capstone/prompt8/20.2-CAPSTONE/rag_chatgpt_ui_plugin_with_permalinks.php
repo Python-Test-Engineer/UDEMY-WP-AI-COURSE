@@ -27,8 +27,8 @@ class RAG_ChatGPT_UI_Assistant {
     
     public function add_admin_menu() {
         add_menu_page(
-            '20.8 CAPSTONE CHATGPT UI',
-            '20.8 CHATGPT UI',
+            '20.2 CAPSTONE CHATGPT UI',
+            '20.2 CHATGPT UI',
             'edit_posts',
             'rag-chatgpt-ui',
             array($this, 'render_admin_page'),

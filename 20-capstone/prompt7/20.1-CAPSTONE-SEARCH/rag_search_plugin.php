@@ -31,8 +31,8 @@ class RAG_Search_Assistant {
     
     public function add_admin_menu() {
         add_menu_page(
-            '20.1 CAPSTONE POST RAG MANAGER',
-            '20.1 CAPSTONE',
+            '20.1 CAPSTONE RAG SEARCH',
+            '20.1 SEARCH',
             'edit_posts',
             'rag-search-assistant',
             array($this, 'render_admin_page'),
