@@ -232,3 +232,72 @@ function wplg_get_random_post_french() {
     ));
 }
 add_action('wp_ajax_wplg_get_random_post_french', 'wplg_get_random_post_french');
+
+/**
+ * AJAX endpoint for deep research tool - get all posts for a category
+ */
+function wplg_deep_research_category() {
+    $category_name = isset($_POST['category_name']) ? sanitize_text_field($_POST['category_name']) : '';
+
+    if (empty($category_name)) {
+        wp_send_json_error(array(
+            'message' => 'No category name provided'
+        ));
+        return;
+    }
+
+    // Find the category by name (case-insensitive)
+    $category = get_term_by('name', $category_name, 'category');
+
+    // If not found by exact name, try slug
+    if (!$category) {
+        $category = get_term_by('slug', $category_name, 'category');
+    }
+
+    // If still not found, try partial name match
+    if (!$category) {
+        $categories = get_categories(array(
+            'name__like' => $category_name,
+            'hide_empty' => false,
+        ));
+        if (!empty($categories)) {
+            $category = $categories[0];
+        }
+    }
+
+    if (!$category) {
+        wp_send_json_error(array(
+            'message' => "Category '{$category_name}' not found"
+        ));
+        return;
+    }
+
+    // Get all posts in this category
+    $posts = get_posts(array(
+        'category' => $category->term_id,
+        'numberposts' => -1, // Get all posts
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'DESC'
+    ));
+
+    $post_data = array();
+    foreach ($posts as $post) {
+        $post_data[] = array(
+            'id' => $post->ID,
+            'title' => $post->post_title,
+            'content' => $post->post_content,
+            'excerpt' => $post->post_excerpt ?: wp_trim_words($post->post_content, 30),
+            'date' => $post->post_date,
+            'url' => get_permalink($post->ID)
+        );
+    }
+
+    wp_send_json_success(array(
+        'category_name' => $category->name,
+        'category_id' => $category->term_id,
+        'posts' => $post_data,
+        'total_posts' => count($post_data)
+    ));
+}
+add_action('wp_ajax_wplg_deep_research_category', 'wplg_deep_research_category');

@@ -52,18 +52,18 @@ if (!defined('ABSPATH')) {
                 <li><strong>Get Random Post (French Translation):</strong> Retrieves a random post and translates it to French</li>
             </ul>
 
-            <h4>🔄 Graph-Style Workflow</h4>
+            <h4>🔬 Deep Research Tool</h4>
             <p>
-                For general queries, it runs a <strong>3-step sequential graph</strong>:
+                For category analysis, it performs <strong>comprehensive research</strong> on all posts within a category:
             </p>
-            <ol style="margin-left: 20px;">
-                <li><strong>Analyzer:</strong> Analyzes the user's input text</li>
-                <li><strong>Processor:</strong> Processes the analysis results</li>
-                <li><strong>Responder:</strong> Generates a final response</li>
-            </ol>
+            <ul style="margin-left: 20px;">
+                <li><strong>Category Analysis:</strong> Extracts and analyzes all posts in the specified category</li>
+                <li><strong>AI-Powered Summary:</strong> Generates insights about themes, patterns, and trends</li>
+                <li><strong>Publication Timeline:</strong> Provides chronological analysis of content</li>
+            </ul>
 
             <p>
-                The plugin <strong>automatically chooses</strong> between tool execution and graph workflow based on your input!
+                The plugin <strong>automatically chooses</strong> the most appropriate tool based on your query!
             </p>
 
             <p style="margin-top: 15px;">

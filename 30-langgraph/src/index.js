@@ -53,9 +53,10 @@ function renderApp(container) {
                 <ul style="margin: 0; padding-left: 20px;">
                     <li><strong>Get statistics for categories and tags</strong> - Lists all categories and tags with their counts</li>
                     <li><strong>Get a random post and translate to french</strong> - Gets a random post and translates it to French</li>
+                    <li><strong>Deep research tool</strong> - Summarizes all posts for a particular category</li>
                 </ul>
                 <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">
-                    Try queries like: "Show me category statistics" or "Give me a random post in French"
+                    Try queries like: "Show me category statistics", "Give me a random post in French", or "Summarize all posts in the 'news' category"
                 </p>
             </div>
 
@@ -192,6 +193,10 @@ async function checkForToolUsage(userInput, apiKey) {
         {
             name: 'get_random_post_french',
             description: 'Get a random post and translate to french - gets a random post and returns it translated to French'
+        },
+        {
+            name: 'deep_research_category',
+            description: 'Deep research tool that summarizes all posts for a particular category - provides comprehensive insights and analysis of all posts in a category'
         }
     ];
 
@@ -248,7 +253,7 @@ Look for keywords and intent that match the tool descriptions.`;
 /**
  * Execute a tool and return the result
  */
-async function executeTool(toolName) {
+async function executeTool(toolName, userInput, apiKey) {
     console.log('🔧 Executing tool:', toolName);
 
     const toolResultDiv = document.getElementById('tool-result');
@@ -324,6 +329,57 @@ async function executeTool(toolName) {
             formattedResult += '</div>';
 
             toolResultDiv.innerHTML = formattedResult;
+
+        } else if (toolName === 'deep_research_category') {
+            toolResultDiv.innerHTML = '<p>⏳ Performing deep research on category posts...</p>';
+
+            // Extract category name from user input using AI
+            const categoryName = await extractCategoryName(userInput, apiKey);
+
+            if (!categoryName) {
+                throw new Error('Could not identify a category name in your request. Please specify a category like "news", "blog", etc.');
+            }
+
+            const response = await fetch(ajaxurl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    action: 'wplg_deep_research_category',
+                    category_name: categoryName
+                })
+            });
+
+            const data = await response.json();
+
+            if (!data.success) {
+                throw new Error(data.data.message || 'Failed to perform deep research');
+            }
+
+            result = data.data;
+
+            // Format the result
+            let formattedResult = `<h3>🔬 Deep Research: Category "${categoryName}"</h3>`;
+
+            if (result.posts.length === 0) {
+                formattedResult += '<p>No posts found in this category.</p>';
+            } else {
+                formattedResult += `<p><strong>Found ${result.posts.length} posts in this category</strong></p>`;
+
+                // Create a summary using AI
+                const summary = await generateCategorySummary(result.posts, categoryName, apiKey);
+                formattedResult += '<h4>📊 Summary:</h4>';
+                formattedResult += `<div class="research-summary">${summary.replace(/\n/g, '<br>')}</div>`;
+
+                formattedResult += '<h4>📝 Post Titles:</h4><ul>';
+                result.posts.forEach(post => {
+                    formattedResult += `<li><strong>${post.title}</strong> (${new Date(post.date).toLocaleDateString()})</li>`;
+                });
+                formattedResult += '</ul>';
+            }
+
+            toolResultDiv.innerHTML = formattedResult;
         }
 
         console.log('✅ Tool executed successfully:', toolName);
@@ -351,7 +407,7 @@ async function runGraphWorkflow(userInput, apiKey, stepsDiv) {
 
     if (requiredTool) {
         console.log('🛠️ Tool required, executing:', requiredTool);
-        await executeTool(requiredTool);
+        await executeTool(requiredTool, userInput, apiKey);
         return { tool_used: requiredTool };
     }
 
@@ -470,26 +526,129 @@ Generate a well-structured, informative response that addresses the user's input
 }
 
 /**
+ * Extract category name from user input using AI
+ */
+async function extractCategoryName(userInput, apiKey) {
+    console.log('🔍 Extracting category name from input:', userInput);
+
+    const extractionPrompt = `Extract the category name from the user's request. Look for words that could be category names.
+
+User input: "${userInput}"
+
+Common category names include: news, blog, tutorials, reviews, announcements, updates, etc.
+
+Respond with ONLY the category name (lowercase), or "none" if no category is found.
+
+Examples:
+- "Summarize posts in the news category" → "news"
+- "Show me blog posts" → "blog"
+- "Research the tutorials section" → "tutorials"`;
+
+    try {
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            },
+            body: JSON.stringify({
+                model: 'gpt-4o-mini',
+                messages: [{ role: 'user', content: extractionPrompt }],
+                max_tokens: 20,
+                temperature: 0.1
+            })
+        });
+
+        const data = await response.json();
+        const categoryName = data.choices[0].message.content.trim().toLowerCase();
+
+        console.log('🔍 Extracted category name:', categoryName);
+
+        return categoryName === 'none' ? null : categoryName;
+
+    } catch (error) {
+        console.error('❌ Error extracting category name:', error);
+        return null;
+    }
+}
+
+/**
+ * Generate a summary of all posts in a category using AI
+ */
+async function generateCategorySummary(posts, categoryName, apiKey) {
+    console.log('📝 Generating category summary for:', categoryName, 'with', posts.length, 'posts');
+
+    if (posts.length === 0) {
+        return 'No posts found in this category.';
+    }
+
+    // Create a summary of post titles and content
+    const postSummaries = posts.map(post =>
+        `- ${post.title} (${new Date(post.date).toLocaleDateString()}): ${post.excerpt || post.content?.substring(0, 100) + '...' || 'No excerpt available'}`
+    ).join('\n');
+
+    const summaryPrompt = `Analyze and summarize all posts in the "${categoryName}" category.
+
+Here are the posts:
+${postSummaries}
+
+Provide a comprehensive summary that includes:
+1. Overall theme/trend of the category
+2. Key topics covered
+3. Most common themes or patterns
+4. Any notable insights or conclusions
+5. Publication timeline information
+
+Keep the summary informative but concise.`;
+
+    try {
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            },
+            body: JSON.stringify({
+                model: 'gpt-4o-mini',
+                messages: [{ role: 'user', content: summaryPrompt }],
+                max_tokens: 500,
+                temperature: 0.3
+            })
+        });
+
+        const data = await response.json();
+        const summary = data.choices[0].message.content.trim();
+
+        console.log('📝 Category summary generated');
+        return summary;
+
+    } catch (error) {
+        console.error('❌ Error generating category summary:', error);
+        return `Found ${posts.length} posts in the "${categoryName}" category, but could not generate a detailed summary.`;
+    }
+}
+
+/**
  * Display a step in the UI
  * Shows the progress through each node in the graph
  */
 function displayStep(container, stepNumber, nodeName, content, status) {
     console.log(`📺 Displaying step ${stepNumber} (${nodeName}): ${status}`);
-    
+
     // Find or create the step div
     let stepDiv = document.getElementById(`step-${stepNumber}`);
-    
+
     if (!stepDiv) {
         stepDiv = document.createElement('div');
         stepDiv.id = `step-${stepNumber}`;
         stepDiv.className = 'graph-step';
         container.appendChild(stepDiv);
     }
-    
+
     // Update the step content
     const statusIcon = status === 'complete' ? '✅' : '⏳';
     const statusClass = status === 'complete' ? 'complete' : 'processing';
-    
+
     stepDiv.className = `graph-step ${statusClass}`;
     stepDiv.innerHTML = `
         <div class="step-header">

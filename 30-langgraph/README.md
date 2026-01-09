@@ -11,15 +11,9 @@ The plugin intelligently detects when users need specific WordPress data and aut
 
 1. **Get Categories & Tags Statistics** - Lists all categories and tags with their post counts
 2. **Get Random Post (French Translation)** - Retrieves a random published post and translates it to French
+3. **Deep Research Tool** - Summarizes all posts for a particular category, providing comprehensive insights and analysis
 
-### 🔄 **Graph-Style Workflow**
-For general queries, it runs a **3-step sequential workflow** that mimics LangGraph concepts:
-
-1. **Analyzer Node** - Analyzes user input (topic, tone, key points)
-2. **Processor Node** - Creates a processing plan based on the analysis
-3. **Responder Node** - Generates a final comprehensive response
-
-The plugin automatically chooses between tool execution and graph workflow based on user intent, demonstrating advanced AI decision-making and state management.
+The plugin automatically chooses the appropriate tool based on user intent, demonstrating advanced AI decision-making and tool selection.
 
 ## 📋 Prerequisites
 
@@ -219,3 +213,4 @@ Craig West - UDEMY WordPress AI Course
 ---
 
 **Note:** This plugin uses `@wordpress/scripts` for bundling, which is the WordPress-recommended way to build modern JavaScript applications for WordPress.
+Craig West - UDEMY WordPress AI Course
