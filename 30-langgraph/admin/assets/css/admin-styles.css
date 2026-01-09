@@ -1,0 +1,10 @@
+/**
+ * Admin Styles for WP-LangGraph Plugin
+ * 
+ * These styles are for the WordPress admin interface elements only.
+ * The main application styles are in src/style.css and bundled to build/style-index.css
+ */
+
+/* Additional admin-only styles can be added here if needed */
+
+/* Currently, all main styles are handled by the bundled CSS from src/style.css */
