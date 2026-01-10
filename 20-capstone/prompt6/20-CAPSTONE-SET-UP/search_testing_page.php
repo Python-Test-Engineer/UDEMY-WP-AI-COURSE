@@ -617,7 +617,7 @@ class Posts_RAG_Manager {
             
             <div class="card" style="margin-top: 20px;">
                 <h2>Generate Embeddings</h2>
-                <p>Generate OpenAI embeddings for post titles. This will process all posts that don't have embeddings yet.</p>
+                <p>Generate OpenAI embeddings for post titles and content combined. This will process all posts that don't have embeddings yet.</p>
                 <button type="button" id="generate-embeddings-btn" class="button button-primary">Generate Embeddings</button>
             </div>
             
@@ -1081,39 +1081,42 @@ class Posts_RAG_Manager {
      */
     public function generate_embeddings() {
         global $wpdb;
-        
+
         $api_key = get_option($this->option_name);
-        
+
         if (empty($api_key)) {
             return array(
                 'success' => false,
                 'message' => 'OpenAI API key is not configured. Please add your API key first.'
             );
         }
-        
+
         // Get posts without embeddings
         $posts = $wpdb->get_results(
-            "SELECT id, post_id, post_title FROM {$this->table_name} WHERE last_embedded IS NULL"
+            "SELECT id, post_id, post_title, post_content FROM {$this->table_name} WHERE last_embedded IS NULL"
         );
-        
+
         if (empty($posts)) {
             return array(
                 'success' => true,
                 'message' => 'All posts already have embeddings.'
             );
         }
-        
+
         $success_count = 0;
         $error_count = 0;
         $errors = array();
-        
+
         foreach ($posts as $post) {
-            $embedding = $this->get_openai_embedding($post->post_title, $api_key);
-            
+            // Create embedding text from title + content (truncated for API limits)
+            $embedding_text = $post->post_title . "\n\n" . wp_trim_words($post->post_content, 500);
+
+            $embedding = $this->get_openai_embedding($embedding_text, $api_key);
+
             if ($embedding !== false) {
                 // Store embedding as JSON
                 $embedding_json = json_encode($embedding);
-                
+
                 $updated = $wpdb->update(
                     $this->table_name,
                     array(
@@ -1124,7 +1127,7 @@ class Posts_RAG_Manager {
                     array('%s', '%s'),
                     array('%d')
                 );
-                
+
                 if ($updated !== false) {
                     $success_count++;
                 } else {
@@ -1135,16 +1138,16 @@ class Posts_RAG_Manager {
                 $error_count++;
                 $errors[] = "Failed to generate embedding for post ID {$post->post_id}";
             }
-            
+
             // Small delay to avoid rate limiting
             usleep(100000); // 0.1 second
         }
-        
+
         $message = "Generated embeddings for {$success_count} posts.";
         if ($error_count > 0) {
             $message .= " {$error_count} errors occurred.";
         }
-        
+
         return array(
             'success' => $success_count > 0,
             'message' => $message,
