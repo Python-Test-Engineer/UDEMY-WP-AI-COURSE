@@ -25,15 +25,15 @@ console.log('🚀 LangGraph-style WordPress plugin loaded');
  */
 document.addEventListener('DOMContentLoaded', () => {
     console.log('📄 DOM Content Loaded - Initializing LangGraph-style app');
-    
+
     // Find the container where we'll inject our app
     const appContainer = document.getElementById('langgraph-app');
-    
+
     if (!appContainer) {
         console.error('❌ Could not find #langgraph-app container');
         return;
     }
-    
+
     console.log('✅ Found app container, rendering UI');
     renderApp(appContainer);
 });
@@ -101,44 +101,44 @@ function renderApp(container) {
  */
 async function handleProcessClick() {
     console.log('🖱️ Process button clicked');
-    
+
     const userInput = document.getElementById('user-input').value.trim();
     const statusDiv = document.getElementById('status');
     const stepsDiv = document.getElementById('graph-steps');
     const resultDiv = document.getElementById('final-result');
     const processBtn = document.getElementById('process-btn');
-    
+
     if (!userInput) {
         console.warn('⚠️ No input provided');
         statusDiv.innerHTML = '<p class="error">Please enter some text to process.</p>';
         return;
     }
-    
+
     console.log('📝 User input:', userInput);
-    
+
     // Disable button and clear previous results
     processBtn.disabled = true;
     processBtn.textContent = 'Processing...';
     statusDiv.innerHTML = '<p class="info">⏳ Fetching API key from WordPress database...</p>';
     stepsDiv.innerHTML = '';
     resultDiv.innerHTML = '';
-    
+
     try {
         // Step 1: Get API key from WordPress database (via AJAX)
         console.log('🔑 Fetching API key from WordPress...');
         const apiKey = await getApiKey();
         console.log('✅ API key retrieved successfully');
-        
+
         statusDiv.innerHTML = '<p class="info">⏳ Running graph workflow...</p>';
-        
+
         // Step 2: Run the graph-style workflow
         console.log('🔄 Starting graph workflow');
         await runGraphWorkflow(userInput, apiKey, stepsDiv);
-        
+
         // Success!
         console.log('✅ Workflow completed successfully');
         statusDiv.innerHTML = '<p class="success">✅ Processing complete!</p>';
-        
+
     } catch (error) {
         console.error('❌ Error during processing:', error);
         statusDiv.innerHTML = `<p class="error">❌ Error: ${error.message}</p>`;
@@ -155,7 +155,7 @@ async function handleProcessClick() {
  */
 async function getApiKey() {
     console.log('📡 Making AJAX request to get API key');
-    
+
     const response = await fetch(ajaxurl, {
         method: 'POST',
         headers: {
@@ -165,16 +165,16 @@ async function getApiKey() {
             action: 'wplg_get_api_key'
         })
     });
-    
+
     console.log('📡 AJAX response received:', response.status);
-    
+
     const data = await response.json();
     console.log('📦 AJAX data:', data);
-    
+
     if (!data.success) {
         throw new Error(data.data.message || 'Failed to get API key');
     }
-    
+
     return data.data.api_key;
 }
 
@@ -188,15 +188,15 @@ async function checkForToolUsage(userInput, apiKey) {
     const tools = [
         {
             name: 'get_categories_tags_stats',
-            description: 'Get statistics for categories and tags - lists number and name of all categories and tags'
+            description: 'Get statistics for categories and tags - lists number and name of all categories and tags. Anytime data or statistics are asked for, use this tool.'
         },
         {
             name: 'get_random_post_french',
-            description: 'Get a random post and translate to french - gets a random post and returns it translated to French'
+            description: 'Get a random post and translate to french - gets a random post and returns it translated to French - useful for samples or examples needed.'
         },
         {
             name: 'deep_research_category',
-            description: 'Deep research tool that summarizes all posts for a particular category - provides comprehensive insights and analysis of all posts in a category'
+            description: 'Deep research tool that summarizes all posts for a particular category - provides comprehensive insights and analysis of all posts in a category. Finds trends, common topics, and key points. Use the closest matching category name from user input and ensure a response is provided with the closest matching category. It does not need to be an exact lexical match - a close semantic match is fine.'
         }
     ];
 
@@ -658,4 +658,4 @@ function displayStep(container, stepNumber, nodeName, content, status) {
         <div class="step-content">${content}</div>
     `;
 }
-    
+
