@@ -2,10 +2,6 @@
  * LangGraph-Style WordPress Integration
  * 
  * This is a simple demonstration of a graph-like workflow in a WordPress plugin.
- * It creates a sequential workflow with 3 steps that mimics LangGraph concepts:
- * 1. Analyzer - Analyzes user input
- * 2. Processor - Processes the analysis
- * 3. Responder - Generates final response
  * 
  * Uses OpenAI's GPT-4o-mini model.
  * 
@@ -181,6 +177,8 @@ async function getApiKey() {
 /**
  * Check if the user input requires using a tool
  */
+
+//region TOOLS
 async function checkForToolUsage(userInput, apiKey) {
     console.log('🔍 Checking if tools are needed for input:', userInput);
 
@@ -202,7 +200,7 @@ async function checkForToolUsage(userInput, apiKey) {
 
     // Create a prompt to determine if a tool should be used
     const toolCheckPrompt = `Given the user's input, determine if any of the available tools should be used.
-
+//endregion TOOLS
 Available tools:
 ${tools.map(tool => `- ${tool.name}: ${tool.description}`).join('\n')}
 
@@ -212,7 +210,7 @@ If a tool should be used, respond with ONLY the tool name (e.g., "get_categories
 If no tool is needed, respond with "none".
 
 Look for keywords and intent that match the tool descriptions.`;
-
+    //region AI BIT
     try {
         const response = await fetch('https://api.openai.com/v1/chat/completions', {
             method: 'POST',
@@ -229,6 +227,8 @@ Look for keywords and intent that match the tool descriptions.`;
         });
 
         const data = await response.json();
+
+        //endregion AI BIT
         const toolDecision = data.choices[0].message.content.trim().toLowerCase();
 
         console.log('🔍 Tool decision:', toolDecision);
@@ -399,6 +399,7 @@ async function executeTool(toolName, userInput, apiKey) {
  * Each "node" is a function that processes the state and returns updated state.
  * This achieves the same result as LangGraph's StateGraph but works in browsers!
  */
+//region GRAPH
 async function runGraphWorkflow(userInput, apiKey, stepsDiv) {
     console.log('🏗️ Building graph-style workflow');
 
@@ -440,7 +441,8 @@ async function runGraphWorkflow(userInput, apiKey, stepsDiv) {
      */
     console.log('📍 NODE 1: ANALYZER - Starting');
     displayStep(stepsDiv, 1, 'Analyzer', 'Analyzing your input...', 'processing');
-
+    //endregion GRAPH
+    //region DEEP
     const analyzerPrompt = `Analyze the following text and identify:
 1. Main topic/theme
 2. Key points or questions

@@ -4,7 +4,7 @@ A WordPress plugin demonstrating **graph-style workflows** and **intelligent too
 
 ## 🎯 What This Plugin Does
 
-This plugin combines two powerful AI capabilities:
+This plugin combines three powerful AI capabilities:
 
 ### 🛠️ **Tool-Based Processing**
 The plugin intelligently detects when users need specific WordPress data and automatically executes appropriate tools:
@@ -62,11 +62,7 @@ This will create the `build` folder with:
 1. Go to WordPress Admin → **30 LANGGRAPH**
 2. Enter text in the textarea (e.g., "Tell me about WordPress")
 3. Click "Process with Graph Workflow"
-4. Watch as the workflow processes through each node:
-   - ⏳ **Step 1**: Analyzer analyzes your input
-   - ⏳ **Step 2**: Processor creates a processing plan
-   - ⏳ **Step 3**: Responder generates the final result
-5. View the final comprehensive response!
+4. View the final comprehensive response!
 
 ## 🔧 Development
 
