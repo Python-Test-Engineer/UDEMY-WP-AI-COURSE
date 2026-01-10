@@ -827,7 +827,7 @@ class RAG_ChatGPT_Memory_Assistant {
             'role' => 'user',
             'content' => "RAG Context:\n{$context}\n\nQuestion: {$query}\n\nPlease provide a helpful answer based on the RAG context above. If this is a follow-up question, use our conversation history for context."
         );
-        
+        //region AI BIT
         $api_response = wp_remote_post('https://api.openai.com/v1/chat/completions', array(
             'headers' => array(
                 'Content-Type' => 'application/json',
@@ -847,7 +847,7 @@ class RAG_ChatGPT_Memory_Assistant {
         }
         
         $response_body = json_decode(wp_remote_retrieve_body($api_response), true);
-        
+        //endregion AI BIT
         if (isset($response_body['choices'][0]['message']['content'])) {
             return $response_body['choices'][0]['message']['content'];
         }
