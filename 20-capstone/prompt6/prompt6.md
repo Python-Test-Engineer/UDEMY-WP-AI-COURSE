@@ -72,7 +72,7 @@ https://mydigitalagent.co.uk/dev/wp-json/posts-rag/v1/vector-search?query=FOAM&l
 "count": 3
 }
 
-For the attacged plugin file, create an additional admin page for this plugin that uses the saved api key already done in the plugin that provides an input for the query and an output area that displays the returned JSON object that is a result of using the FTS API and Vector API to get response.
+For the attached plugin file, create an additional admin page for this plugin that uses the saved api key already done in the plugin that provides an input for the query and an output area that displays the returned JSON object that is a result of using the FTS API and Vector API to get response.
 
 fts_id has the post_ids for the results from the https://mydigitalagent.co.uk/dev/wp-json/posts-rag/v1/search?query=FOAM&limit=3 for a given query
 
