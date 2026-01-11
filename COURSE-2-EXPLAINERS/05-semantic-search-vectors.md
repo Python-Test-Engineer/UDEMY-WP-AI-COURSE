@@ -4,6 +4,14 @@
 
 Semantic search uses vector embeddings and similarity measures to find content based on meaning rather than exact keyword matches. Unlike traditional full-text search (which matches words), semantic search understands context, synonyms, and conceptual relationships between queries and documents.
 
+Cat, kitten, feline are semantically similar.
+
+Computer, Internet, Software are in the same area.
+
+If we ask for an animal that is like a kitty, the embedding for kitty will be closer to the 'Cat, kitten, feline' group than the tech group.
+
+In an office, people in same teams tend to be in same physical location so searching for a dev engineer would be more effective searching that area of the office rather than the marketing office.
+
 ## Core Concepts
 
 ### What Are Vector Embeddings?
@@ -109,72 +117,6 @@ cosine(θ) ≈ -1 →  Opposite
    Query Vector → Similarity Search → Ranked Results
 ```
 
-### Detailed Steps
-
-#### Phase 1: Document Indexing
-
-```python
-from sentence_transformers import SentenceTransformer
-import numpy as np
-
-# Load pre-trained model
-model = SentenceTransformer('all-MiniLM-L6-v2')  # 384 dimensions
-
-# Sample documents
-documents = [
-    "Python is a high-level programming language",
-    "Machine learning uses algorithms to learn from data",
-    "The cat sat on the mat",
-    "Deep learning is a subset of machine learning"
-]
-
-# Generate embeddings
-doc_embeddings = model.encode(documents)
-print(doc_embeddings.shape)  # (4, 384)
-
-# Store in vector database (conceptual)
-# vector_db.store(doc_embeddings, documents)
-```
-
-#### Phase 2: Query Processing
-
-```python
-# User searches for something
-query = "What is ML?"
-
-# Convert query to vector
-query_embedding = model.encode([query])[0]
-print(query_embedding.shape)  # (384,)
-```
-
-#### Phase 3: Similarity Search
-
-```python
-from sklearn.metrics.pairwise import cosine_similarity
-
-# Calculate similarities
-similarities = cosine_similarity([query_embedding], doc_embeddings)[0]
-
-# Rank results
-results = []
-for idx, score in enumerate(similarities):
-    results.append({
-        'document': documents[idx],
-        'score': score
-    })
-
-# Sort by similarity score
-results.sort(key=lambda x: x['score'], reverse=True)
-
-# Display top results
-for result in results[:3]:
-    print(f"Score: {result['score']:.4f} - {result['document']}")
-
-# Output:
-# Score: 0.6543 - Machine learning uses algorithms to learn from data
-# Score: 0.5821 - Deep learning is a subset of machine learning
-# Score: 0.2341 - Python is a high-level programming language
-```
 
 ## Implementation Examples
 
@@ -400,7 +342,7 @@ if __name__ == '__main__':
 
 ```php
 <?php
-
+#region VEC
 class MySQLVectorSearch {
     private PDO $pdo;
     private SemanticSearch $search;
