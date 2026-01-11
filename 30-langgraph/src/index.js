@@ -57,8 +57,8 @@ function renderApp(container) {
             </div>
 
             <div class="input-section">
-                <label for="user-input">Enter your text to process:</label>
-                <textarea
+                <label for="user-input">Enter your query</label>
+                <textarea style="font-size:1.5rem;"
                     id="user-input"
                     rows="4"
                     placeholder="Type something interesting here... (e.g., 'Tell me about WordPress' or 'Show me category statistics')"

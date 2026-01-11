@@ -19,6 +19,6 @@ Create a simple WordPress Plugin that has:
 
  
 
-For each post, insert the post_title, post_content, categories, tags inot a row.
+For each post, insert the post_title, post_content, categories, tags into a row.
 
 For the custom_meta_data field, get all the custom fields from ACF or other means and insert as csv all the values in this field.

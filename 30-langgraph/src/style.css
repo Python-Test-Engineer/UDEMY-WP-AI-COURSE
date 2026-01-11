@@ -3,6 +3,16 @@
  * 
  * Simple, clean styling for the LangGraph demo interface
  */
+ul,
+p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+label,
+textarea {
+    font-size: 1.3rem;
+}
 
 .langgraph-demo {
     max-width: 900px;
@@ -178,9 +188,12 @@
 
 /* Animations */
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.6;
     }
@@ -195,11 +208,11 @@
     .langgraph-demo {
         padding: 10px;
     }
-    
+
     .input-section {
         padding: 15px;
     }
-    
+
     .process-button {
         width: 100%;
     }

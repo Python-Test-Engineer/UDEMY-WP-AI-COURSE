@@ -24,20 +24,7 @@ if (!defined('ABSPATH')) {
         
         <!-- Information Section -->
         <div style="background: #f0f6fc; border-left: 4px solid #2271b1; padding: 15px; margin-bottom: 20px;">
-            <h2 style="margin-top: 0;">
-                <?php _e('What is LangGraph?', 'wp-langgraph'); ?>
-            </h2>
-            <p>
-                <strong>LangGraph</strong> is a library for building stateful, multi-actor applications with LLMs. 
-                It allows you to create workflows where AI agents can:
-            </p>
-            <ul style="margin-left: 20px;">
-                <li>Process input through multiple sequential steps (nodes)</li>
-                <li>Make decisions and route to different paths (conditional edges)</li>
-                <li>Maintain state across the entire workflow</li>
-                <li>Coordinate multiple AI agents working together</li>
-            </ul>
-            
+           
             <h3><?php _e('This Demo:', 'wp-langgraph'); ?></h3>
             <p>
                 This advanced demonstration combines two AI capabilities:

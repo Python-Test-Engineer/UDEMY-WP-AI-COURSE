@@ -13,12 +13,11 @@ Create a WP plugin called 'wp-langgraph' with admin menu level item of 30. Mkae 
 
 Any supplemenatary plugin files other than the main plugin file should be in folder 'admin'.
 
-Create and admin page to demostrate the app.
+Create an admin page to demostrate the app.
 
 ## LLM and model
 
 Use OpenAI and gpt-4o-mini
-
 
 ## ENSURE
 
@@ -36,4 +35,4 @@ Avoid Node.js modules and create a browser-compatible version that simulates a g
 
 ## Bundle
 
-The src  folder will be bundled into the 'build' folder with @wordpress/scripts so ensure references in the plugin for the app to use this location.
+The src folder will be bundled into the 'build' folder with @wordpress/scripts so ensure references in the plugin for the app to use this location.
