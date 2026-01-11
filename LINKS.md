@@ -18,5 +18,7 @@ node --version (will show version number if installed)
 
 [https://academy.langchain.com/](https://academy.langchain.com/)
 
+[https://academy.langchain.com/courses/quickstart-langchain-essentials-typescript](https://academy.langchain.com/courses/quickstart-langchain-essentials-typescript)
+
 [https://www.deeplearning.ai/courses/?courses_date_desc%5Bquery%5D=langchain](https://www.deeplearning.ai/courses/?courses_date_desc%5Bquery%5D=langchain) and many other libraries.
 
