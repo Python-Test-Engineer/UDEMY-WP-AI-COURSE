@@ -58,7 +58,7 @@ class QueryCategorizerAI {
                     <tr>
                         <th scope="row">OpenAI API Key</th>
                         <td>
-                            <input type="text" 
+                            <input type="password" 
                                    name="<?php echo $this->option_name; ?>" 
                                    value="<?php echo esc_attr(get_option($this->option_name)); ?>" 
                                    class="regular-text" />
