@@ -90,3 +90,4 @@ Before you can use the API, you need to add a payment method:
 - Check the [OpenAI Community Forum](https://community.openai.com)
 - Review the [Help Center](https://help.openai.com)
 - Contact OpenAI support through your account dashboard
+
