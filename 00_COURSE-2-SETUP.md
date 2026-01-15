@@ -25,5 +25,6 @@
 9. Settings > Wider Menu plugin `COURSE-2-WP-PLUGINS\04_WIDER_MENU.zip`
 10. Install `COURSE-2-WP-PLUGINS\08_OPENAI_KEYS_REMOVAL.zip` - appears under TOOLS. This set any OPENAI_API_KEYs to blank in the wp_options table to avoid any issues with option tables having keys.
 
-Add plugins and test admin and frontend.
+Add plugins `COURSE-2-UDEMY-PLUGINS` and test admin and frontend after each is installed in case there are any clashes. This is an educational set up so you don't need all of them active at once. However, I have tested it and it works with all installed.
+
 
