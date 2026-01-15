@@ -4,6 +4,8 @@
 
 [https://auth.openai.com/create-account](https://auth.openai.com/create-account)
 
+[https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
+
 ### Create API key
 
 [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
