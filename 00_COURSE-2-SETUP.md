@@ -4,7 +4,7 @@
 3. Install  COURSE-2-WP-PLUGINS\01_CREATE_CHILD_THEME.zip
     Appearance > Child Theme create 'gen-child'.
     
-    OPTIONAL: Add this CSS in style.css or customizer
+    OPTIONAL: Add this CSS in style.css or customizer in case images are too large.
 
     ```
     svg {
