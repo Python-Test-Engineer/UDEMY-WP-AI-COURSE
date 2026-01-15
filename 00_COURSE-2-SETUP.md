@@ -23,5 +23,7 @@
 7. Settings > Media uncheck and say why...
 8. Install `COURSE-2-WP-PLUGINS\03_PREFIX_CHANGE.zip` to make prefix wp_ (just in case) but $wpdb->prefix used for tables. TOOLS > DB PREFIX
 9. Settings > Wider Menu plugin `COURSE-2-WP-PLUGINS\04_WIDER_MENU.zip`
-10. Add plugins and test admin and frontend.
+10. Install `COURSE-2-WP-PLUGINS\08_OPENAI_KEYS_REMOVAL.zip` - appears under TOOLS. This set any OPENAI_API_KEYs to blank in the wp_options table to avoid any issues with option tables having keys.
+
+Add plugins and test admin and frontend.
 
