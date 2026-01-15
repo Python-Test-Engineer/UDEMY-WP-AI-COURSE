@@ -17,7 +17,7 @@
     }
     ```
 
-4. Upload `COURSE-2-WP-PLUGINS\CUSTOM-WP-PAGES\page-basic-agent.php` > Child Theme
+4. Upload custom pages in `COURSE-2-WP-PLUGINS\CUSTOM-WP-PAGES\` > Child Theme
 5. TOOLS > WP Importer for `COURSE-2-WP-PLUGINS\WP-EXPORTER\UDEMY-WP-AI-EXPORT.xml ` for posts and any pages etc. 
 6. Change Site title as needed and customizer > layout > container width to 1400px (optional)
 7. Settings > Media uncheck and say why...
@@ -25,4 +25,3 @@
 9. Settings > Wider Menu plugin `COURSE-2-WP-PLUGINS\04_WIDER_MENU.zip`
 10. Add plugins and test admin and frontend.
 
-We will load in PLUGINS 04+ as needed.

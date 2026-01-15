@@ -29,7 +29,7 @@
 	<title>DEV</title>
 	<link>https://mydigitalagent.co.uk/dev</link>
 	<description></description>
-	<pubDate>Sat, 10 Jan 2026 08:04:44 +0000</pubDate>
+	<pubDate>Thu, 15 Jan 2026 09:09:09 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://mydigitalagent.co.uk/dev</wp:base_site_url>
@@ -39,57 +39,66 @@
 
 		<wp:category>
 		<wp:term_id>2</wp:term_id>
-		<wp:category_nicename><![CDATA[ai]]></wp:category_nicename>
+		<wp:category_nicename><![CDATA[artificial-intelligence]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
-		<wp:cat_name><![CDATA[AI]]></wp:cat_name>
+		<wp:cat_name><![CDATA[Artificial Intelligence]]></wp:cat_name>
+<wp:category_description><![CDATA[Artificial Intelligence, Machine Learning, Computer Vision, RAG, This category is for the modern AI era covering the full range of Artificial Intelligence and Machine Learning  subjects as well as Data Analytics and Data Science]]></wp:category_description>
 	</wp:category>
 		<wp:category>
 		<wp:term_id>3</wp:term_id>
-		<wp:category_nicename><![CDATA[beauty-personal-care]]></wp:category_nicename>
+		<wp:category_nicename><![CDATA[beauty]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
-		<wp:cat_name><![CDATA[Beauty &amp; Personal Care]]></wp:cat_name>
+		<wp:cat_name><![CDATA[Beauty]]></wp:cat_name>
+<wp:category_description><![CDATA[Beauty products, tips and advice as well as all aspects to looking food and being presentable.]]></wp:category_description>
 	</wp:category>
 		<wp:category>
 		<wp:term_id>4</wp:term_id>
-		<wp:category_nicename><![CDATA[computer-languages]]></wp:category_nicename>
+		<wp:category_nicename><![CDATA[computer]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
-		<wp:cat_name><![CDATA[computer languages]]></wp:cat_name>
+		<wp:cat_name><![CDATA[Computer]]></wp:cat_name>
+<wp:category_description><![CDATA[Computers, technical matters regarding general software and hardware. This does not cover AI or Machine Learning.]]></wp:category_description>
 	</wp:category>
 		<wp:category>
 		<wp:term_id>5</wp:term_id>
 		<wp:category_nicename><![CDATA[electronics]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
 		<wp:cat_name><![CDATA[Electronics]]></wp:cat_name>
+<wp:category_description><![CDATA[Electronic devices like TV, microphones a- all things that use electronic components.]]></wp:category_description>
 	</wp:category>
 		<wp:category>
 		<wp:term_id>6</wp:term_id>
 		<wp:category_nicename><![CDATA[family]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
 		<wp:cat_name><![CDATA[Family]]></wp:cat_name>
+<wp:category_description><![CDATA[Family members like brothers, sisters, uncles, aunts, grand parents and children.]]></wp:category_description>
 	</wp:category>
 		<wp:category>
 		<wp:term_id>7</wp:term_id>
-		<wp:category_nicename><![CDATA[fitness-sports]]></wp:category_nicename>
+		<wp:category_nicename><![CDATA[fitness]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
-		<wp:cat_name><![CDATA[Fitness &amp; Sports]]></wp:cat_name>
+		<wp:cat_name><![CDATA[Fitness]]></wp:cat_name>
+<wp:category_description><![CDATA[All matters regarding physical fitness, sports, activities that involve movement and exercise as well as Yoga, Tai Chi and other health practices.]]></wp:category_description>
 	</wp:category>
 		<wp:category>
 		<wp:term_id>8</wp:term_id>
 		<wp:category_nicename><![CDATA[holidays]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
-		<wp:cat_name><![CDATA[holidays]]></wp:cat_name>
+		<wp:cat_name><![CDATA[Holidays]]></wp:cat_name>
+<wp:category_description><![CDATA[Holidays and travel, airplanes, train journeys, expeditions.]]></wp:category_description>
 	</wp:category>
 		<wp:category>
 		<wp:term_id>9</wp:term_id>
-		<wp:category_nicename><![CDATA[home-kitchen]]></wp:category_nicename>
+		<wp:category_nicename><![CDATA[home]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
-		<wp:cat_name><![CDATA[Home &amp; Kitchen]]></wp:cat_name>
+		<wp:cat_name><![CDATA[Home]]></wp:cat_name>
+<wp:category_description><![CDATA[Home, rooms, kitchens, bathrooms, construction, redecoration.]]></wp:category_description>
 	</wp:category>
 		<wp:category>
 		<wp:term_id>10</wp:term_id>
 		<wp:category_nicename><![CDATA[travel]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
 		<wp:cat_name><![CDATA[Travel]]></wp:cat_name>
+<wp:category_description><![CDATA[Travel, expeditions, business travel, work trips.]]></wp:category_description>
 	</wp:category>
 		<wp:category>
 		<wp:term_id>1</wp:term_id>
@@ -2090,13 +2099,6 @@
 		<wp:term_name><![CDATA[AGI]]></wp:term_name>
 	</wp:term>
 		<wp:term>
-		<wp:term_id>2</wp:term_id>
-		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[ai]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[AI]]></wp:term_name>
-	</wp:term>
-		<wp:term>
 		<wp:term_id>17</wp:term_id>
 		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[ai-art]]></wp:term_slug>
@@ -2195,6 +2197,14 @@
 		<wp:term_name><![CDATA[anti-aging]]></wp:term_name>
 	</wp:term>
 		<wp:term>
+		<wp:term_id>2</wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[artificial-intelligence]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[Artificial Intelligence]]></wp:term_name>
+		<wp:term_description><![CDATA[Artificial Intelligence, Machine Learning, Computer Vision, RAG, This category is for the modern AI era covering the full range of Artificial Intelligence and Machine Learning  subjects as well as Data Analytics and Data Science]]></wp:term_description>
+	</wp:term>
+		<wp:term>
 		<wp:term_id>31</wp:term_id>
 		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[athletic-shoes]]></wp:term_slug>
@@ -2260,9 +2270,10 @@
 		<wp:term>
 		<wp:term_id>3</wp:term_id>
 		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[beauty-personal-care]]></wp:term_slug>
+		<wp:term_slug><![CDATA[beauty]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[Beauty &amp; Personal Care]]></wp:term_name>
+		<wp:term_name><![CDATA[Beauty]]></wp:term_name>
+		<wp:term_description><![CDATA[Beauty products, tips and advice as well as all aspects to looking food and being presentable.]]></wp:term_description>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>40</wp:term_id>
@@ -2568,9 +2579,10 @@
 		<wp:term>
 		<wp:term_id>4</wp:term_id>
 		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[computer-languages]]></wp:term_slug>
+		<wp:term_slug><![CDATA[computer]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[computer languages]]></wp:term_name>
+		<wp:term_name><![CDATA[Computer]]></wp:term_name>
+		<wp:term_description><![CDATA[Computers, technical matters regarding general software and hardware. This does not cover AI or Machine Learning.]]></wp:term_description>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>82</wp:term_id>
@@ -2879,6 +2891,7 @@
 		<wp:term_slug><![CDATA[electronics]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
 		<wp:term_name><![CDATA[Electronics]]></wp:term_name>
+		<wp:term_description><![CDATA[Electronic devices like TV, microphones a- all things that use electronic components.]]></wp:term_description>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>125</wp:term_id>
@@ -2984,6 +2997,7 @@
 		<wp:term_slug><![CDATA[family]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
 		<wp:term_name><![CDATA[Family]]></wp:term_name>
+		<wp:term_description><![CDATA[Family members like brothers, sisters, uncles, aunts, grand parents and children.]]></wp:term_description>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>139</wp:term_id>
@@ -3093,9 +3107,10 @@
 		<wp:term>
 		<wp:term_id>7</wp:term_id>
 		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[fitness-sports]]></wp:term_slug>
+		<wp:term_slug><![CDATA[fitness]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[Fitness &amp; Sports]]></wp:term_name>
+		<wp:term_name><![CDATA[Fitness]]></wp:term_name>
+		<wp:term_description><![CDATA[All matters regarding physical fitness, sports, activities that involve movement and exercise as well as Yoga, Tai Chi and other health practices.]]></wp:term_description>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>154</wp:term_id>
@@ -3368,7 +3383,8 @@
 		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[holidays]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[holidays]]></wp:term_name>
+		<wp:term_name><![CDATA[Holidays]]></wp:term_name>
+		<wp:term_description><![CDATA[Holidays and travel, airplanes, train journeys, expeditions.]]></wp:term_description>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>192</wp:term_id>
@@ -3380,9 +3396,10 @@
 		<wp:term>
 		<wp:term_id>9</wp:term_id>
 		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[home-kitchen]]></wp:term_slug>
+		<wp:term_slug><![CDATA[home]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[Home &amp; Kitchen]]></wp:term_name>
+		<wp:term_name><![CDATA[Home]]></wp:term_name>
+		<wp:term_description><![CDATA[Home, rooms, kitchens, bathrooms, construction, redecoration.]]></wp:term_description>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>193</wp:term_id>
@@ -4594,6 +4611,7 @@
 		<wp:term_slug><![CDATA[travel]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
 		<wp:term_name><![CDATA[Travel]]></wp:term_name>
+		<wp:term_description><![CDATA[Travel, expeditions, business travel, work trips.]]></wp:term_description>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>364</wp:term_id>
@@ -5033,48 +5051,28 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Sample Page]]></title>
-		<link>https://mydigitalagent.co.uk/dev/?page_id=8</link>
-		<pubDate>Sat, 06 Dec 2025 08:10:04 +0000</pubDate>
+		<title><![CDATA[chatbot]]></title>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=205</link>
+		<pubDate>Tue, 09 Dec 2025 13:13:46 +0000</pubDate>
 		<dc:creator><![CDATA[udemy]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=2</guid>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=205</guid>
 		<description></description>
-		<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:quote -->
-<blockquote class="wp-block-quote">
-<!-- wp:paragraph -->
-<p>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</p>
-<!-- /wp:paragraph -->
-</blockquote>
-<!-- /wp:quote -->
+		<content:encoded><![CDATA[<!-- wp:shortcode -->
+[wp_chatbot ]
+<!-- /wp:shortcode -->
 
 <!-- wp:paragraph -->
-<p>...or something like this:</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:quote -->
-<blockquote class="wp-block-quote">
-<!-- wp:paragraph -->
-<p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p>
-<!-- /wp:paragraph -->
-</blockquote>
-<!-- /wp:quote -->
-
-<!-- wp:paragraph -->
-<p>As a new WordPress user, you should go to <a href="https://mydigitalagent.co.uk/dev/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+<p></p>
 <!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>8</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-06 08:10:04]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-06 08:10:04]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-06 08:10:04]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-06 08:10:04]]></wp:post_modified_gmt>
+		<wp:post_id>205</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-09 13:13:46]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-09 13:13:46]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 14:02:37]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 14:02:37]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[sample-page__trashed]]></wp:post_name>
+		<wp:post_name><![CDATA[chatbot__trashed]]></wp:post_name>
 		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -5082,8 +5080,12 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
+		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
@@ -5091,123 +5093,11 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1765475768]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1767276157]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[sample-page]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Privacy Policy]]></title>
-		<link>https://mydigitalagent.co.uk/dev/?page_id=9</link>
-		<pubDate>Sat, 06 Dec 2025 08:10:04 +0000</pubDate>
-		<dc:creator><![CDATA[udemy]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=3</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:heading -->
-<h2 class="wp-block-heading">Who we are</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p><strong class="privacy-policy-tutorial">Suggested text: </strong>Our website address is: https://mydigitalagent.co.uk/dev.</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Comments</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p><strong class="privacy-policy-tutorial">Suggested text: </strong>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Media</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Cookies</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Embedded content from other websites</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p><strong class="privacy-policy-tutorial">Suggested text: </strong>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Who we share your data with</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you request a password reset, your IP address will be included in the reset email.</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2 class="wp-block-heading">How long we retain your data</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2 class="wp-block-heading">What rights you have over your data</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Where your data is sent</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p><strong class="privacy-policy-tutorial">Suggested text: </strong>Visitor comments may be checked through an automated spam detection service.</p>
-<!-- /wp:paragraph -->
-]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>9</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-06 08:10:04]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-06 08:10:04]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-06 08:10:04]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-06 08:10:04]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[privacy-policy__trashed]]></wp:post_name>
-		<wp:status><![CDATA[trash]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
-		<wp:meta_value><![CDATA[draft]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1765525354]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[privacy-policy]]></wp:meta_value>
+		<wp:meta_value><![CDATA[chatbot]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -5234,6 +5124,46 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 														</item>
+					<item>
+		<title><![CDATA[basic-agent]]></title>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=254</link>
+		<pubDate>Thu, 11 Dec 2025 17:40:46 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=254</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>254</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-11 17:40:46]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-11 17:40:46]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-01 14:02:35]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-01 14:02:35]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[basic-agent__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1767276155]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[basic-agent]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
 					<item>
 		<title><![CDATA[gen-child]]></title>
 		<link>https://mydigitalagent.co.uk/dev/gen-child/</link>
@@ -5845,7 +5775,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="holidays"><![CDATA[holidays]]></category>
+										<category domain="category" nicename="holidays"><![CDATA[Holidays]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[footnotes]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
@@ -5896,7 +5826,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="computer-languages"><![CDATA[computer languages]]></category>
+										<category domain="category" nicename="computer"><![CDATA[Computer]]></category>
 		<category domain="post_tag" nicename="python"><![CDATA[python]]></category>
 						</item>
 					<item>
@@ -6020,135 +5950,65 @@
 		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
 						</item>
 					<item>
-		<title><![CDATA[html ai agent]]></title>
-		<link>https://mydigitalagent.co.uk/dev/?page_id=146</link>
-		<pubDate>Sun, 07 Dec 2025 07:54:17 +0000</pubDate>
+		<title><![CDATA[City Break Itineraries]]></title>
+		<link>https://mydigitalagent.co.uk/dev/city-break-itineraries/</link>
+		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
 		<dc:creator><![CDATA[udemy]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=146</guid>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/city-break-itineraries/</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[Short city breaks maximize limited vacation time with concentrated experiences. Prioritizing must-see attractions prevents trying to do everything. Using public transportation immerses you in local life. Neighborhood exploration reveals authentic character beyond tourist zones. Booking skip-the-line tickets saves precious hours. Balancing planned activities with spontaneous discoveries creates memorable trips. Even weekend trips provide refreshing changes of scenery.]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>146</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-07 07:54:17]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-07 07:54:17]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-07 07:54:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-07 07:54:17]]></wp:post_modified_gmt>
+		<wp:post_id>77</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[html-ai-agent__trashed]]></wp:post_name>
-		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_name><![CDATA[city-break-itineraries]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
-		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1765475766]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[html-ai-agent]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
+										<category domain="post_tag" nicename="city-tours"><![CDATA[city tours]]></category>
+		<category domain="post_tag" nicename="london"><![CDATA[London]]></category>
+		<category domain="post_tag" nicename="new-york"><![CDATA[New York]]></category>
+		<category domain="post_tag" nicename="paris"><![CDATA[Paris]]></category>
+		<category domain="post_tag" nicename="public-transportation"><![CDATA[public transportation]]></category>
+		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
+						</item>
 					<item>
-		<title><![CDATA[chatbot]]></title>
-		<link>https://mydigitalagent.co.uk/dev/?page_id=205</link>
-		<pubDate>Tue, 09 Dec 2025 13:13:46 +0000</pubDate>
+		<title><![CDATA[Travel During Holidays]]></title>
+		<link>https://mydigitalagent.co.uk/dev/travel-during-holidays/</link>
+		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
 		<dc:creator><![CDATA[udemy]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=205</guid>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/travel-during-holidays/</guid>
 		<description></description>
-		<content:encoded><![CDATA[<!-- wp:shortcode -->
-[wp_chatbot ]
-<!-- /wp:shortcode -->
-
-<!-- wp:paragraph -->
-<p></p>
-<!-- /wp:paragraph -->]]></content:encoded>
+		<content:encoded><![CDATA[Traveling during holidays offers unique cultural experiences despite larger crowds. Christmas markets transform European cities into winter wonderlands. Experiencing local holiday traditions provides authentic cultural immersion. Booking well in advance secures accommodation during peak periods. Prices increase significantly during major holidays. Some attractions close for celebrations requiring itinerary adjustments. Holiday travel creates special memories worth extra planning efforts.]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>205</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-09 13:13:46]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-09 13:13:46]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-01-01 14:02:37]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-01-01 14:02:37]]></wp:post_modified_gmt>
+		<wp:post_id>78</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[chatbot__trashed]]></wp:post_name>
-		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_name><![CDATA[travel-during-holidays]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
-		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
-		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1767276157]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[chatbot]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[basic-agent]]></title>
-		<link>https://mydigitalagent.co.uk/dev/?page_id=254</link>
-		<pubDate>Thu, 11 Dec 2025 17:40:46 +0000</pubDate>
-		<dc:creator><![CDATA[udemy]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/?page_id=254</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>254</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-11 17:40:46]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-11 17:40:46]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-01-01 14:02:35]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-01-01 14:02:35]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[basic-agent__trashed]]></wp:post_name>
-		<wp:status><![CDATA[trash]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
-		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1767276155]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[basic-agent]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
+										<category domain="post_tag" nicename="celebrations"><![CDATA[celebrations]]></category>
+		<category domain="post_tag" nicename="christmas-markets"><![CDATA[Christmas markets]]></category>
+		<category domain="post_tag" nicename="festivals"><![CDATA[festivals]]></category>
+		<category domain="post_tag" nicename="holidays"><![CDATA[holidays]]></category>
+		<category domain="post_tag" nicename="peak-season"><![CDATA[peak season]]></category>
+		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
+						</item>
 					<item>
 		<title><![CDATA[chat-with-memory]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?page_id=257</link>
@@ -6671,65 +6531,55 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[City Break Itineraries]]></title>
-		<link>https://mydigitalagent.co.uk/dev/city-break-itineraries/</link>
-		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
+		<title><![CDATA[plugin05]]></title>
+		<link>https://mydigitalagent.co.uk/dev/?page_id=587</link>
+		<pubDate>Sat, 10 Jan 2026 11:24:59 +0000</pubDate>
 		<dc:creator><![CDATA[udemy]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/city-break-itineraries/</guid>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?page_id=587</guid>
 		<description></description>
-		<content:encoded><![CDATA[Short city breaks maximize limited vacation time with concentrated experiences. Prioritizing must-see attractions prevents trying to do everything. Using public transportation immerses you in local life. Neighborhood exploration reveals authentic character beyond tourist zones. Booking skip-the-line tickets saves precious hours. Balancing planned activities with spontaneous discoveries creates memorable trips. Even weekend trips provide refreshing changes of scenery.]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:shortcode -->
+[openai_structured_output]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>77</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
+		<wp:post_id>587</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 11:24:59]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 11:24:59]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-10 11:57:38]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-10 11:57:38]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[city-break-itineraries]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_name><![CDATA[plugin05__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_tag" nicename="city-tours"><![CDATA[city tours]]></category>
-		<category domain="post_tag" nicename="london"><![CDATA[London]]></category>
-		<category domain="post_tag" nicename="new-york"><![CDATA[New York]]></category>
-		<category domain="post_tag" nicename="paris"><![CDATA[Paris]]></category>
-		<category domain="post_tag" nicename="public-transportation"><![CDATA[public transportation]]></category>
-		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
-						</item>
-					<item>
-		<title><![CDATA[Travel During Holidays]]></title>
-		<link>https://mydigitalagent.co.uk/dev/travel-during-holidays/</link>
-		<pubDate>Sat, 06 Dec 2025 19:16:01 +0000</pubDate>
-		<dc:creator><![CDATA[udemy]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/travel-during-holidays/</guid>
-		<description></description>
-		<content:encoded><![CDATA[Traveling during holidays offers unique cultural experiences despite larger crowds. Christmas markets transform European cities into winter wonderlands. Experiencing local holiday traditions provides authentic cultural immersion. Booking well in advance secures accommodation during peak periods. Prices increase significantly during major holidays. Some attractions close for celebrations requiring itinerary adjustments. Holiday travel creates special memories worth extra planning efforts.]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>78</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-06 19:16:01]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-06 19:16:01]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-06 19:16:01]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[travel-during-holidays]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_tag" nicename="celebrations"><![CDATA[celebrations]]></category>
-		<category domain="post_tag" nicename="christmas-markets"><![CDATA[Christmas markets]]></category>
-		<category domain="post_tag" nicename="festivals"><![CDATA[festivals]]></category>
-		<category domain="post_tag" nicename="holidays"><![CDATA[holidays]]></category>
-		<category domain="post_tag" nicename="peak-season"><![CDATA[peak season]]></category>
-		<category domain="category" nicename="travel"><![CDATA[Travel]]></category>
-						</item>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_generate-sidebar-layout-meta]]></wp:meta_key>
+		<wp:meta_value><![CDATA[no-sidebar]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1768046258]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[plugin05]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
 					<item>
 		<title><![CDATA[Cruise Ship Experiences]]></title>
 		<link>https://mydigitalagent.co.uk/dev/cruise-ship-experiences/</link>
@@ -7413,8 +7263,8 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
-		<category domain="post_tag" nicename="algorithms"><![CDATA[algorithms]]></category>
+										<category domain="post_tag" nicename="algorithms"><![CDATA[algorithms]]></category>
+		<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="neural-networks"><![CDATA[neural networks]]></category>
 		<category domain="post_tag" nicename="python"><![CDATA[python]]></category>
 		<category domain="post_tag" nicename="tensorflow"><![CDATA[TensorFlow]]></category>
@@ -7447,7 +7297,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+										<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="doctors"><![CDATA[doctors]]></category>
 		<category domain="post_tag" nicename="hospitals"><![CDATA[hospitals]]></category>
 		<category domain="post_tag" nicename="ibm-watson"><![CDATA[IBM Watson]]></category>
@@ -7481,8 +7331,8 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
-		<category domain="post_tag" nicename="ai-ethics"><![CDATA[AI ethics]]></category>
+										<category domain="post_tag" nicename="ai-ethics"><![CDATA[AI ethics]]></category>
+		<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="bias"><![CDATA[bias]]></category>
 		<category domain="post_tag" nicename="facial-recognition"><![CDATA[facial recognition]]></category>
 		<category domain="post_tag" nicename="privacy"><![CDATA[privacy]]></category>
@@ -7515,7 +7365,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+										<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="chatbots"><![CDATA[chatbots]]></category>
 		<category domain="post_tag" nicename="google-translate"><![CDATA[Google Translate]]></category>
 		<category domain="post_tag" nicename="gpt"><![CDATA[GPT]]></category>
@@ -7545,8 +7395,8 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
-		<category domain="post_tag" nicename="ai-art"><![CDATA[AI art]]></category>
+										<category domain="post_tag" nicename="ai-art"><![CDATA[AI art]]></category>
+		<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="creative-tools"><![CDATA[creative tools]]></category>
 		<category domain="post_tag" nicename="dall-e"><![CDATA[DALL-E]]></category>
 		<category domain="post_tag" nicename="midjourney"><![CDATA[Midjourney]]></category>
@@ -7580,7 +7430,7 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="agi"><![CDATA[AGI]]></category>
-		<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+		<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="deepmind"><![CDATA[DeepMind]]></category>
 		<category domain="post_tag" nicename="openai"><![CDATA[OpenAI]]></category>
 		<category domain="post_tag" nicename="quantum-computing"><![CDATA[quantum computing]]></category>
@@ -7609,7 +7459,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+										<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="autonomous-vehicles"><![CDATA[autonomous vehicles]]></category>
 		<category domain="post_tag" nicename="computer-vision"><![CDATA[computer vision]]></category>
 		<category domain="post_tag" nicename="self-driving-cars"><![CDATA[self-driving cars]]></category>
@@ -7643,8 +7493,8 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
-		<category domain="post_tag" nicename="alexa"><![CDATA[Alexa]]></category>
+										<category domain="post_tag" nicename="alexa"><![CDATA[Alexa]]></category>
+		<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="google-assistant"><![CDATA[Google Assistant]]></category>
 		<category domain="post_tag" nicename="siri"><![CDATA[Siri]]></category>
 		<category domain="post_tag" nicename="smart-speakers"><![CDATA[smart speakers]]></category>
@@ -7673,8 +7523,8 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
-		<category domain="post_tag" nicename="algorithmic-trading"><![CDATA[algorithmic trading]]></category>
+										<category domain="post_tag" nicename="algorithmic-trading"><![CDATA[algorithmic trading]]></category>
+		<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="banks"><![CDATA[banks]]></category>
 		<category domain="post_tag" nicename="fraud-detection"><![CDATA[fraud detection]]></category>
 		<category domain="post_tag" nicename="robo-advisors"><![CDATA[robo-advisors]]></category>
@@ -7707,7 +7557,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+										<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="automation"><![CDATA[automation]]></category>
 		<category domain="post_tag" nicename="employment"><![CDATA[employment]]></category>
 		<category domain="post_tag" nicename="job-market"><![CDATA[job market]]></category>
@@ -7741,7 +7591,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+										<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="deep-learning"><![CDATA[deep learning]]></category>
 		<category domain="post_tag" nicename="gpus"><![CDATA[GPUs]]></category>
 		<category domain="post_tag" nicename="image-recognition"><![CDATA[image recognition]]></category>
@@ -7772,7 +7622,7 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="adaptive-learning"><![CDATA[adaptive learning]]></category>
-		<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+		<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="education-technology"><![CDATA[education technology]]></category>
 		<category domain="post_tag" nicename="khan-academy"><![CDATA[Khan Academy]]></category>
 		<category domain="post_tag" nicename="students"><![CDATA[students]]></category>
@@ -7805,7 +7655,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+										<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="cameras"><![CDATA[cameras]]></category>
 		<category domain="post_tag" nicename="computer-vision"><![CDATA[computer vision]]></category>
 		<category domain="post_tag" nicename="facial-recognition"><![CDATA[facial recognition]]></category>
@@ -7835,7 +7685,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+										<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="cybersecurity"><![CDATA[cybersecurity]]></category>
 		<category domain="post_tag" nicename="hackers"><![CDATA[hackers]]></category>
 		<category domain="post_tag" nicename="malware"><![CDATA[malware]]></category>
@@ -7869,9 +7719,9 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
-		<category domain="post_tag" nicename="ai-research"><![CDATA[AI research]]></category>
+										<category domain="post_tag" nicename="ai-research"><![CDATA[AI research]]></category>
 		<category domain="post_tag" nicename="algorithms"><![CDATA[algorithms]]></category>
+		<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="explainable-ai"><![CDATA[explainable AI]]></category>
 		<category domain="post_tag" nicename="interpretability"><![CDATA[interpretability]]></category>
 		<category domain="post_tag" nicename="transparency"><![CDATA[transparency]]></category>
@@ -7903,8 +7753,8 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
-		<category domain="post_tag" nicename="amazon"><![CDATA[Amazon]]></category>
+										<category domain="post_tag" nicename="amazon"><![CDATA[Amazon]]></category>
+		<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="chatbots"><![CDATA[chatbots]]></category>
 		<category domain="post_tag" nicename="e-commerce"><![CDATA[e-commerce]]></category>
 		<category domain="post_tag" nicename="recommendation-engines"><![CDATA[recommendation engines]]></category>
@@ -7937,8 +7787,8 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
-		<category domain="post_tag" nicename="alphago"><![CDATA[AlphaGo]]></category>
+										<category domain="post_tag" nicename="alphago"><![CDATA[AlphaGo]]></category>
+		<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="deepmind"><![CDATA[DeepMind]]></category>
 		<category domain="post_tag" nicename="gaming"><![CDATA[gaming]]></category>
 		<category domain="post_tag" nicename="reinforcement-learning"><![CDATA[reinforcement learning]]></category>
@@ -7967,7 +7817,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+										<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="climate-change"><![CDATA[climate change]]></category>
 		<category domain="post_tag" nicename="environmental-monitoring"><![CDATA[environmental monitoring]]></category>
 		<category domain="post_tag" nicename="renewable-energy"><![CDATA[renewable energy]]></category>
@@ -8001,7 +7851,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+										<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="content-creation"><![CDATA[content creation]]></category>
 		<category domain="post_tag" nicename="dall-e"><![CDATA[DALL-E]]></category>
 		<category domain="post_tag" nicename="deepfakes"><![CDATA[deepfakes]]></category>
@@ -8031,8 +7881,8 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
-		<category domain="post_tag" nicename="ai-regulation"><![CDATA[AI regulation]]></category>
+										<category domain="post_tag" nicename="ai-regulation"><![CDATA[AI regulation]]></category>
+		<category domain="category" nicename="artificial-intelligence"><![CDATA[Artificial Intelligence]]></category>
 		<category domain="post_tag" nicename="european-union"><![CDATA[European Union]]></category>
 		<category domain="post_tag" nicename="governance"><![CDATA[governance]]></category>
 		<category domain="post_tag" nicename="legislation"><![CDATA[legislation]]></category>
@@ -8390,7 +8240,7 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="cookware"><![CDATA[cookware]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
 		<category domain="post_tag" nicename="induction"><![CDATA[induction]]></category>
 		<category domain="post_tag" nicename="kitchen-essentials"><![CDATA[kitchen essentials]]></category>
 		<category domain="post_tag" nicename="pots-and-pans"><![CDATA[pots and pans]]></category>
@@ -8422,7 +8272,7 @@
 										<category domain="post_tag" nicename="air-fryer"><![CDATA[air fryer]]></category>
 		<category domain="post_tag" nicename="countertop-appliances"><![CDATA[countertop appliances]]></category>
 		<category domain="post_tag" nicename="healthy-cooking"><![CDATA[healthy cooking]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
 		<category domain="post_tag" nicename="kitchen-appliances"><![CDATA[kitchen appliances]]></category>
 		<category domain="post_tag" nicename="ninja"><![CDATA[Ninja]]></category>
 						</item>
@@ -8452,7 +8302,7 @@
 										<category domain="post_tag" nicename="breakfast-appliances"><![CDATA[breakfast appliances]]></category>
 		<category domain="post_tag" nicename="coffee-maker"><![CDATA[coffee maker]]></category>
 		<category domain="post_tag" nicename="drip-coffee"><![CDATA[drip coffee]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
 		<category domain="post_tag" nicename="mr-coffee"><![CDATA[Mr. Coffee]]></category>
 		<category domain="post_tag" nicename="programmable"><![CDATA[programmable]]></category>
 						</item>
@@ -8482,7 +8332,7 @@
 										<category domain="post_tag" nicename="cleaning"><![CDATA[cleaning]]></category>
 		<category domain="post_tag" nicename="cordless-vacuum"><![CDATA[cordless vacuum]]></category>
 		<category domain="post_tag" nicename="dyson"><![CDATA[Dyson]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
 		<category domain="post_tag" nicename="home-appliances"><![CDATA[home appliances]]></category>
 		<category domain="post_tag" nicename="vacuum-cleaner"><![CDATA[vacuum cleaner]]></category>
 						</item>
@@ -8511,7 +8361,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="bedding"><![CDATA[bedding]]></category>
 		<category domain="post_tag" nicename="bedroom"><![CDATA[bedroom]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
 		<category domain="post_tag" nicename="memory-foam"><![CDATA[memory foam]]></category>
 		<category domain="post_tag" nicename="pillows"><![CDATA[pillows]]></category>
 		<category domain="post_tag" nicename="sleep-accessories"><![CDATA[sleep accessories]]></category>
@@ -8546,7 +8396,7 @@
 										<category domain="post_tag" nicename="chef-knife"><![CDATA[chef knife]]></category>
 		<category domain="post_tag" nicename="cooking-tools"><![CDATA[cooking tools]]></category>
 		<category domain="post_tag" nicename="cutlery"><![CDATA[cutlery]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
 		<category domain="post_tag" nicename="kitchen-knives"><![CDATA[kitchen knives]]></category>
 		<category domain="post_tag" nicename="knife-set"><![CDATA[knife set]]></category>
 						</item>
@@ -8574,7 +8424,7 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="crock-pot"><![CDATA[Crock-Pot]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
 		<category domain="post_tag" nicename="kitchen-appliances"><![CDATA[kitchen appliances]]></category>
 		<category domain="post_tag" nicename="meal-prep"><![CDATA[meal prep]]></category>
 		<category domain="post_tag" nicename="programmable"><![CDATA[programmable]]></category>
@@ -8607,9 +8457,65 @@
 		<category domain="post_tag" nicename="baking"><![CDATA[baking]]></category>
 		<category domain="post_tag" nicename="baking-pans"><![CDATA[baking pans]]></category>
 		<category domain="post_tag" nicename="cookie-sheets"><![CDATA[cookie sheets]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
 		<category domain="post_tag" nicename="non-stick"><![CDATA[non-stick]]></category>
 						</item>
+					<item>
+		<title><![CDATA[BLENDER HIGH SPEED 1600W]]></title>
+		<link>https://mydigitalagent.co.uk/dev/?p=172</link>
+		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/blender-high-speed-1400w/</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Professional-grade motor blends toughest ingredients including ice and frozen fruit. Variable speed control and pulse function provide precise blending. 64-ounce BPA-free pitcher makes large batches for whole family. Self-cleaning feature simplifies cleanup with water and drop of soap. Hardened stainless steel blades stay sharp through years of use. Includes recipe book with smoothies, soups, and sauces. Ten-year warranty covers motor and parts.</p>
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>4-in-1 hand blender set: Includes stainless steel immersion blender, whisk, 500ml chopping bowl, 700ml measuring cup. Many options are available to you: soups, sauces, mayonnaise, purees, baby food and more.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Safety and quality assurance: All food contact parts of the hand blender for kitchen are BPA free. We stand behind the quality of our product and offer technical support. if you have any questions, please contact us first, we will provide you with a satisfactory solution as soon as possible.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>172</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-08 13:40:50]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-08 13:40:50]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-17 15:46:02]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-17 15:46:02]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[blender-high-speed-1400w__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="post_tag" nicename="blender"><![CDATA[blender]]></category>
+		<category domain="post_tag" nicename="high-speed"><![CDATA[high-speed]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
+		<category domain="post_tag" nicename="kitchen-appliances"><![CDATA[kitchen appliances]]></category>
+		<category domain="post_tag" nicename="smoothie-maker"><![CDATA[smoothie maker]]></category>
+		<category domain="post_tag" nicename="vitamix"><![CDATA[Vitamix]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1765986362]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[blender-high-speed-1400w]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
 					<item>
 		<title><![CDATA[Digital Kitchen Scale 11lb Capacity]]></title>
 		<link>https://mydigitalagent.co.uk/dev/digital-kitchen-scale-11lb-capacity/</link>
@@ -8636,7 +8542,7 @@
 										<category domain="post_tag" nicename="baking-tools"><![CDATA[baking tools]]></category>
 		<category domain="post_tag" nicename="digital-scale"><![CDATA[digital scale]]></category>
 		<category domain="post_tag" nicename="food-scale"><![CDATA[food scale]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
 		<category domain="post_tag" nicename="kitchen-scale"><![CDATA[kitchen scale]]></category>
 		<category domain="post_tag" nicename="measuring"><![CDATA[measuring]]></category>
 						</item>
@@ -8664,7 +8570,7 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="exercise-mat"><![CDATA[exercise mat]]></category>
-		<category domain="category" nicename="fitness-sports"><![CDATA[Fitness &amp; Sports]]></category>
+		<category domain="category" nicename="fitness"><![CDATA[Fitness]]></category>
 		<category domain="post_tag" nicename="fitness-equipment"><![CDATA[fitness equipment]]></category>
 		<category domain="post_tag" nicename="pilates"><![CDATA[Pilates]]></category>
 		<category domain="post_tag" nicename="yoga"><![CDATA[yoga]]></category>
@@ -8695,7 +8601,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="bowflex"><![CDATA[Bowflex]]></category>
 		<category domain="post_tag" nicename="dumbbells"><![CDATA[dumbbells]]></category>
-		<category domain="category" nicename="fitness-sports"><![CDATA[Fitness &amp; Sports]]></category>
+		<category domain="category" nicename="fitness"><![CDATA[Fitness]]></category>
 		<category domain="post_tag" nicename="home-gym"><![CDATA[home gym]]></category>
 		<category domain="post_tag" nicename="strength-training"><![CDATA[strength training]]></category>
 		<category domain="post_tag" nicename="weights"><![CDATA[weights]]></category>
@@ -8723,7 +8629,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="fitness-sports"><![CDATA[Fitness &amp; Sports]]></category>
+										<category domain="category" nicename="fitness"><![CDATA[Fitness]]></category>
 		<category domain="post_tag" nicename="fitness-bands"><![CDATA[fitness bands]]></category>
 		<category domain="post_tag" nicename="home-workout"><![CDATA[home workout]]></category>
 		<category domain="post_tag" nicename="portable"><![CDATA[portable]]></category>
@@ -8755,7 +8661,7 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="adidas"><![CDATA[Adidas]]></category>
 		<category domain="post_tag" nicename="athletic-shoes"><![CDATA[athletic shoes]]></category>
-		<category domain="category" nicename="fitness-sports"><![CDATA[Fitness &amp; Sports]]></category>
+		<category domain="category" nicename="fitness"><![CDATA[Fitness]]></category>
 		<category domain="post_tag" nicename="footwear"><![CDATA[footwear]]></category>
 		<category domain="post_tag" nicename="nike"><![CDATA[Nike]]></category>
 		<category domain="post_tag" nicename="running-shoes"><![CDATA[running shoes]]></category>
@@ -8783,7 +8689,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="fitness-sports"><![CDATA[Fitness &amp; Sports]]></category>
+										<category domain="category" nicename="fitness"><![CDATA[Fitness]]></category>
 		<category domain="post_tag" nicename="foam-roller"><![CDATA[foam roller]]></category>
 		<category domain="post_tag" nicename="massage"><![CDATA[massage]]></category>
 		<category domain="post_tag" nicename="muscle-recovery"><![CDATA[muscle recovery]]></category>
@@ -8817,7 +8723,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="fitness-sports"><![CDATA[Fitness &amp; Sports]]></category>
+										<category domain="category" nicename="fitness"><![CDATA[Fitness]]></category>
 		<category domain="post_tag" nicename="hydration"><![CDATA[hydration]]></category>
 		<category domain="post_tag" nicename="hydro-flask"><![CDATA[Hydro Flask]]></category>
 		<category domain="post_tag" nicename="insulated-bottle"><![CDATA[insulated bottle]]></category>
@@ -8850,7 +8756,7 @@
 										<category domain="post_tag" nicename="cardio-equipment"><![CDATA[cardio equipment]]></category>
 		<category domain="post_tag" nicename="cycling"><![CDATA[cycling]]></category>
 		<category domain="post_tag" nicename="exercise-bike"><![CDATA[exercise bike]]></category>
-		<category domain="category" nicename="fitness-sports"><![CDATA[Fitness &amp; Sports]]></category>
+		<category domain="category" nicename="fitness"><![CDATA[Fitness]]></category>
 		<category domain="post_tag" nicename="home-gym"><![CDATA[home gym]]></category>
 		<category domain="post_tag" nicename="stationary-bike"><![CDATA[stationary bike]]></category>
 						</item>
@@ -8880,7 +8786,7 @@
 										<category domain="post_tag" nicename="boxing"><![CDATA[boxing]]></category>
 		<category domain="post_tag" nicename="cardio"><![CDATA[cardio]]></category>
 		<category domain="post_tag" nicename="crossfit"><![CDATA[CrossFit]]></category>
-		<category domain="category" nicename="fitness-sports"><![CDATA[Fitness &amp; Sports]]></category>
+		<category domain="category" nicename="fitness"><![CDATA[Fitness]]></category>
 		<category domain="post_tag" nicename="fitness-equipment"><![CDATA[fitness equipment]]></category>
 		<category domain="post_tag" nicename="jump-rope"><![CDATA[jump rope]]></category>
 						</item>
@@ -8907,7 +8813,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="fitness-sports"><![CDATA[Fitness &amp; Sports]]></category>
+										<category domain="category" nicename="fitness"><![CDATA[Fitness]]></category>
 		<category domain="post_tag" nicename="flexibility"><![CDATA[flexibility]]></category>
 		<category domain="post_tag" nicename="stretching-strap"><![CDATA[stretching strap]]></category>
 		<category domain="post_tag" nicename="yoga-accessories"><![CDATA[yoga accessories]]></category>
@@ -8938,7 +8844,7 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="duffel-bag"><![CDATA[duffel bag]]></category>
-		<category domain="category" nicename="fitness-sports"><![CDATA[Fitness &amp; Sports]]></category>
+		<category domain="category" nicename="fitness"><![CDATA[Fitness]]></category>
 		<category domain="post_tag" nicename="gym-bag"><![CDATA[gym bag]]></category>
 		<category domain="post_tag" nicename="sports-bag"><![CDATA[sports bag]]></category>
 		<category domain="post_tag" nicename="travel-bag"><![CDATA[travel bag]]></category>
@@ -8968,7 +8874,7 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="anti-aging"><![CDATA[anti-aging]]></category>
-		<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
+		<category domain="category" nicename="beauty"><![CDATA[Beauty]]></category>
 		<category domain="post_tag" nicename="beauty-routine"><![CDATA[beauty routine]]></category>
 		<category domain="post_tag" nicename="facial-care"><![CDATA[facial care]]></category>
 		<category domain="post_tag" nicename="moisturizer"><![CDATA[moisturizer]]></category>
@@ -8997,7 +8903,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
+										<category domain="category" nicename="beauty"><![CDATA[Beauty]]></category>
 		<category domain="post_tag" nicename="blow-dryer"><![CDATA[blow dryer]]></category>
 		<category domain="post_tag" nicename="dyson"><![CDATA[Dyson]]></category>
 		<category domain="post_tag" nicename="hair-dryer"><![CDATA[hair dryer]]></category>
@@ -9027,7 +8933,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
+										<category domain="category" nicename="beauty"><![CDATA[Beauty]]></category>
 		<category domain="post_tag" nicename="dental-hygiene"><![CDATA[dental hygiene]]></category>
 		<category domain="post_tag" nicename="electric-toothbrush"><![CDATA[electric toothbrush]]></category>
 		<category domain="post_tag" nicename="oral-care"><![CDATA[oral care]]></category>
@@ -9057,7 +8963,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
+										<category domain="category" nicename="beauty"><![CDATA[Beauty]]></category>
 		<category domain="post_tag" nicename="beauty-tools"><![CDATA[beauty tools]]></category>
 		<category domain="post_tag" nicename="brush-set"><![CDATA[brush set]]></category>
 		<category domain="post_tag" nicename="cosmetics"><![CDATA[cosmetics]]></category>
@@ -9087,7 +8993,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
+										<category domain="category" nicename="beauty"><![CDATA[Beauty]]></category>
 		<category domain="post_tag" nicename="cleansing-brush"><![CDATA[cleansing brush]]></category>
 		<category domain="post_tag" nicename="face-cleaner"><![CDATA[face cleaner]]></category>
 		<category domain="post_tag" nicename="facial-brush"><![CDATA[facial brush]]></category>
@@ -9133,7 +9039,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="beauty-personal-care"><![CDATA[Beauty &amp; Personal Care]]></category>
+										<category domain="category" nicename="beauty"><![CDATA[Beauty]]></category>
 		<category domain="post_tag" nicename="eau-de-parfum"><![CDATA[eau de parfum]]></category>
 		<category domain="post_tag" nicename="fragrance"><![CDATA[fragrance]]></category>
 		<category domain="post_tag" nicename="luxury-beauty"><![CDATA[luxury beauty]]></category>
@@ -9154,6 +9060,71 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_exclude]]></wp:meta_key>
 		<wp:meta_value><![CDATA[field_695d1fc5ca30c]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[BLENDER LOW SPEED]]></title>
+		<link>https://mydigitalagent.co.uk/dev/?p=328</link>
+		<pubDate>Tue, 16 Dec 2025 16:36:57 +0000</pubDate>
+		<dc:creator><![CDATA[udemy]]></dc:creator>
+		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=328</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>2 BLENDERS IN 1: Save space with this traditional jug blender &amp; personal blender in one. Create dips, sauces &amp; smoothies in the single-serve cups. Or blend frozen cocktails &amp; smoothies in the large jug.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>DETECT DIAL: Easy-to-read dial lets you take full control of blending, chopping &amp; more. Select from 15+ functions (14 manual and 4 automatic modes). Also includes countdown timer &amp; ‘Add liquid’ notification.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>AUTO, MANUAL &amp; PRESET MODES: Ninja Detect Blenders let you take as little or as much control as you like in the kitchen. Enjoy automatic BlendSense Technology, 10 speeds &amp; handy preset modes.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>INCLUDES: 1200W Motor Base (UK Plug), 2L Jug with Lid (1900 ml max liquid capacity), 680ml Single Serve Cup (644 ml max liquid capacity), Ninja Detect Total Crushing &amp; Chopping Blade, Hybrid Edge Blades, Inspiration &amp; Recipe Guide.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>DIMENSIONS: H: 44.5 x W: 21 x D: 17.5 cm. Weight: 4.83 kg. Colour: Black. 2-year guarantee upon registration with Ninja (UK &amp; ROI only).</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>328</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-16 16:36:57]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-16 16:36:57]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-17 15:45:59]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-17 15:45:59]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[low-speed-blender__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="post_tag" nicename="blender"><![CDATA[blender]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
+		<category domain="post_tag" nicename="kitchen-appliances"><![CDATA[kitchen appliances]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1765986359]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[low-speed-blender]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -9187,65 +9158,6 @@
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
-					<item>
-		<title><![CDATA[Hello world!]]></title>
-		<link>https://mydigitalagent.co.uk/dev/?p=1</link>
-		<pubDate>Sat, 13 Dec 2025 20:44:40 +0000</pubDate>
-		<dc:creator><![CDATA[udemy]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=1</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
-<!-- /wp:paragraph -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-13 20:44:40]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-13 20:44:40]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-13 20:44:49]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-13 20:44:49]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[hello-world__trashed]]></wp:post_name>
-		<wp:status><![CDATA[trash]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
-		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1765658689]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[hello-world]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_comments_status]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:1;s:1:"1";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:comment>
-			<wp:comment_id>1</wp:comment_id>
-			<wp:comment_author><![CDATA[A WordPress Commenter]]></wp:comment_author>
-			<wp:comment_author_email><![CDATA[wapuu@wordpress.example]]></wp:comment_author_email>
-			<wp:comment_author_url>https://wordpress.org/</wp:comment_author_url>
-			<wp:comment_author_IP><![CDATA[]]></wp:comment_author_IP>
-			<wp:comment_date><![CDATA[2025-12-13 20:44:40]]></wp:comment_date>
-			<wp:comment_date_gmt><![CDATA[2025-12-13 20:44:40]]></wp:comment_date_gmt>
-			<wp:comment_content><![CDATA[Hi, this is a comment.
-To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
-Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp:comment_content>
-			<wp:comment_approved><![CDATA[post-trashed]]></wp:comment_approved>
-			<wp:comment_type><![CDATA[comment]]></wp:comment_type>
-			<wp:comment_parent>0</wp:comment_parent>
-			<wp:comment_user_id>0</wp:comment_user_id>
-							</wp:comment>
-					</item>
 					<item>
 		<title><![CDATA[Navigation]]></title>
 		<link>https://mydigitalagent.co.uk/dev/navigation/</link>
@@ -9296,62 +9208,6 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
 										<category domain="wp_theme" nicename="twentytwentyfive"><![CDATA[twentytwentyfive]]></category>
 						</item>
 					<item>
-		<title><![CDATA[BLENDER HIGH SPEED 1600W]]></title>
-		<link>https://mydigitalagent.co.uk/dev/?p=172</link>
-		<pubDate>Mon, 08 Dec 2025 13:40:50 +0000</pubDate>
-		<dc:creator><![CDATA[udemy]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/udemy/blender-high-speed-1400w/</guid>
-		<description></description>
-		<content:encoded><![CDATA[<p>Professional-grade motor blends toughest ingredients including ice and frozen fruit. Variable speed control and pulse function provide precise blending. 64-ounce BPA-free pitcher makes large batches for whole family. Self-cleaning feature simplifies cleanup with water and drop of soap. Hardened stainless steel blades stay sharp through years of use. Includes recipe book with smoothies, soups, and sauces. Ten-year warranty covers motor and parts.</p>
-
-<!-- wp:list -->
-<ul class="wp-block-list"><!-- wp:list-item -->
-<li>4-in-1 hand blender set: Includes stainless steel immersion blender, whisk, 500ml chopping bowl, 700ml measuring cup. Many options are available to you: soups, sauces, mayonnaise, purees, baby food and more.</li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>Safety and quality assurance: All food contact parts of the hand blender for kitchen are BPA free. We stand behind the quality of our product and offer technical support. if you have any questions, please contact us first, we will provide you with a satisfactory solution as soon as possible.</li>
-<!-- /wp:list-item --></ul>
-<!-- /wp:list -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>172</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-08 13:40:50]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-08 13:40:50]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-17 15:46:02]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-17 15:46:02]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[blender-high-speed-1400w__trashed]]></wp:post_name>
-		<wp:status><![CDATA[trash]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_tag" nicename="blender"><![CDATA[blender]]></category>
-		<category domain="post_tag" nicename="high-speed"><![CDATA[high-speed]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
-		<category domain="post_tag" nicename="kitchen-appliances"><![CDATA[kitchen appliances]]></category>
-		<category domain="post_tag" nicename="smoothie-maker"><![CDATA[smoothie maker]]></category>
-		<category domain="post_tag" nicename="vitamix"><![CDATA[Vitamix]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
-		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1765986362]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[blender-high-speed-1400w]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
 		<title><![CDATA[Navigation]]></title>
 		<link>https://mydigitalagent.co.uk/dev/navigation-2/</link>
 		<pubDate>Sat, 06 Dec 2025 08:10:05 +0000</pubDate>
@@ -9375,71 +9231,6 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 														</item>
-					<item>
-		<title><![CDATA[BLENDER LOW SPEED]]></title>
-		<link>https://mydigitalagent.co.uk/dev/?p=328</link>
-		<pubDate>Tue, 16 Dec 2025 16:36:57 +0000</pubDate>
-		<dc:creator><![CDATA[udemy]]></dc:creator>
-		<guid isPermaLink="false">https://mydigitalagent.co.uk/dev/?p=328</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>2 BLENDERS IN 1: Save space with this traditional jug blender &amp; personal blender in one. Create dips, sauces &amp; smoothies in the single-serve cups. Or blend frozen cocktails &amp; smoothies in the large jug.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>DETECT DIAL: Easy-to-read dial lets you take full control of blending, chopping &amp; more. Select from 15+ functions (14 manual and 4 automatic modes). Also includes countdown timer &amp; ‘Add liquid’ notification.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>AUTO, MANUAL &amp; PRESET MODES: Ninja Detect Blenders let you take as little or as much control as you like in the kitchen. Enjoy automatic BlendSense Technology, 10 speeds &amp; handy preset modes.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>INCLUDES: 1200W Motor Base (UK Plug), 2L Jug with Lid (1900 ml max liquid capacity), 680ml Single Serve Cup (644 ml max liquid capacity), Ninja Detect Total Crushing &amp; Chopping Blade, Hybrid Edge Blades, Inspiration &amp; Recipe Guide.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>DIMENSIONS: H: 44.5 x W: 21 x D: 17.5 cm. Weight: 4.83 kg. Colour: Black. 2-year guarantee upon registration with Ninja (UK &amp; ROI only).</p>
-<!-- /wp:paragraph -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>328</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-16 16:36:57]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-16 16:36:57]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-17 15:45:59]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-17 15:45:59]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[low-speed-blender__trashed]]></wp:post_name>
-		<wp:status><![CDATA[trash]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_tag" nicename="blender"><![CDATA[blender]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
-		<category domain="post_tag" nicename="kitchen-appliances"><![CDATA[kitchen appliances]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
-		<wp:meta_value><![CDATA[publish]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1765986359]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-		<wp:meta_value><![CDATA[low-speed-blender]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
 					<item>
 		<title><![CDATA[BLENDER MEDIUM SPEED]]></title>
 		<link>https://mydigitalagent.co.uk/dev/?p=333</link>
@@ -9484,7 +9275,7 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="blender"><![CDATA[blender]]></category>
-		<category domain="category" nicename="home-kitchen"><![CDATA[Home &amp; Kitchen]]></category>
+		<category domain="category" nicename="home"><![CDATA[Home]]></category>
 		<category domain="post_tag" nicename="kitchen-appliances"><![CDATA[kitchen appliances]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
