@@ -1,5 +1,34 @@
 # Understanding AI Agents: A Comprehensive Guide
 
+## Mermaid DIagrams Online
+
+[https://mermaid.live/](https://mermaid.live/)
+
+copy this:
+
+graph LR
+    subgraph Traditional AI
+    A[User Input] --> B[LLM Processing]
+    B --> C[Text Response]
+    end
+    
+    subgraph AI Agent
+    D[User Goal] --> E[Agent Planning]
+    E --> F{Decision Point}
+    F -->|Action 1| G[Use Tool]
+    F -->|Action 2| H[Query Memory]
+    F -->|Action 3| I[Generate Response]
+    G --> J[Observe Result]
+    H --> J
+    I --> J
+    J --> K{Goal Achieved?}
+    K -->|No| E
+    K -->|Yes| L[Final Output]
+    end
+
+
+    
+
 ## Introduction
 
 An **AI Agent** represents a paradigm shift from traditional AI systems. Rather than simply responding to prompts, an AI agent can perceive its environment, make decisions, take actions, and work autonomously toward achieving specific goals. This document explores the fundamental concepts of AI agents, with particular relevance to their implementation in systems like WordPress.
@@ -17,6 +46,7 @@ An AI agent is an AI system that can:
 5. **Persist** information across interactions through memory systems
 
 ### Traditional AI vs. AI Agents
+
 
 ```mermaid
 graph LR
