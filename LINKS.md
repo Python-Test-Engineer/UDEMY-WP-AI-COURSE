@@ -24,3 +24,6 @@ node --version (will show version number if installed)
 
 [https://www.deeplearning.ai/courses/?courses_date_desc%5Bquery%5D=langchain](https://www.deeplearning.ai/courses/?courses_date_desc%5Bquery%5D=langchain) and many other libraries.
 
+# Mermaind diagrams
+
+[https://mermaid.live/](https://mermaid.live/)
